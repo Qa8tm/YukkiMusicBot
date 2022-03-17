@@ -24,7 +24,7 @@ from YukkiMusic.utils.database import (add_active_chat,
 from YukkiMusic.utils.exceptions import AssistantErr
 from YukkiMusic.utils.inline.play import (stream_markup,
                                           telegram_markup)
-from YukkiMusic.utils.inline.playlist import close_markup
+from YukkiMusic.utils.inline.playlist import close_markup, keyboard
 from YukkiMusic.utils.pastebin import Yukkibin
 from YukkiMusic.utils.stream.queue import put_queue, put_queue_index
 from YukkiMusic.utils.thumbnails import gen_thumb
@@ -114,19 +114,6 @@ async def stream(
                     forceplay=forceplay,
                 )
                 img = await gen_thumb(vidid)
-    keyboard = InlineKeyboardMarkup(
-                  [[
-                      InlineKeyboardButton("⏹", callback_data="set_stop"),
-                      InlineKeyboardButton("⏸", callback_data="set_pause"),
-                      InlineKeyboardButton('⏭️', callback_data="set_skip"),
-                      InlineKeyboardButton("▶️", callback_data="set_resume"),
-                  ],[
-                      InlineKeyboardButton("• Cʜᴀɴɴᴇʟ", url=f"https://t.me/Elnqyb"),
-                      InlineKeyboardButton("• Group", url=f"https://t.me/barelnqyb"),
-                  ],[
-                      InlineKeyboardButton("𝗔𝗵𝗠𝗲𝗱 𝗘𝗹𝗡𝗾𝗬𝗯™★ ⤶", url="https://t.me/ahmedelnqyb")],
-                  ]
-             )
                 button = stream_markup(_, vidid)
                 await app.send_photo(
                     original_chat_id,
