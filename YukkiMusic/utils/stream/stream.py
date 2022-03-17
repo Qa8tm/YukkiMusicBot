@@ -119,7 +119,6 @@ async def stream(
                     original_chat_id,
                     photo=img,
                     caption=**The song has been added to the playlist**\n\n "**Song Name : ** {title} \n**Duration Time ** : {duration_min} \n**Play Status Now ** : Played\n**Requested By : {user_name}",
-                    ),
                     reply_markup=InlineKeyboardMarkup(button),
                 )
         if count == 0:
