@@ -7,7 +7,7 @@
 #
 # All rights reserved.
 
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.types import InlineKeyboardButton
 
 
 def track_markup(_, videoid, user_id, channel, fplay):
@@ -135,17 +135,3 @@ def slider_markup(
         ],
     ]
     return buttons
-
-    keyboard = InlineKeyboardMarkup(
-                  [[
-                      InlineKeyboardButton("⏹", callback_data="set_stop"),
-                      InlineKeyboardButton("⏸", callback_data="set_pause"),
-                      InlineKeyboardButton('⏭️', callback_data="set_skip"),
-                      InlineKeyboardButton("▶️", callback_data="set_resume"),
-                  ],[
-                      InlineKeyboardButton("• Cʜᴀɴɴᴇʟ", url=f"https://t.me/Elnqyb"),
-                      InlineKeyboardButton("• Group", url=f"https://t.me/barelnqyb"),
-                  ],[
-                      InlineKeyboardButton("𝗔𝗵𝗠𝗲𝗱 𝗘𝗹𝗡𝗾𝗬𝗯™★ ⤶", url="https://t.me/ahmedelnqyb")],
-                  ]
-             )
