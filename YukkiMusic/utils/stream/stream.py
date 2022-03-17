@@ -114,12 +114,13 @@ async def stream(
                     forceplay=forceplay,
                 )
                 img = await gen_thumb(vidid)
+                title = result["title"]
                 button = stream_markup(_, vidid)
                 await app.send_photo(
                     original_chat_id,
                     photo=img,
                     reply_markup=InlineKeyboardMarkup(button),
-                    caption=f"**Track added to queue » ** \n\n**Song Name : ** {title} \n**Duration Time Played :** `{duration}`\n**Status Play Now:** Playing\n**Request by User :** {user_name}",
+                    caption=f"**Track added to queue » ** \n\n**Song Name : ** {title} \n**Duration Time Played :** \n**Status Play Now:** Playing\n**Request by User :",
                     )
         if count == 0:
             return
@@ -190,12 +191,13 @@ async def stream(
                 forceplay=forceplay,
             )
             img = await gen_thumb(vidid)
+            title = result["title"]
             button = stream_markup(_, vidid)
             await app.send_photo(
                 original_chat_id,
                 photo=img,
                 reply_markup=InlineKeyboardMarkup(button),
-                caption=f"**Track added to queue » ** \n\n**Song Name : ** {title} \n**Duration Time Played :** `{duration}`\n**Status Play Now:** Playing\n**Request by User :** {user_name}",
+                caption=f"**Track added to queue » ** \n\n**Song Name : ** {title} \n**Duration Time Played :** \n**Status Play Now:** Playing\n**Request by User :** ",
                 )
 
     elif streamtype == "soundcloud":
@@ -351,12 +353,13 @@ async def stream(
                 forceplay=forceplay,
             )
             img = await gen_thumb(vidid)
+            title = result["title"]
             button = telegram_markup(_)
             await app.send_photo(
                 original_chat_id,
                 photo=img,
                 reply_markup=InlineKeyboardMarkup(button),
-                caption=f"**Track added to queue » ** \n\n**Song Name : ** {title} \n**Duration Time Played :** `{duration}`\n**Status Play Now:** Playing\n**Request by User :** {user_name}",
+                caption=f"**Track added to queue » ** \n\n**Song Name : ** {title} \n**Duration Time Played :** \n**Status Play Now:** Playing\n**Request by User :",
                 )
     elif streamtype == "index":
         link = result
