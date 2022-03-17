@@ -24,7 +24,7 @@ from YukkiMusic.utils.database import (get_active_chats,
                                        get_particular_top,
                                        get_served_chats,
                                        get_served_users, get_user_top,
-                                       is_cleanmode_on, set_queries,
+                                       is_cleanmode_on, cleanmode.of, set_queries,
                                        update_particular_top,
                                        update_user_top)
 from YukkiMusic.utils.decorators.language import language
@@ -53,7 +53,7 @@ async def clean_mode(client, update, users, chats):
         return
     message_id = update.max_id
     chat_id = int(f"-100{update.channel_id}")
-    if not await is_cleanmode_on(chat_id):
+    if not await cleanmode_of(chat_id):
         return
     if chat_id not in clean:
         clean[chat_id] = []
