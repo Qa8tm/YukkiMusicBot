@@ -194,12 +194,9 @@ async def stream(
             await app.send_photo(
                 original_chat_id,
                 photo=img,
-                caption=_["stream_1"].format(
-                    user_name,
-                    f"https://t.me/{app.username}?start=info_{vidid}",
-                ),
                 reply_markup=InlineKeyboardMarkup(button),
-            )
+                caption=f"**Track added to queue » ** \n\n**Song Name : ** {title} \n**Duration Time Played :** `{duration}`\n**Status Play Now:** Playing\n**Request by User :** {user_name}",
+                )
 
     elif streamtype == "soundcloud":
         file_path = result["filepath"]
@@ -358,12 +355,9 @@ async def stream(
             await app.send_photo(
                 original_chat_id,
                 photo=img,
-                caption=_["stream_1"].format(
-                    user_name,
-                    f"https://t.me/{app.username}?start=info_{vidid}",
-                ),
                 reply_markup=InlineKeyboardMarkup(button),
-            )
+                caption=f"**Track added to queue » ** \n\n**Song Name : ** {title} \n**Duration Time Played :** `{duration}`\n**Status Play Now:** Playing\n**Request by User :** {user_name}",
+                )
     elif streamtype == "index":
         link = result
         title = "Index or M3u8 Link"
