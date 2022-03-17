@@ -118,7 +118,7 @@ async def stream(
                 await app.send_photo(
                     original_chat_id,
                     photo=img,
-                    reply_markup=keyboard,
+                    reply_markup=InlineKeyboardMarkup(button),
                     caption=f"**Track added to queue » ** \n\n**Song Name : ** {title} \n**Duration Time Played :** `{duration}`\n**Status Play Now:** Playing\n**Request by User :** {user_name}",
                     )
         if count == 0:
