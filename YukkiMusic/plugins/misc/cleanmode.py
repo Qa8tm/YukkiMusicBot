@@ -19,7 +19,7 @@ from config import adminlist, chatstats, clean, userstats
 from strings import get_command
 from YukkiMusic import app, userbot
 from YukkiMusic.misc import SUDOERS
-from YukkiMusic.utils.database import cleanmode_of
+from YukkiMusic.utils.database import cleanmode_off
 from YukkiMusic.utils.database import (get_active_chats,
                                        get_authuser_names, get_client,
                                        get_particular_top,
@@ -54,7 +54,7 @@ async def clean_mode(client, update, users, chats):
         return
     message_id = update.max_id
     chat_id = int(f"-100{update.channel_id}")
-    if not await cleanmode_of(chat_id):
+    if not await cleanmode_off(chat_id):
         return
     if chat_id not in clean:
         clean[chat_id] = []
