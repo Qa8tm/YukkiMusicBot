@@ -15,7 +15,6 @@ from config import autoclean
 async def auto_clean(popped):
     try:
         rem = popped["file"]
-        autoclean.remove(rem)
         count = autoclean.count(rem)
         if count == 0:
             if (
@@ -24,7 +23,7 @@ async def auto_clean(popped):
                 or "index_" not in rem
             ):
                 try:
-                    os.remove(rem)
+                    os.remove(re)
                 except:
                     pass
     except:
