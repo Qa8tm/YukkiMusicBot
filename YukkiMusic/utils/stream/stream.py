@@ -30,6 +30,21 @@ from YukkiMusic.utils.stream.queue import put_queue, put_queue_index
 from YukkiMusic.utils.thumbnails import gen_thumb
 
 
+    keyboard = InlineKeyboardMarkup(
+                  [[
+                      InlineKeyboardButton("⏹", callback_data="set_stop"),
+                      InlineKeyboardButton("⏸", callback_data="set_pause"),
+                      InlineKeyboardButton('⏭️', callback_data="set_skip"),
+                      InlineKeyboardButton("▶️", callback_data="set_resume"),
+                  ],[
+                      InlineKeyboardButton("• Cʜᴀɴɴᴇʟ", url=f"https://t.me/Elnqyb"),
+                      InlineKeyboardButton("• Group", url=f"https://t.me/barelnqyb"),
+                  ],[
+                      InlineKeyboardButton("𝗔𝗵𝗠𝗲𝗱 𝗘𝗹𝗡𝗾𝗬𝗯™★ ⤶", url="https://t.me/ahmedelnqyb")],
+                  ]
+             )
+
+
 async def stream(
     _,
     mystic,
@@ -118,9 +133,9 @@ async def stream(
                 await app.send_photo(
                     original_chat_id,
                     photo=img,
-                    caption=**The song has been added to the playlist**\n\n "**Song Name : ** {title} \n**Duration Time ** : {duration_min} \n**Play Status Now ** : Played\n**Requested By : {user_name}",
-                    reply_markup=InlineKeyboardMarkup(button),
-                )
+                    reply_markup=keyboard,
+                    caption=f"**Track added to queue » ** \n\n**Song Name : ** {title} \n**Duration Time Played :** `{duration}`\n**Status Play Now:** Playing\n**Request by User :** {user_name}",
+                    )
         if count == 0:
             return
         else:
