@@ -2,10 +2,7 @@ from datetime import datetime
 from sys import version_info
 from time import time
 
-from Config import (
-    ALIVE_IMG,
-    ELNQYB,
-)
+from config.config import ALIVE_IMG, ELNQYB
 from YukkiMusic.plugins.play.filters import command, other_filters
 from pyrogram import Client, filters
 from YukkiMusic import app
