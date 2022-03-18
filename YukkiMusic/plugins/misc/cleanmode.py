@@ -215,7 +215,7 @@ async def auto_clean():
                 for x in clean[chat_id]:
                     if datetime.now() > x["timer_after"]:
                         try:
-                            await app.delete_messages(
+                            await uu.delete_messages(
                                 chat_id, x["msg_id"]
                             )
                         except FloodWait as e:
