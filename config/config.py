@@ -19,6 +19,8 @@ load_dotenv()
 # Get it from my.telegram.org
 API_ID = int(getenv("API_ID", "13238717"))
 API_HASH = getenv("API_HASH", "104f04d2793c9fdf35ee84bf7c9899a7")
+ELNQYB = getenv("ELNQYB", "https://telegra.ph/file/62e28f469c217f5513f20.jpg")
+ALIVE_IMG = getenv("ALIVE_IMG", "https://telegra.ph/file/c83b000f004f01897fe18.png")
 
 ## Get it from @Botfather in Telegram.
 BOT_TOKEN = getenv("BOT_TOKEN")
@@ -37,10 +39,10 @@ SONG_DOWNLOAD_DURATION = int(
 )  # Remember to give value in Minutes
 
 # You'll need a Private Group ID for this.
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", ""))
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1001580282605"))
 
 # A name for your Music bot.
-MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "elnqyb")
+MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "𝗘𝗹𝗡𝗾𝗬𝗯™★ ⤶")
 
 # Your User ID.
 OWNER_ID = list(
