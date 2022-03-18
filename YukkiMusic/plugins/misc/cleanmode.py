@@ -19,7 +19,6 @@ from config import adminlist, chatstats, clean, userstats
 from strings import get_command
 from YukkiMusic import app, userbot
 from YukkiMusic.misc import SUDOERS
-from YukkiMusic.utils.database import cleanmode_off
 from YukkiMusic.utils.database import (get_active_chats,
                                        get_authuser_names, get_client,
                                        get_particular_top,
@@ -37,6 +36,34 @@ AUTO_SLEEP = 5
 IS_BROADCASTING = False
 cleanmode_group = 15
 
+
+@app.on_raw_update(group=cleanmode_group)
+async def clean_mode(client, update, users, chats):
+    global IS_BROADCASTING
+    if IS_BROADCASTING:
+        return
+    try:
+        if not isinstance(update, types.UpdateReadChannelOutbox):
+            return
+    except:
+        return
+    if users:
+        return
+    if chats:
+        return
+    message_id = update.max_id
+    chat_id = int(f"-100{update.channel_id}")
+    if not await is_cleanmode_on(chat_id):
+        return
+    if chat_id not in clean:
+        clean[chat_id] = []
+    time_now = datetime.now()
+    put = {
+        "msg_id": message_id,
+        "timer_after": time_now + timedelta(minutes=AUTO_DELETE),
+    }
+    clean[chat_id].append(put)
+    await set_queries(1)
 
 
 @app.on_message(filters.command(BROADCAST_COMMAND) & SUDOERS)
@@ -215,7 +242,7 @@ async def auto_clean():
                 for x in clean[chat_id]:
                     if datetime.now() > x["timer_after"]:
                         try:
-                            await uu.delete_messages(
+                            await app.delete_messages(
                                 chat_id, x["msg_id"]
                             )
                         except FloodWait as e:
