@@ -101,7 +101,8 @@ def PlayWrapper(command):
         if playty != "Everyone":
             if message.from_user.id not in SUDOERS:
                 admins = adminlist.get(message.chat.id)
-                If not admin:
+                if not admins:
+                    return await message.reply_text(_["**قم باعاده تحديث البوت بكتابة الامر** \n /Reload \n **لتحديث قائمه الادمنيه**"])
                 else:
                     if message.from_user.id not in admins:
                         return await message.reply_text(_["play_4"])
