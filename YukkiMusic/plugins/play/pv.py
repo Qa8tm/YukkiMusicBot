@@ -4,7 +4,7 @@ from config.config import OWNER_ID as SUDO_USERS
 from config.config import PMPERMIT
 from pyrogram import filters
 from pyrogram.types import Message
-from YukkiMusic.core.userbot import userbot as USER
+from YukkiMusic.core.userbot import Userbot as USER
 
 PMSET =True
 pchats = []
