@@ -115,12 +115,14 @@ async def stream(
                 )
                 img = await gen_thumb(vidid)
                 title = result["title"]
+                requester = f"[{user_name}](tg://user?id={user_id})"
+                duration_min = result["duration_min"]
                 button = stream_markup(_, vidid)
                 await app.send_photo(
                     original_chat_id,
                     photo=img,
                     reply_markup=InlineKeyboardMarkup(button),
-                    caption=f"**Track added to queue » ** \n\n**Song Name : ** {title} \n**Duration Time Played :** \n**Status Play Now:** Playing\n**Request by User :",
+                    caption=f"**Track added to queue » ** \n\n**Song Name : ** {title} \n**Duration Time Played :** {duration_min} \n**Status Play Now:** Playing\n**Request by User :** {requester} ",
                     )
         if count == 0:
             return
@@ -192,12 +194,14 @@ async def stream(
             )
             img = await gen_thumb(vidid)
             title = result["title"]
+            requester = f"[{user_name}](tg://user?id={user_id})"
+            duration_min = result["duration_min"]
             button = stream_markup(_, vidid)
             await app.send_photo(
                 original_chat_id,
                 photo=img,
                 reply_markup=InlineKeyboardMarkup(button),
-                caption=f"**Track added to queue » ** \n\n**Song Name : ** {title} \n**Duration Time Played :** \n**Status Play Now:** Playing\n**Request by User :** ",
+                caption=f"**Track added to queue » ** \n\n**Song Name : ** {title} \n**Duration Time Played :** {duration_min}\n**Status Play Now:** Playing\n**Request by User :** {requester} ",
                 )
 
     elif streamtype == "soundcloud":
@@ -354,12 +358,14 @@ async def stream(
             )
             img = await gen_thumb(vidid)
             title = result["title"]
+            requester = f"[{user_name}](tg://user?id={user_id})"
+            duration_min = result["duration_min"]
             button = telegram_markup(_)
             await app.send_photo(
                 original_chat_id,
                 photo=img,
                 reply_markup=InlineKeyboardMarkup(button),
-                caption=f"**Track added to queue » ** \n\n**Song Name : ** {title} \n**Duration Time Played :** \n**Status Play Now:** Playing\n**Request by User :",
+                caption=f"**Track added to queue » ** \n\n**Song Name : ** {title} \n**Duration Time Played :** {duration_min} \n**Status Play Now:** Playing\n**Request by User :** {requester} ",
                 )
     elif streamtype == "index":
         link = result
