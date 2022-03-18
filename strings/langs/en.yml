@@ -2,11 +2,11 @@ name : English
 
 # General Strings
 general_1 : "Reply to a user's message or give username/user_id."
-general_2 : "Error! Wrong Usage of Command."
+general_2 : "خطا في استخدام الازرار."
 general_3 : "Some **exception occured** while processing your query.\n\nException Type:- {0}"
-general_4 : "You're an anonymous admin in this chat group!\nRevert back to User Account From Admin Rights."
-general_5 : "You need to be admin with manage voice chat rights to perform this action."
-general_6 : "Bot isn't streaming on voice chat."
+general_4 : "يمكنك طلب التشغيل من الحساب الاساسي فقط ليس حساب قناة او جروب ⚡."
+general_5 : "**يجب ان تكون ادمن مع الصلاحيات المطلوبة للقيام بذلك ⚡.**"
+general_6 : "**لا يوجد شئ يتم تشغيلة الان ⚡.**"
 
 # Classes - Telegram.py
 tg_1 : "Bot is **overloaded** with downloads right now.\n\n**Try After:** {0} (__expected time__)"
@@ -37,15 +37,15 @@ auth_8 : "┗ Added By:-"
 
 # PLUGINS - Admins
 admin_1 : "Music is already Paused."
-admin_2 : "🎧 Voicechat Paused by {}!"
+admin_2 : "Voicechat Paused by {}!"
 admin_3 : "Music is already resumed."
-admin_4 : "🎧 Voicechat Resumed by {}!"
+admin_4 : "Voicechat Resumed by {}!"
 admin_5 : "Music is already muted."
-admin_6 : "🎧 Voicechat Muted by {}!"
+admin_6 : "Voicechat Muted by {}!"
 admin_7 : "Music is already unmuted."
-admin_8 : "🎧 Voicechat Unmuted by {}!"
-admin_9 : "🎧 Voicechat End/Stopped by {}!"
-admin_10 : "🎧 Voicechat Skipped by {}!. No More Music in Queue."
+admin_8 : "Voicechat Unmuted by {}!"
+admin_9 : "Voicechat End/Stopped by {}!"
+admin_10 : "Voicechat Skipped by {}!. No More Music in Queue."
 admin_11 : "Error while changing stream to **{0}**\n\nPlease use /skip again."
 admin_12 : "Unable to skip to a specific track because of enabled loop play. Please disable loop play via `/loop disable` to use this feature."
 admin_13 : "Please use numeric numbers for specific tracks, like 1, 2 or 4 etc"
