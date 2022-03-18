@@ -276,7 +276,11 @@ async def welcome(client, message: Message):
                     reply_markup=InlineKeyboardMarkup(out),
                 )
             if member.id in config.OWNER_ID:
-                return await message.reply_text(**[𝗔𝗵𝗠𝗲𝗱 𝗘𝗹𝗡𝗾𝗬𝗯™★ ⤶](https://t.me/ahmedelnqyb) احمد النقيب انضم اللي هنا\n يرجي من الاعضاء احترام وجوده هنا 🍀☕**")
+                return await message.reply_text(
+                    _["start_4"].format(
+                        config.MUSIC_BOT_NAME, member.mention
+                    )
+                )
             if member.id in SUDOERS:
                 return await message.reply_text(
                     _["start_5"].format(
