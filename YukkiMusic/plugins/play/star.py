@@ -4,11 +4,11 @@ from time import time
 
 from Config import (
     ALIVE_IMG,
-    BOT_USERNAME,
     ELNQYB,
 )
 from YukkiMusic.plugins.play.filters import command, other_filters
 from pyrogram import Client, filters
+from YukkiMusic import app
 from pyrogram import __version__ as pyrover
 from pytgcalls import (__version__ as pytover)
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
@@ -114,7 +114,7 @@ async def new_chat(c: Client, m: Message):
                             InlineKeyboardButton("Support", url=f"https://t.me/barelnqyb")
                         ],
                         [
-                            InlineKeyboardButton("اضف البوت الى مجموعتك", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
+                            InlineKeyboardButton("اضف البوت الى مجموعتك", url=f"https://t.me/{app.username}?startgroup=true")
                         ]
                     ]
                 )
