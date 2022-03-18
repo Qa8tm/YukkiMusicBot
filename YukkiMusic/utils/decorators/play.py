@@ -69,11 +69,7 @@ def PlayWrapper(command):
                 if "stream" in message.command:
                     return await message.reply_text(_["str_1"])
                 buttons = botplaylist_markup(_)
-                return await message.reply_photo(
-                    photo=PLAYLIST_IMG_URL,
-                    caption=_["playlist_1"],
-                    reply_markup=InlineKeyboardMarkup(buttons),
-                )
+                return await message.reply_text(_["playlist_1"])
         if message.sender_chat:
             upl = InlineKeyboardMarkup(
                 [
@@ -105,7 +101,8 @@ def PlayWrapper(command):
         if playty != "Everyone":
             if message.from_user.id not in SUDOERS:
                 admins = adminlist.get(message.chat.id)
-                if message.from_user.id not in admins:
+                else:
+                    if message.from_user.id not in admins:
                         return await message.reply_text(_["play_4"])
         if message.command[0][0] == "v":
             video = True
