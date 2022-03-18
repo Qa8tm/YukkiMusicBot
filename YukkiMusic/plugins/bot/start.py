@@ -238,7 +238,7 @@ async def testbot(client, message: Message, _):
     )
 
 
-welcome_group = 2
+welcome_group = 500
 
 
 @app.on_message(filters.new_chat_members, group=welcome_group)
@@ -247,9 +247,8 @@ async def welcome(client, message: Message):
     if config.PRIVATE_BOT_MODE == str(True):
         if not await is_served_private_chat(message.chat.id):
             await message.reply_text(
-                "**Private Music Bot**\n\nOnly for authorized chats from the owner. Ask my owner to allow your chat first."
+                "**هذا البوت خاص لا يمكن اضافتة اللي المجموعات الاخري 🍀☕**"
             )
-            return await app.leave_chat(message.chat.id)
     else:
         await add_served_chat(chat_id)
     for member in message.new_chat_members:
@@ -260,14 +259,12 @@ async def welcome(client, message: Message):
                 chat_type = message.chat.type
                 if chat_type != "supergroup":
                     await message.reply_text(_["start_6"])
-                    return await app.leave_chat(message.chat.id)
                 if chat_id in await blacklisted_chats():
                     await message.reply_text(
                         _["start_7"].format(
                             f"https://t.me/{app.username}?start=sudolist"
                         )
                     )
-                    return await app.leave_chat(chat_id)
                 userbot = await get_assistant(message.chat.id)
                 out = start_pannel(_)
                 await message.reply_text(
@@ -279,9 +276,7 @@ async def welcome(client, message: Message):
                     reply_markup=InlineKeyboardMarkup(out),
                 )
             if member.id in config.OWNER_ID:
-                return await message.reply_text(
-                    _["start_4"].format(
-                        config.MUSIC_BOT_NAME, member.mention
+                return await message.reply_text(**[𝗔𝗵𝗠𝗲𝗱 𝗘𝗹𝗡𝗾𝗬𝗯™★ ⤶](https://t.me/ahmedelnqyb) احمد النقيب انضم اللي هنا\n يرجي من الاعضاء احترام وجوده هنا 🍀☕**"
                     )
                 )
             if member.id in SUDOERS:
