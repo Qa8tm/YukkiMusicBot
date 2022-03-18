@@ -265,16 +265,6 @@ async def welcome(client, message: Message):
                             f"https://t.me/{app.username}?start=sudolist"
                         )
                     )
-                userbot = await get_assistant(message.chat.id)
-                out = start_pannel(_)
-                await message.reply_text(
-                    _["start_3"].format(
-                        config.MUSIC_BOT_NAME,
-                        userbot.username,
-                        userbot.id,
-                    ),
-                    reply_markup=InlineKeyboardMarkup(out),
-                )
             if member.id in config.OWNER_ID:
                 return await message.reply_text(
                     _["start_4"].format(
