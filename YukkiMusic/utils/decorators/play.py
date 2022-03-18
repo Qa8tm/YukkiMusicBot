@@ -35,7 +35,7 @@ def PlayWrapper(command):
                     "**Private Music Bot**\n\nOnly for authorized chats from the owner. Ask my owner to allow your chat first."
                 )
                 return await app.leave_chat(message.chat.id)
-        if await is_commanddelete_on(message.chat.id):
+        if await commanddelete_off(message.chat.id):
             try:
                 await message.delete()
             except:
