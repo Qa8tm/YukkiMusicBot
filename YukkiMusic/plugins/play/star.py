@@ -41,7 +41,7 @@ async def _human_time_duration(seconds):
 
 
 
-@Client.on_message(
+@app.on_message(
     command(["alive", f"معلومات"]) & filters.group & ~filters.edited
 )
 async def alive(c: Client, message: Message):
@@ -71,7 +71,7 @@ async def alive(c: Client, message: Message):
     )
 
 
-@Client.on_message(command(["ping", "بنج"]) & ~filters.edited)
+@app.on_message(command(["ping", "بنج"]) & ~filters.edited)
 async def ping_pong(client: Client, message: Message):
     start = time()
     m_reply = await message.reply_text("pinging...")
@@ -79,7 +79,7 @@ async def ping_pong(client: Client, message: Message):
     await m_reply.edit_text("🏓 `PONG!!`\n" f"⚡️ `{delta_ping * 1000:.3f} ms`")
 
 
-@Client.on_message(command(["uptime", "وقت التشغيل"]) & ~filters.edited)
+@app.on_message(command(["uptime", "وقت التشغيل"]) & ~filters.edited)
 async def get_uptime(client: Client, message: Message):
     current_time = datetime.utcnow()
     uptime_sec = (current_time - START_TIME).total_seconds()
@@ -91,7 +91,7 @@ async def get_uptime(client: Client, message: Message):
     )
 
 
-@Client.on_message(filters.new_chat_members)
+@app.on_message(filters.new_chat_members)
 async def new_chat(c: Client, m: Message):
     chat_id = m.chat.id
     bot_id = (await c.get_me()).id
@@ -117,7 +117,7 @@ async def new_chat(c: Client, m: Message):
                 )
             )
 
-@Client.on_message(command("/start") & filters.private & ~filters.edited)
+@app.on_message(command("/start") & filters.private & ~filters.edited)
 async def starttt_(client: Client, message: Message):
     await message.reply_photo(
         photo=f"{ALIVE_IMG}",
@@ -137,7 +137,7 @@ async def starttt_(client: Client, message: Message):
                 )
             )
 
-@Client.on_message(command(["/help", "الاوامر"]) & filters.group & ~filters.edited)
+@app.on_message(command(["/help", "الاوامر"]) & filters.group & ~filters.edited)
 async def starhelp(client: Client, message: Message):
     await message.reply_photo(
         photo=f"{ALIVE_IMG}",
@@ -157,7 +157,7 @@ async def starhelp(client: Client, message: Message):
                 )
             )
 
-@Client.on_message(command(["المطور", "النقيب"]) & filters.group & ~filters.edited)
+@app.on_message(command(["المطور", "النقيب"]) & filters.group & ~filters.edited)
 async def dev(client: Client, message: Message):
     await message.reply_photo(
         photo=f"{ELNQYB}",
@@ -171,7 +171,7 @@ async def dev(client: Client, message: Message):
                 )
             )
 
-@Client.on_message(command("بوت") & filters.group & ~filters.edited)
+@app.on_message(command("بوت") & filters.group & ~filters.edited)
 async def bott(client: Client, message: Message):
     await message.reply_text(" البوت قيد التشغيل الان ⚡",
         reply_markup=InlineKeyboardMarkup(
