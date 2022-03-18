@@ -71,7 +71,7 @@ async def alive(c: Client, message: Message):
     )
 
 
-@Client.on_message(command(["ping", f"ping@{BOT_USERNAME}", "بنج"]) & ~filters.edited)
+@Client.on_message(command(["ping", "بنج"]) & ~filters.edited)
 async def ping_pong(client: Client, message: Message):
     start = time()
     m_reply = await message.reply_text("pinging...")
@@ -79,7 +79,7 @@ async def ping_pong(client: Client, message: Message):
     await m_reply.edit_text("🏓 `PONG!!`\n" f"⚡️ `{delta_ping * 1000:.3f} ms`")
 
 
-@Client.on_message(command(["uptime", f"uptime@{BOT_USERNAME}", "وقت التشغيل"]) & ~filters.edited)
+@Client.on_message(command(["uptime", "وقت التشغيل"]) & ~filters.edited)
 async def get_uptime(client: Client, message: Message):
     current_time = datetime.utcnow()
     uptime_sec = (current_time - START_TIME).total_seconds()
