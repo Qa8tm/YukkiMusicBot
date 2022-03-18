@@ -254,7 +254,7 @@ async def commanddelete_off(chat_id: int):
 
 async def commanddelete_on(chat_id: int):
     try:
-        command.oppend(chat_id)
+        command.remove(chat_id)
     except:
         pass
 
@@ -274,7 +274,7 @@ async def cleanmode_off(chat_id: int):
 
 async def cleanmode_on(chat_id: int):
     try:
-        cleanmode.oppend(chat_id)
+        cleanmode.remove(chat_id)
     except:
         pass
 
