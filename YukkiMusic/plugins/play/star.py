@@ -5,7 +5,6 @@ from time import time
 from Config import (
     ALIVE_IMG,
     BOT_USERNAME,
-    SUDO_USERS,
     ELNQYB,
 )
 from YukkiMusic.plugins.play.filters import command, other_filters
