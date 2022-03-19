@@ -37,7 +37,7 @@ def stream_markup(_, videoid):
         [
             InlineKeyboardButton(
                 text=_["PL_B_2"],
-                callback_data="playlist",
+                callback_data=f"add_playlist {videoid}",
             ),
             InlineKeyboardButton(
                 text=_["PL_B_3"], switch_inline_query_current_chat=""
@@ -65,7 +65,7 @@ def telegram_markup(_):
         [
             InlineKeyboardButton(
                 text=_["PL_B_2"],
-                callback_data=f"add_playlist {videoid}",
+                callback_data=f"playlist",
             ),
             InlineKeyboardButton(
                 text=_["PL_B_3"], switch_inline_query_current_chat=""
