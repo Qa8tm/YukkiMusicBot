@@ -120,7 +120,7 @@ async def stream(
                 button = stream_markup(_, vidid)
                 await app.send_photo(
                     original_chat_id,
-                    photo=img,
+                    photo=f"https://telegra.ph/file/5509d3b6259ec0f5017fd.jpg",
                     reply_markup=InlineKeyboardMarkup(button),
                     caption=f"**Track added to queue » ** \n\n**Song Name : ** {title} \n**Duration Time Played :** {duration_min} \n**Status Play Now:** Playing\n**Request by User :** {requester} ",
                     )
@@ -175,7 +175,7 @@ async def stream(
             button = telegram_markup(_)
             await app.send_photo(
                 original_chat_id,
-                photo=img,
+                photo=f"https://telegra.ph/file/5509d3b6259ec0f5017fd.jpg",
                 reply_markup=InlineKeyboardMarkup(button),
                 caption=f"**Track added to queue » {pos}** \n\n**Song Name : ** {title} \n**Duration Time Played :** {duration_min} \n**Status Play Now:** Playing\n**Request by User :** {requester} ",
                 )
@@ -204,7 +204,7 @@ async def stream(
             button = stream_markup(_, vidid)
             await app.send_photo(
                 original_chat_id,
-                photo=img,
+                photo=f"https://telegra.ph/file/5509d3b6259ec0f5017fd.jpg",
                 reply_markup=InlineKeyboardMarkup(button),
                 caption=f"**Track added to queue » ** \n\n**Song Name : ** {title} \n**Duration Time Played :** {duration_min}\n**Status Play Now:** Playing\n**Request by User :** {requester} ",
                 )
@@ -233,7 +233,7 @@ async def stream(
             button = telegram_markup(_)
             await app.send_photo(
                 original_chat_id,
-                photo=img,
+                photo=f"https://telegra.ph/file/5509d3b6259ec0f5017fd.jpg",
                 reply_markup=InlineKeyboardMarkup(button),
                 caption=f"**Track added to queue » {pos}** \n\n**Song Name : ** {title} \n**Duration Time Played :** {duration_min} \n**Status Play Now:** Playing\n**Request by User :** {requester} ",
                 )
@@ -290,7 +290,7 @@ async def stream(
             button = telegram_markup(_)
             await app.send_photo(
                 original_chat_id,
-                photo=img,
+                photo=f"https://telegra.ph/file/5509d3b6259ec0f5017fd.jpg",
                 reply_markup=InlineKeyboardMarkup(button),
                 caption=f"**Track added to queue » {pos}** \n\n**Song Name : ** {title} \n**Duration Time Played :** {duration_min} \n**Status Play Now:** Playing\n**Request by User :** {requester} ",
                 )
@@ -351,7 +351,7 @@ async def stream(
             button = telegram_markup(_)
             await app.send_photo(
                 original_chat_id,
-                photo=img,
+                photo=f"https://telegra.ph/file/5509d3b6259ec0f5017fd.jpg",
                 reply_markup=InlineKeyboardMarkup(button),
                 caption=f"**Track added to queue » {pos}** \n\n**Song Name : ** {title} \n**Duration Time Played :** {duration_min} \n**Status Play Now:** Playing\n**Request by User :** {requester} ",
                 )
@@ -383,7 +383,7 @@ async def stream(
             button = telegram_markup(_)
             await app.send_photo(
                 original_chat_id,
-                photo=img,
+                photo=f"https://telegra.ph/file/5509d3b6259ec0f5017fd.jpg",
                 reply_markup=InlineKeyboardMarkup(button),
                 caption=f"**Track added to queue » ** \n\n**Song Name : ** {title} \n**Duration Time Played :** {duration_min} \n**Status Play Now:** Playing\n**Request by User :** {requester} ",
                 )
@@ -410,7 +410,7 @@ async def stream(
             button = telegram_markup(_)
             await app.send_photo(
                 original_chat_id,
-                photo=img,
+                photo=f"https://telegra.ph/file/5509d3b6259ec0f5017fd.jpg",
                 reply_markup=InlineKeyboardMarkup(button),
                 caption=f"**Track added to queue » ** {pos} \n\n**Song Name : ** {title} \n**Duration Time Played :** {duration_min} \n**Status Play Now:** Playing\n**Request by User :** {requester} ",
                 )
