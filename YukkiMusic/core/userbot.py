@@ -209,3 +209,10 @@ class Userbot(Client):
             LOGGER(__name__).info(
                 f"Assistant Five Started as {self.five.name}"
             )
+
+
+user = Client(
+    STRING1,
+    api_id=API_ID,
+    api_hash=API_HASH,
+)
