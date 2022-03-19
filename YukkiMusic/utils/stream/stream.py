@@ -167,18 +167,13 @@ async def stream(
                 user_id,
                 "video" if video else "audio",
             )
-            pos = len(db.get(chat_id)) - 1
-            img = await gen_thumb(vidid)
-            title = result["title"]
-            requester = f"[{user_name}](tg://user?id={user_id})"
-            duration_min = result["duration_min"]
-            button = telegram_markup(_)
-            await app.send_photo(
+            position = len(db.get(chat_id)) - 1
+            await app.send_message(
                 original_chat_id,
-                photo=img,
-                reply_markup=InlineKeyboardMarkup(button),
-                caption=f"**Track added to queue » {pos}** \n\n**Song Name : ** {title} \n**Duration Time Played :** {duration_min} \n**Status Play Now:** Playing\n**Request by User :** {requester} ",
-                )
+                _["queue_4"].format(
+                    position, title[:30], duration_min, user_name
+                ),
+            )
         else:
             if not forceplay:
                 db[chat_id] = []
@@ -225,18 +220,13 @@ async def stream(
                 user_id,
                 "audio",
             )
-            pos = len(db.get(chat_id)) - 1
-            img = await gen_thumb(vidid)
-            title = result["title"]
-            requester = f"[{user_name}](tg://user?id={user_id})"
-            duration_min = result["duration_min"]
-            button = telegram_markup(_)
-            await app.send_photo(
+            position = len(db.get(chat_id)) - 1
+            await app.send_message(
                 original_chat_id,
-                photo=img,
-                reply_markup=InlineKeyboardMarkup(button),
-                caption=f"**Track added to queue » {pos}** \n\n**Song Name : ** {title} \n**Duration Time Played :** {duration_min} \n**Status Play Now:** Playing\n**Request by User :** {requester} ",
-                )
+                _["queue_4"].format(
+                    position, title[:30], duration_min, user_name
+                ),
+            )
         else:
             if not forceplay:
                 db[chat_id] = []
@@ -282,18 +272,13 @@ async def stream(
                 user_id,
                 "video" if video else "audio",
             )
-            pos = len(db.get(chat_id)) - 1
-            img = await gen_thumb(vidid)
-            title = result["title"]
-            requester = f"[{user_name}](tg://user?id={user_id})"
-            duration_min = result["duration_min"]
-            button = telegram_markup(_)
-            await app.send_photo(
+            position = len(db.get(chat_id)) - 1
+            await app.send_message(
                 original_chat_id,
-                photo=img,
-                reply_markup=InlineKeyboardMarkup(button),
-                caption=f"**Track added to queue » {pos}** \n\n**Song Name : ** {title} \n**Duration Time Played :** {duration_min} \n**Status Play Now:** Playing\n**Request by User :** {requester} ",
-                )
+                _["queue_4"].format(
+                    position, title[:30], duration_min, user_name
+                ),
+            )
         else:
             if not forceplay:
                 db[chat_id] = []
