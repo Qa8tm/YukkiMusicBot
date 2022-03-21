@@ -238,7 +238,7 @@ async def testbot(client, message: Message, _):
     )
 
 
-welcome_group = 500
+welcome_group = 5000
 
 
 @app.on_message(filters.new_chat_members, group=welcome_group)
