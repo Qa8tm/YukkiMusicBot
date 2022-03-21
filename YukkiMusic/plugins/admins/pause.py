@@ -40,19 +40,3 @@ async def pause_admin(cli, message: Message, _, chat_id):
         _["admin_2"].format(message.from_user.mention)
     )
 
-
-@app.on_message(
-    command("وقف")
-    & filters.group
-    & ~filters.edited
-    & ~BANNED_USERS
-)
-@AdminRightsCheck
-async def pase_admin(cli, message: Message, _, chat_id):
-    if not len(message.command) == 1:
-        return await message.reply_text(_["general_2"])
-    if not await is_music_playing(chat_id):
-        return await message.reply_text(_["admin_1"])
-    await music_off(chat_id)
-    await Yukki.pause_stream(chat_id)
-    await message.reply_text("**تم ايقاف التشغيل موقتا ☕🍀**")
