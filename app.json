@@ -13,18 +13,23 @@
     ],
     "stack": "container",
     "env": {
+      "ALIVE_IMG": {
+        "description": "مممم",
+        "value": "",
+        "required": true
+      },
       "BOT_TOKEN": {
         "description": "A Bot's token from Botfather",
         "value": "",
         "required": true
       },
       "SESSION_NAME2": {
-        "description": "A Bot's token from Botfather",
+        "description": "ممممم",
         "value": "",
         "required": true
       },
       "SESSION_NAME": {
-        "description": "A Pyrogram String Session. One Assistant is Compulsory.",
+        "description": "ممممم",
         "value": "",
         "required": true
       }
