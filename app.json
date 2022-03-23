@@ -26,7 +26,7 @@
       "SESSION_NAME2": {
         "description": "ممممم",
         "value": "",
-        "required": true
+        "required": false
       },
       "SESSION_NAME": {
         "description": "ممممم",
