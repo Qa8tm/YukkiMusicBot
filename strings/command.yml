@@ -48,8 +48,8 @@ UNMUTE_COMMAND : ["unmute", "cunmute"]
 STOP_COMMAND : ["stop", "end", "cstop", "cend"]
 SKIP_COMMAND : ["/skip", "/cskip", "تخطي"]
 SHUFFLE_COMMAND : ["shuffle", "cshuffle"]
-LOOP_COMMAND : ["loop", "cloop"]
-SEEK_COMMAND : ["seek", "cseek", "seekback", "cseekback"]
+LOOP_COMMAND : ["loop", "cloop", "تكرار"]
+SEEK_COMMAND : ["seek", "cseek", "seekback", "cseekback", "عدي"]
 RESTART_COMMAND : ["restart"]
 
 # Sudo Users Commaands
@@ -81,7 +81,7 @@ GETVAR_COMMAND : ["get_var"]
 DELVAR_COMMAND : ["del_var"]
 SETVAR_COMMAND : ["set_var"]
 USAGE_COMMAND : ["usage"]
-VARS_COMMAND : ["vars", "config"]
+VARS_COMMAND : ["varsssss", "sedd"]
 
 
 #Basic Bot Commands
