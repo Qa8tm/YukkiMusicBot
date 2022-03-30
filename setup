@@ -25,7 +25,7 @@ node(){
 
 
 repo(){
-	git clone https://github.com/01014797417/YukkiMusicBot &&  cd YukkiMusicBot
+	git clone https://github.com/UUCCTT/YukkiMusicBot &&  cd YukkiMusicBot
 }
 
 
