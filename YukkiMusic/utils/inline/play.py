@@ -64,11 +64,16 @@ def telegram_markup(_):
     buttons = [
         [
             InlineKeyboardButton(
-                text=_["PL_B_2"],
-                callback_data=f"playlist",
+                text="PAUSE",
+                callback_data=f"pausebc",
             ),
             InlineKeyboardButton(
-                text=_["PL_B_3"], switch_inline_query_current_chat=""
+                text="RESUME",
+                callback_data=f"resumebc",
+            ),
+            InlineKeyboardButton(
+                text="END",
+                callback_data=f"stopbc",
             ),
         ],[
             InlineKeyboardButton(
