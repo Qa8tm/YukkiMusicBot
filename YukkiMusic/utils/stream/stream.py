@@ -198,18 +198,18 @@ async def stream(
                 vidid,
                 user_id,
                 "video" if video else "audio",
-                forceplay=forceplay,
             )
+            pos = len(db.get(chat_id)) - 1
             img = await gen_thumb(vidid)
             title = result["title"]
             elnqyb = elnqyb
             requester = f"[{user_name}](tg://user?id={user_id})"
             duration_min = result["duration_min"]
-            button = stream_markup(_, vidid)
+            button = telegram_markup(_)
             await elnqyb.reply_photo(
                 photo=f"https://telegra.ph/file/5509d3b6259ec0f5017fd.jpg",
                 reply_markup=InlineKeyboardMarkup(button),
-                caption=f"**Track added to queue » ** \n\n**Song Name : ** {title} \n**Duration Time Played :** {duration_min}\n**Status Play Now:** Playing\n**Request by User :** {requester} ",
+                caption=f"**Track added to queue » {pos}** \n\n**Song Name : ** {title} \n**Duration Time Played :** {duration_min} \n**Status Play Now:** Playing\n**Request by User :** {requester} ",
                 )
 
     elif streamtype == "soundcloud":
