@@ -67,6 +67,7 @@ async def play_commnd(
     spotify = None
     user_id = message.from_user.id
     user_name = message.from_user.first_name
+    elnqyb = message
     audio_telegram = (
         (
             message.reply_to_message.audio
@@ -115,6 +116,7 @@ async def play_commnd(
                     details,
                     chat_id,
                     user_name,
+                    elnqyb,
                     message.chat.id,
                     streamtype="telegram",
                     forceplay=fplay,
@@ -164,6 +166,7 @@ async def play_commnd(
                     details,
                     chat_id,
                     user_name,
+                    elnqyb,
                     message.chat.id,
                     video=True,
                     streamtype="telegram",
@@ -321,6 +324,7 @@ async def play_commnd(
                     details,
                     chat_id,
                     user_name,
+                    elnqyb,
                     message.chat.id,
                     streamtype="soundcloud",
                     forceplay=fplay,
@@ -358,6 +362,7 @@ async def play_commnd(
                     url,
                     chat_id,
                     message.from_user.first_name,
+                    elnqyb,
                     message.chat.id,
                     video=video,
                     streamtype="index",
@@ -424,6 +429,7 @@ async def play_commnd(
                 details,
                 chat_id,
                 user_name,
+                elnqyb,
                 message.chat.id,
                 video=video,
                 streamtype=streamtype,
