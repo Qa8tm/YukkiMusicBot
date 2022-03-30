@@ -179,7 +179,7 @@ async def stream(
             await elnqyb.reply_photo(
                 photo=f"https://telegra.ph/file/5509d3b6259ec0f5017fd.jpg",
                 reply_markup=InlineKeyboardMarkup(button),
-                caption=f"**Track added to queue » {pos}** \n\n**Song Name : ** {title} \n**Duration Time Played :** {duration_min} \n**Status Play Now:** Playing\n**Request by User :** {requester} ",
+                caption=f"**Track added to queue » {pos}** \n\n**Song Name : ** {title} \n**Duration Time :** {duration_min}\n**Request By :** {requester} ",
                 )
         else:
             if not forceplay:
@@ -209,7 +209,7 @@ async def stream(
             await elnqyb.reply_photo(
                 photo=f"https://telegra.ph/file/5509d3b6259ec0f5017fd.jpg",
                 reply_markup=InlineKeyboardMarkup(button),
-                caption=f"**Track added to queue » {pos}** \n\n**Song Name : ** {title} \n**Duration Time Played :** {duration_min} \n**Status Play Now:** Playing\n**Request by User :** {requester} ",
+                caption=f"**Start Playing Now » 🍀☕ ** \n\n**Song Name : ** {title} \n**Duration Time :** {duration_min} \n**Request By :** {requester} ",
                 )
 
     elif streamtype == "soundcloud":
