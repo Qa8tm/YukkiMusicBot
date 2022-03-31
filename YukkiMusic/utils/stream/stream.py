@@ -205,7 +205,7 @@ async def stream(
             elnqyb = elnqyb
             requester = f"[{user_name}](tg://user?id={user_id})"
             duration_min = result["duration_min"]
-            button = elnqyb_markup(_)
+            button = stream_markup(_)
             await elnqyb.reply_photo(
                 photo=f"https://telegra.ph/file/5509d3b6259ec0f5017fd.jpg",
                 reply_markup=InlineKeyboardMarkup(button),
