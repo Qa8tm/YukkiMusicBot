@@ -151,7 +151,7 @@ async def skip(cli, message: Message, _, chat_id):
             await Yukki.skip_stream(chat_id, file_path, video=status)
         except Exception:
             return await mystic.edit_text(_["call_9"])
-        button = stream_markup(_, videoid)
+        button = telegram_markup(_)
         img = await gen_thumb(videoid)
         await message.reply_photo(
             photo=img,
@@ -201,7 +201,7 @@ async def skip(cli, message: Message, _, chat_id):
                 reply_markup=InlineKeyboardMarkup(button),
             )
         else:
-            button = stream_markup(_, videoid)
+            button = telegram_markup(_)
             img = await gen_thumb(videoid)
             await message.reply_photo(
                 photo=img,
