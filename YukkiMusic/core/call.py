@@ -274,11 +274,11 @@ class Call(PyTgCalls):
                 )
         except AlreadyJoinedError:
             raise AssistantErr(
-                "**Assistant Already in Voice Chat**\n\nSystems have detected that assistant is already there in the voice chat, this issue generally comes when you play 2 queries together.\n\nIf assistant is not present in voice chat, please end voice chat and start fresh voice chat again and if the  problem continues, try /restart"
+                "**قم بكتابة الامر لتحديث البوت /Restart **"
             )
         except TelegramServerError:
             raise AssistantErr(
-                "**Telegram Sever Error**\n\nTelegram is having some internal server problems, Please try playing again.\n\n If this problem keeps coming everytime, please end your voice chat and start fresh voice chat again."
+                "**اقفل الكول وافتحو تاني يسطا 🙂**"
             )
         await add_active_chat(chat_id)
         await mute_off(chat_id)
@@ -337,16 +337,6 @@ class Call(PyTgCalls):
                         text=_["call_9"],
                     )
                 img = await gen_thumb(videoid)
-                button = telegram_markup(_)
-                await app.send_photo(
-                    original_chat_id,
-                    photo=f"https://telegra.ph/file/5509d3b6259ec0f5017fd.jpg",
-                    caption=_["stream_1"].format(
-                        user,
-                        f"https://t.me/{app.username}?start=info_{videoid}",
-                    ),
-                    reply_markup=InlineKeyboardMarkup(button),
-                )
             elif "vid_" in queued:
                 mystic = await app.send_message(
                     original_chat_id, _["call_10"]
@@ -374,17 +364,6 @@ class Call(PyTgCalls):
                         text=_["call_9"],
                     )
                 img = await gen_thumb(videoid)
-                button = stream_markup(_, videoid)
-                await mystic.delete()
-                await app.send_photo(
-                    original_chat_id,
-                    photo=f"https://telegra.ph/file/5509d3b6259ec0f5017fd.jpg",
-                    caption=_["stream_1"].format(
-                        user,
-                        f"https://t.me/{app.username}?start=info_{videoid}",
-                    ),
-                    reply_markup=InlineKeyboardMarkup(button),
-                )
             elif "index_" in queued:
                 try:
                     await client.change_stream(
@@ -395,13 +374,6 @@ class Call(PyTgCalls):
                         original_chat_id,
                         text=_["call_9"],
                     )
-                button = telegram_markup(_)
-                await app.send_photo(
-                    original_chat_id,
-                    photo=config.STREAM_IMG_URL,
-                    caption=_["stream_2"].format(user),
-                    reply_markup=InlineKeyboardMarkup(button),
-                )
             else:
                 try:
                     await client.change_stream(
@@ -413,39 +385,9 @@ class Call(PyTgCalls):
                         text=_["call_9"],
                     )
                 if videoid == "telegram":
-                    button = telegram_markup(_)
-                    await app.send_photo(
-                        original_chat_id,
-                        photo=config.TELEGRAM_AUDIO_URL
-                        if str(streamtype) == "audio"
-                        else config.TELEGRAM_VIDEO_URL,
-                        caption=_["stream_3"].format(
-                            title, check[0]["dur"], user
-                        ),
-                        reply_markup=InlineKeyboardMarkup(button),
-                    )
                 elif videoid == "soundcloud":
-                    button = telegram_markup(_)
-                    await app.send_photo(
-                        original_chat_id,
-                        photo=config.SOUNCLOUD_IMG_URL,
-                        caption=_["stream_3"].format(
-                            title, check[0]["dur"], user
-                        ),
-                        reply_markup=InlineKeyboardMarkup(button),
-                    )
                 else:
                     img = await gen_thumb(videoid)
-                    button = stream_markup(_, videoid)
-                    await app.send_photo(
-                        original_chat_id,
-                        photo=f"https://telegra.ph/file/5509d3b6259ec0f5017fd.jpg",
-                        caption=_["stream_1"].format(
-                            user,
-                            f"https://t.me/{app.username}?start=info_{videoid}",
-                        ),
-                        reply_markup=InlineKeyboardMarkup(button),
-                    )
 
     async def ping(self):
         pings = []
