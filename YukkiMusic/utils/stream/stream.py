@@ -23,7 +23,7 @@ from YukkiMusic.utils.database import (add_active_chat,
                                        is_video_allowed, music_on)
 from YukkiMusic.utils.exceptions import AssistantErr
 from YukkiMusic.utils.inline.play import (stream_markup,
-                                          telegram_markup, elnqyb_markup)
+                                          telegram_markup)
 from YukkiMusic.utils.inline.playlist import close_markup
 from YukkiMusic.utils.pastebin import Yukkibin
 from YukkiMusic.utils.stream.queue import put_queue, put_queue_index
@@ -115,16 +115,16 @@ async def stream(
                     forceplay=forceplay,
                 )
                 img = await gen_thumb(vidid)
-                title = result["title"]
-                requester = f"[{user_name}](tg://user?id={user_id})"
-                duration_min = result["duration_min"]
                 button = stream_markup(_, vidid)
                 await app.send_photo(
                     original_chat_id,
-                    photo=f"https://telegra.ph/file/5509d3b6259ec0f5017fd.jpg",
+                    photo=img,
+                    caption=_["stream_1"].format(
+                        user_name,
+                        f"https://t.me/{app.username}?start=info_{vidid}",
+                    ),
                     reply_markup=InlineKeyboardMarkup(button),
-                    caption=f"**Track added to queue » ** \n\n**Song Name : ** {title} \n**Duration Time Played :** {duration_min} \n**Status Play Now:** Playing\n**Request by User :** {requester} ",
-                    )
+                )
         if count == 0:
             return
         else:
@@ -164,23 +164,15 @@ async def stream(
                 title,
                 duration_min,
                 user_name,
-                elnqyb,
                 vidid,
                 user_id,
                 "video" if video else "audio",
             )
-            pos = len(db.get(chat_id)) - 1
-            img = await gen_thumb(vidid)
-            title = result["title"]
-            elnqyb = elnqyb
-            requester = f"[{user_name}](tg://user?id={user_id})"
-            duration_min = result["duration_min"]
-            button = elnqyb_markup(_)
-            await elnqyb.reply_photo(
-                photo=f"https://telegra.ph/file/5509d3b6259ec0f5017fd.jpg",
-                reply_markup=InlineKeyboardMarkup(button),
-                caption=f"**Track added to queue » {pos}** \n\n**Song Name : ** {title} \n**Duration Time :** {duration_min}\n**Request By :** {requester} ",
-                )
+            position = len(db.get(chat_id)) - 1
+            await elnqyb.reply_message(_["queue_4"].format(
+                    position, title[:30], duration_min, user_name
+                ),
+            )
         else:
             if not forceplay:
                 db[chat_id] = []
@@ -194,23 +186,21 @@ async def stream(
                 title,
                 duration_min,
                 user_name,
-                elnqyb,
                 vidid,
                 user_id,
                 "video" if video else "audio",
+                forceplay=forceplay,
             )
-            pos = len(db.get(chat_id)) - 1
             img = await gen_thumb(vidid)
-            title = result["title"]
-            elnqyb = elnqyb
-            requester = f"[{user_name}](tg://user?id={user_id})"
-            duration_min = result["duration_min"]
-            button = stream_markup(_)
+            button = stream_markup(_, vidid)
             await elnqyb.reply_photo(
-                photo=f"https://telegra.ph/file/5509d3b6259ec0f5017fd.jpg",
+                photo=img,
+                caption=_["stream_1"].format(
+                    user_name,
+                    f"https://t.me/{app.username}?start=info_{vidid}",
+                ),
                 reply_markup=InlineKeyboardMarkup(button),
-                caption=f"**Start Playing Now » 🍀☕ ** \n\n**Song Name : ** {title} \n**Duration Time :** {duration_min} \n**Request By :** {requester} ",
-                )
+            )
 
     elif streamtype == "soundcloud":
         file_path = result["filepath"]
@@ -228,18 +218,13 @@ async def stream(
                 user_id,
                 "audio",
             )
-            pos = len(db.get(chat_id)) - 1
-            img = await gen_thumb(vidid)
-            title = result["title"]
-            requester = f"[{user_name}](tg://user?id={user_id})"
-            duration_min = result["duration_min"]
-            button = telegram_markup(_)
-            await app.send_photo(
+            position = len(db.get(chat_id)) - 1
+            await app.send_message(
                 original_chat_id,
-                photo=f"https://telegra.ph/file/5509d3b6259ec0f5017fd.jpg",
-                reply_markup=InlineKeyboardMarkup(button),
-                caption=f"**Track added to queue » {pos}** \n\n**Song Name : ** {title} \n**Duration Time Played :** {duration_min} \n**Status Play Now:** Playing\n**Request by User :** {requester} ",
-                )
+                _["queue_4"].format(
+                    position, title[:30], duration_min, user_name
+                ),
+            )
         else:
             if not forceplay:
                 db[chat_id] = []
@@ -285,18 +270,13 @@ async def stream(
                 user_id,
                 "video" if video else "audio",
             )
-            pos = len(db.get(chat_id)) - 1
-            img = await gen_thumb(vidid)
-            title = result["title"]
-            requester = f"[{user_name}](tg://user?id={user_id})"
-            duration_min = result["duration_min"]
-            button = telegram_markup(_)
-            await app.send_photo(
+            position = len(db.get(chat_id)) - 1
+            await app.send_message(
                 original_chat_id,
-                photo=f"https://telegra.ph/file/5509d3b6259ec0f5017fd.jpg",
-                reply_markup=InlineKeyboardMarkup(button),
-                caption=f"**Track added to queue » {pos}** \n\n**Song Name : ** {title} \n**Duration Time Played :** {duration_min} \n**Status Play Now:** Playing\n**Request by User :** {requester} ",
-                )
+                _["queue_4"].format(
+                    position, title[:30], duration_min, user_name
+                ),
+            )
         else:
             if not forceplay:
                 db[chat_id] = []
@@ -346,18 +326,13 @@ async def stream(
                 user_id,
                 "video" if video else "audio",
             )
-            pos = len(db.get(chat_id)) - 1
-            img = await gen_thumb(vidid)
-            title = result["title"]
-            requester = f"[{user_name}](tg://user?id={user_id})"
-            duration_min = result["duration_min"]
-            button = telegram_markup(_)
-            await app.send_photo(
+            position = len(db.get(chat_id)) - 1
+            await app.send_message(
                 original_chat_id,
-                photo=f"https://telegra.ph/file/5509d3b6259ec0f5017fd.jpg",
-                reply_markup=InlineKeyboardMarkup(button),
-                caption=f"**Track added to queue » {pos}** \n\n**Song Name : ** {title} \n**Duration Time Played :** {duration_min} \n**Status Play Now:** Playing\n**Request by User :** {requester} ",
-                )
+                _["queue_4"].format(
+                    position, title[:30], duration_min, user_name
+                ),
+            )
         else:
             if not forceplay:
                 db[chat_id] = []
@@ -380,16 +355,16 @@ async def stream(
                 forceplay=forceplay,
             )
             img = await gen_thumb(vidid)
-            title = result["title"]
-            requester = f"[{user_name}](tg://user?id={user_id})"
-            duration_min = result["duration_min"]
             button = telegram_markup(_)
             await app.send_photo(
                 original_chat_id,
-                photo=f"https://telegra.ph/file/5509d3b6259ec0f5017fd.jpg",
+                photo=img,
+                caption=_["stream_1"].format(
+                    user_name,
+                    f"https://t.me/{app.username}?start=info_{vidid}",
+                ),
                 reply_markup=InlineKeyboardMarkup(button),
-                caption=f"**Track added to queue » ** \n\n**Song Name : ** {title} \n**Duration Time Played :** {duration_min} \n**Status Play Now:** Playing\n**Request by User :** {requester} ",
-                )
+            )
     elif streamtype == "index":
         link = result
         title = "Index or M3u8 Link"
@@ -405,18 +380,12 @@ async def stream(
                 link,
                 "video" if video else "audio",
             )
-            pos = len(db.get(chat_id)) - 1
-            img = await gen_thumb(vidid)
-            title = result["title"]
-            requester = f"[{user_name}](tg://user?id={user_id})"
-            duration_min = result["duration_min"]
-            button = telegram_markup(_)
-            await app.send_photo(
-                original_chat_id,
-                photo=f"https://telegra.ph/file/5509d3b6259ec0f5017fd.jpg",
-                reply_markup=InlineKeyboardMarkup(button),
-                caption=f"**Track added to queue » ** {pos} \n\n**Song Name : ** {title} \n**Duration Time Played :** {duration_min} \n**Status Play Now:** Playing\n**Request by User :** {requester} ",
+            position = len(db.get(chat_id)) - 1
+            await mystic.edit_text(
+                _["queue_4"].format(
+                    position, title[:30], duration_min, user_name
                 )
+            )
         else:
             if not forceplay:
                 db[chat_id] = []
