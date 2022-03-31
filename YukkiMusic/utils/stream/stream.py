@@ -23,7 +23,7 @@ from YukkiMusic.utils.database import (add_active_chat,
                                        is_video_allowed, music_on)
 from YukkiMusic.utils.exceptions import AssistantErr
 from YukkiMusic.utils.inline.play import (stream_markup,
-                                          telegram_markup)
+                                          telegram_markup, elnqyb_markup)
 from YukkiMusic.utils.inline.playlist import close_markup
 from YukkiMusic.utils.pastebin import Yukkibin
 from YukkiMusic.utils.stream.queue import put_queue, put_queue_index
@@ -175,7 +175,7 @@ async def stream(
             elnqyb = elnqyb
             requester = f"[{user_name}](tg://user?id={user_id})"
             duration_min = result["duration_min"]
-            button = telegram_markup(_)
+            button = elnqyb_markup(_)
             await elnqyb.reply_photo(
                 photo=f"https://telegra.ph/file/5509d3b6259ec0f5017fd.jpg",
                 reply_markup=InlineKeyboardMarkup(button),
@@ -205,7 +205,7 @@ async def stream(
             elnqyb = elnqyb
             requester = f"[{user_name}](tg://user?id={user_id})"
             duration_min = result["duration_min"]
-            button = telegram_markup(_)
+            button = elnqyb_markup(_)
             await elnqyb.reply_photo(
                 photo=f"https://telegra.ph/file/5509d3b6259ec0f5017fd.jpg",
                 reply_markup=InlineKeyboardMarkup(button),
