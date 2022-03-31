@@ -64,6 +64,34 @@ def telegram_markup(_):
     buttons = [
         [
             InlineKeyboardButton(
+                text=_["PL_B_2"],
+                callback_data=f"playlist",
+            ),
+            InlineKeyboardButton(
+                text=_["PL_B_3"], switch_inline_query_current_chat=""
+            ),
+        ],[
+            InlineKeyboardButton(
+                text="Channel",
+                url=f"https://t.me/elnqyb",
+            ),
+            InlineKeyboardButton(
+                text="Group", url="https://t.me/barelnqyb"
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text="𝗔𝗵𝗠𝗲𝗱 𝗘𝗹𝗡𝗾𝗬𝗯™★ ⤶", url="https://t.me/ahmedelnqyb"
+            )
+        ],
+    ]
+    return buttons
+
+
+def elnqyb_markup(_):
+    buttons = [
+        [
+            InlineKeyboardButton(
                 text="PAUSE",
                 callback_data=f"pausebc",
             ),
