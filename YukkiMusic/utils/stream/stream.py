@@ -172,10 +172,7 @@ async def stream(
             button = stream_markup(_, vidid)
             await elnqyb.reply_photo(
                 photo="https://telegra.ph//file/898eb976279af4dea8645.jpg",
-                caption=_["stream_1"].format(
-                    user_name,
-                    f"https://t.me/{app.username}?start=info_{vidid}",
-                ),
+                caption="track add to playlist",
                 reply_markup=InlineKeyboardMarkup(button),
             )
         else:
