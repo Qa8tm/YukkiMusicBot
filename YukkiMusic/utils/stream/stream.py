@@ -169,9 +169,10 @@ async def stream(
                 "video" if video else "audio",
             )
             position = len(db.get(chat_id)) - 1
+            img = await gen_thumb(vidid)
             button = stream_markup(_, vidid)
             await elnqyb.reply_photo(
-                photo="https://telegra.ph//file/898eb976279af4dea8645.jpg",
+                photo="img,
                 caption="track add to playlist",
                 reply_markup=InlineKeyboardMarkup(button),
             )
