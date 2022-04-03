@@ -67,10 +67,11 @@ async def gen_thumb(videoid):
                     await f.close()
 
         youtube = Image.open(f"YukkiMusic/utils/ahmed.png")
+        you = Image.open(f"cache/thumb{videoid}.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
         background = image2.filter(filter=ImageFilter.BoxBlur(20))
-        enhancer = ImageEnhance.Brightness("cache/thumb{videoid}.png")
+        enhancer = ImageEnhance.Brightness(background)
         background = enhancer.enhance(0.6)
         Xcenter = youtube.width / 2
         Ycenter = youtube.height / 2
@@ -78,7 +79,7 @@ async def gen_thumb(videoid):
         y1 = Ycenter - 250
         x2 = Xcenter + 250
         y2 = Ycenter + 250
-        logo = youtube.crop((x1, y1, x2, y2))
+        logo = you.crop((x1, y1, x2, y2))
         logo.thumbnail((520, 520), Image.ANTIALIAS)
         logo = ImageOps.expand(logo, border=15, fill="white")
         background.paste(logo, (50, 100))
