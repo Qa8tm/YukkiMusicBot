@@ -30,8 +30,8 @@ def changeImageSize(maxWidth, maxHeight, image):
 
 
 async def gen_thumb(videoid):
-    if os.path.isfile(f"https://telegra.ph//file/87df80418564dd50949e8.jpg"):
-        return f"https://telegra.ph//file/87df80418564dd50949e8.jpg"
+    if os.path.isfile(f"cache/{videoid}.png"):
+        return f"cache/{videoid}.png"
 
     url = f"https://www.youtube.com/watch?v={videoid}"
     try:
@@ -61,12 +61,12 @@ async def gen_thumb(videoid):
             async with session.get(thumbnail) as resp:
                 if resp.status == 200:
                     f = await aiofiles.open(
-                        f"https://telegra.ph//file/87df80418564dd50949e8.jpg", mode="wb"
+                        f"cache/thumb{videoid}.png", mode="wb"
                     )
                     await f.write(await resp.read())
                     await f.close()
 
-        youtube = Image.open(f"cache/thumb{videoid}.png")
+        youtube = Image.open(f"https://telegra.ph//file/87df80418564dd50949e8.jpg")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
         background = image2.filter(filter=ImageFilter.BoxBlur(20))
@@ -141,10 +141,10 @@ async def gen_thumb(videoid):
             font=arial,
         )
         try:
-            os.remove(f"https://telegra.ph//file/87df80418564dd50949e8.jpg")
+            os.remove(f"cache/thumb{videoid}.png")
         except:
             pass
-        background.save(f"https://telegra.ph//file/87df80418564dd50949e8.jpg")
-        return f"https://telegra.ph//file/87df80418564dd50949e8.jpg"
+        background.save(f"cache/{videoid}.png")
+        return f"cache/{videoid}.png"
     except Exception:
         return YOUTUBE_IMG_URL
