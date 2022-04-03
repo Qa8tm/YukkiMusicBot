@@ -172,7 +172,7 @@ async def stream(
             img = await gen_thumb(vidid)
             button = stream_markup(_, vidid)
             await elnqyb.reply_photo(
-                photo="img,
+                photo=img,
                 caption="track add to playlist",
                 reply_markup=InlineKeyboardMarkup(button),
             )
