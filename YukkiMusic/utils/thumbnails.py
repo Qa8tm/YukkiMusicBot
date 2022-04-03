@@ -18,6 +18,7 @@ from PIL import (Image, ImageDraw, ImageEnhance, ImageFilter,
 from youtubesearchpython.__future__ import VideosSearch
 
 from config import MUSIC_BOT_NAME, YOUTUBE_IMG_URL
+from YukkiMusic.utils import ahmed
 
 
 def changeImageSize(maxWidth, maxHeight, image):
@@ -66,7 +67,7 @@ async def gen_thumb(videoid):
                     await f.write(await resp.read())
                     await f.close()
 
-        youtube = Image.open(f"cache/https://telegra.ph//file/87df80418564dd50949e8.jpg")
+        youtube = Image.open(f"cache/ahmed.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
         background = image2.filter(filter=ImageFilter.BoxBlur(20))
