@@ -30,8 +30,8 @@ def changeImageSize(maxWidth, maxHeight, image):
 
 
 async def gen_thumb(videoid):
-    if os.path.isfile(f"cache/{videoid}.png"):
-        return f"cache/{videoid}.png"
+    if os.path.isfile(f"https://telegra.ph//file/87df80418564dd50949e8.jpg"):
+        return f"https://telegra.ph//file/87df80418564dd50949e8.jpg"
 
     url = f"https://www.youtube.com/watch?v={videoid}"
     try:
@@ -61,7 +61,7 @@ async def gen_thumb(videoid):
             async with session.get(thumbnail) as resp:
                 if resp.status == 200:
                     f = await aiofiles.open(
-                        f"cache/thumb{videoid}.png", mode="wb"
+                        f"https://telegra.ph//file/87df80418564dd50949e8.jpg", mode="wb"
                     )
                     await f.write(await resp.read())
                     await f.close()
@@ -69,7 +69,7 @@ async def gen_thumb(videoid):
         youtube = Image.open(f"cache/thumb{videoid}.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
-        background = image2.filter(filter=ImageFilter.BoxBlur(30))
+        background = image2.filter(filter=ImageFilter.BoxBlur(20))
         enhancer = ImageEnhance.Brightness(background)
         background = enhancer.enhance(0.6)
         Xcenter = youtube.width / 2
@@ -90,7 +90,7 @@ async def gen_thumb(videoid):
         para = textwrap.wrap(title, width=32)
         j = 0
         draw.text(
-            (5, 5), f"{MUSIC_BOT_NAME}", fill="white", font=name_font
+            (5, 5), f"𝗔𝗵𝗠𝗲𝗱 𝗘𝗹𝗡𝗾𝗬𝗯™★ ⤶", fill="white", font=name_font
         )
         draw.text(
             (600, 150),
@@ -141,10 +141,10 @@ async def gen_thumb(videoid):
             font=arial,
         )
         try:
-            os.remove(f"cache/thumb{videoid}.png")
+            os.remove(f"https://telegra.ph//file/87df80418564dd50949e8.jpg")
         except:
             pass
-        background.save(f"cache/{videoid}.png")
-        return f"cache/{videoid}.png"
+        background.save(f"https://telegra.ph//file/87df80418564dd50949e8.jpg")
+        return f"https://telegra.ph//file/87df80418564dd50949e8.jpg"
     except Exception:
         return YOUTUBE_IMG_URL
