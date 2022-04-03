@@ -70,7 +70,7 @@ async def gen_thumb(videoid):
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
         background = image2.filter(filter=ImageFilter.BoxBlur(20))
-        enhancer = ImageEnhance.Brightness(background)
+        enhancer = ImageEnhance.Brightness("cache/thumb{videoid}.png")
         background = enhancer.enhance(0.6)
         Xcenter = youtube.width / 2
         Ycenter = youtube.height / 2
@@ -90,7 +90,7 @@ async def gen_thumb(videoid):
         para = textwrap.wrap(title, width=32)
         j = 0
         draw.text(
-            (5, 5), f"𝗔𝗵𝗠𝗲𝗱 𝗘𝗹𝗡𝗾𝗬𝗯™★ ⤶", fill="white", font=name_font
+            (5, 5), f"𝗔𝗵𝗠𝗲𝗱 𝗘𝗹𝗡𝗾𝗬𝗯™★ ⤶", fill="white", font=assets/font.ttf
         )
         draw.text(
             (600, 150),
