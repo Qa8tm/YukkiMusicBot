@@ -29,7 +29,7 @@ def changeImageSize(maxWidth, maxHeight, image):
     return newImage
 
 
-async def gen_thumb(videoid):
+async def gen_thumb(videoid, wegz):
     if os.path.isfile(f"cache/{videoid}.png"):
         return f"cache/{videoid}.png"
 
@@ -66,7 +66,7 @@ async def gen_thumb(videoid):
                     await f.write(await resp.read())
                     await f.close()
 
-        youtube = Image.open(f"YukkiMusic/utils/ahmed.png")
+        youtube = Image.open(f"{wegz}.png")
         elnqybv = Image.open(f"cache/thumb{videoid}.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
