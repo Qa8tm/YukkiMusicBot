@@ -73,13 +73,13 @@ async def gen_thumb(videoid):
         background = image2.filter(filter=ImageFilter.BoxBlur(20))
         enhancer = ImageEnhance.Brightness(background)
         background = enhancer.enhance(0.6)
-        Xcenter = elnqybpc.width / 2
-        Ycenter = elnqybpc.height / 2
+        Xcenter = youtube.width / 2
+        Ycenter = youtube.height / 2
         x1 = Xcenter - 250
         y1 = Ycenter - 250
         x2 = Xcenter + 250
         y2 = Ycenter + 250
-        logo = elnqybpc.crop((x1, y1, x2, y2))
+        logo = youtube.crop((x1, y1, x2, y2))
         logo.thumbnail((520, 520), Image.ANTIALIAS)
         logo = ImageOps.expand(logo, border=15, fill="white")
         background.paste(logo, (50, 100))
