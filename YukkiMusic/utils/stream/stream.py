@@ -179,7 +179,7 @@ async def stream(
             button = stream_markup(_, vidid)
             await elnqyb.reply_photo(
                 photo=img,
-                caption="**track add to playlist** {position}\n\n**Song Name** : {title[20]}\n**Duration Time** :{duration_min}\n**Request By** :{requester}",
+                caption=f"**track add to playlist** {position}\n\n**Song Name** : {title}\n**Duration Time** :{duration_min}\n**Request By** :{requester}",
                 reply_markup=InlineKeyboardMarkup(button),
             )
         else:
@@ -210,7 +210,7 @@ async def stream(
             button = stream_markup(_, vidid)
             await elnqyb.reply_photo(
                 photo=img,
-                caption="**Starting Stream Playing**\n\n**Song Name** : {title}\n{titl}\n**Duration Time** :{durationmin} \n{duration_min}\n**Request By** :{requester}",
+                caption=f"**Starting Stream Playing**\n\n**Song Name** : {title}\n**Duration Time** : {duration_min}\n**Request By** :{requester}",
                 reply_markup=InlineKeyboardMarkup(button),
             )
 
