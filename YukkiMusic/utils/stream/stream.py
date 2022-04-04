@@ -169,11 +169,16 @@ async def stream(
                 "video" if video else "audio",
             )
             position = len(db.get(chat_id)) - 1
-            img = await gen_thumb(vidid)
+            photo_id = user.photo.big_file_id if user.photo else None
+            photo = await app.download_media(photo_id)
+            img = await gen_thumb(vidid, photo)
+            title = result["title"]
+            requester = f"[{user_name}](tg://user?id={user_id})"
+            duration_min = result["duration_min"]
             button = stream_markup(_, vidid)
             await elnqyb.reply_photo(
                 photo=img,
-                caption="track add to playlist",
+                caption="**track add to playlist** {position}\n\n**Song Name** : {title[20]}\n**Duration Time** :{duration_min}\n**Request By** :{requester}",
                 reply_markup=InlineKeyboardMarkup(button),
             )
         else:
@@ -198,13 +203,13 @@ async def stream(
             photo_id = user.photo.big_file_id if user.photo else None
             photo = await app.download_media(photo_id)
             img = await gen_thumb(vidid, photo)
+            title = result["title"]
+            requester = f"[{user_name}](tg://user?id={user_id})"
+            duration_min = result["duration_min"]
             button = stream_markup(_, vidid)
             await elnqyb.reply_photo(
                 photo=img,
-                caption=_["stream_1"].format(
-                    user_name,
-                    f"https://t.me/{app.username}?start=info_{vidid}",
-                ),
+                caption="**Starting Stream Playing**\n\n**Song Name** : {title[20]}\n**Duration Time** :{duration_min}\n**Request By** :{requester}",
                 reply_markup=InlineKeyboardMarkup(button),
             )
 
