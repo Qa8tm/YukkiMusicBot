@@ -150,7 +150,7 @@ async def gen_thumb(videoid, photo):
     except Exception:
         return YOUTUBE_IMG_URL
 
-async def genthumb(photo):
+async def genthumb(photo, title, duration_min):
 youtube = Image.open(f"YukkiMusic/utils/ahmed.png")
         elnqybv = Image.open(f"{photo}")
         image1 = changeImageSize(1280, 720, youtube)
@@ -201,7 +201,7 @@ youtube = Image.open(f"YukkiMusic/utils/ahmed.png")
                 j += 1
                 draw.text(
                     (600, 280),
-                    f"{line}",
+                    f"{title}",
                     fill="white",
                     stroke_width=1,
                     stroke_fill="white",
@@ -216,13 +216,13 @@ youtube = Image.open(f"YukkiMusic/utils/ahmed.png")
         )
         draw.text(
             (600, 500),
-            f"Duration : {duration[:23]} Mins",
+            f"Duration : {duration_min} Mins",
             (255, 255, 255),
             font=arial,
         )
         draw.text(
             (600, 550),
-            f"Channel : {channel}",
+            f"Channel : Telegram",
             (255, 255, 255),
             font=arial,
         )
