@@ -129,7 +129,7 @@ async def skip(cli, message: Message, _, chat_id):
         user = await app.get_users(user_id)
         photo_id = user.photo.big_file_id if user.photo else None
         photo = await app.download_media(photo_id)
-        img = await gen_thumb(vidid, photo)
+        img = await gen_thumb(videoid, photo)
         await message.reply_photo(
             photo=img,
             caption=f"**Skipped Streaming**\n\nSong Name **: {title}",
@@ -157,7 +157,7 @@ async def skip(cli, message: Message, _, chat_id):
         user = await app.get_users(user_id)
         photo_id = user.photo.big_file_id if user.photo else None
         photo = await app.download_media(photo_id)
-        img = await gen_thumb(vidid, photo)
+        img = await gen_thumb(videoid, photo)
         await message.reply_photo(
             photo=img,
             caption=f"**Skipped Streaming**\n\nSong Name **: {title}",
@@ -208,7 +208,7 @@ async def skip(cli, message: Message, _, chat_id):
             user = await app.get_users(user_id)
             photo_id = user.photo.big_file_id if user.photo else None
             photo = await app.download_media(photo_id)
-            img = await gen_thumb(vidid, photo)
+            img = await gen_thumb(videoid, photo)
             await message.reply_photo(
                 photo=img,
                 caption=f"**Skipped Streaming**\n\nSong Name **: {title}",
