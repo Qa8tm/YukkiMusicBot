@@ -38,7 +38,7 @@ SKIP_COMMAND = get_command("SKIP_COMMAND")
 async def skip(cli, message: Message, _, chat_id):
     if not len(message.command) < 2:
         loop = await get_loop(chat_id)
-        user_id = message.from.user.id
+        user_id = message.from_user.id
         if loop != 0:
             return await message.reply_text(_["admin_12"])
         state = message.text.split(None, 1)[1].strip()
