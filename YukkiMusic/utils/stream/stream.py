@@ -172,9 +172,9 @@ async def stream(
             photo_id = user.photo.big_file_id if user.photo else None
             photo = await app.download_media(photo_id)
             img = await gen_thumb(vidid, photo)
-            title = result["title"]
+            title = title
             requester = f"[{user_name}](tg://user?id={user_id})"
-            duration_min = result["duration_min"]
+            duration_min = duration_min
             button = stream_markup(_, vidid)
             await elnqyb.reply_photo(
                 photo=img,
@@ -203,9 +203,9 @@ async def stream(
             photo_id = user.photo.big_file_id if user.photo else None
             photo = await app.download_media(photo_id)
             img = await gen_thumb(vidid, photo)
-            title = result["title"]
+            title = title
             requester = f"[{user_name}](tg://user?id={user_id})"
-            duration_min = result["duration_min"]
+            duration_min = duration_min
             button = stream_markup(_, vidid)
             await elnqyb.reply_photo(
                 photo=img,
