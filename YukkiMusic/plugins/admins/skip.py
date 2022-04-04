@@ -125,7 +125,10 @@ async def skip(cli, message: Message, _, chat_id):
         except Exception:
             return await message.reply_text(_["call_9"])
         button = telegram_markup(_)
-        img = await gen_thumb(videoid)
+        user = await app.get_users(message.form.user.id)
+        photo_id = user.photo.big_file_id if user.photo else None
+        photo = await app.download_media(photo_id)
+        img = await gen_thumb(vidid, photo)
         await message.reply_photo(
             photo=img,
             caption=_["stream_1"].format(
