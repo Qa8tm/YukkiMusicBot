@@ -274,11 +274,11 @@ class Call(PyTgCalls):
                 )
         except AlreadyJoinedError:
             raise AssistantErr(
-                "**Assistant Already in Voice Chat**\n\nSystems have detected that assistant is already there in the voice chat, this issue generally comes when you play 2 queries together.\n\nIf assistant is not present in voice chat, please end voice chat and start fresh voice chat again and if the  problem continues, try /restart"
+                "**قم بكتابة الامر ل تحديث البوت ** \n /restart"
             )
         except TelegramServerError:
             raise AssistantErr(
-                "**Telegram Sever Error**\n\nTelegram is having some internal server problems, Please try playing again.\n\n If this problem keeps coming everytime, please end your voice chat and start fresh voice chat again."
+                "**اقفل الكول وافتحو تاني **"
             )
         await add_active_chat(chat_id)
         await mute_off(chat_id)
@@ -286,7 +286,7 @@ class Call(PyTgCalls):
         if video:
             await add_active_video_chat(chat_id)
 
-    async def change_stream(self, client, chat_id):
+    async def change_stream(self, client, chat_id, elnqyb):
         check = db.get(chat_id)
         popped = None
         loop = await get_loop(chat_id)
@@ -435,11 +435,15 @@ class Call(PyTgCalls):
                         reply_markup=InlineKeyboardMarkup(button),
                     )
                 else:
-                    img = await gen_thumb(videoid)
+                    user_id = elnqyb.from_user.id
+                    user = await app.get_users(user_id)
+                    photo_id = user.photo.big_file_id if user.photo else None
+                    photo = await app.download_media(photo_id)
+                    img = await gen_thumb(videoid, photo)
                     button = stream_markup(_, videoid)
                     await app.send_photo(
                         original_chat_id,
-                        photo=f"https://telegra.ph/file/5509d3b6259ec0f5017fd.jpg",
+                        photo=img,
                         caption=_["stream_1"].format(
                             user,
                             f"https://t.me/{app.username}?start=info_{videoid}",
