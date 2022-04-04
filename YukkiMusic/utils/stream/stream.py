@@ -199,17 +199,17 @@ async def stream(
                 "video" if video else "audio",
                 forceplay=forceplay,
             )
+            titl = result["title"]
+            requester = f"[{user_name}](tg://user?id={user_id})"
+            durationmin = result["duration_min"]
             user = await app.get_users(user_id)
             photo_id = user.photo.big_file_id if user.photo else None
             photo = await app.download_media(photo_id)
             img = await gen_thumb(vidid, photo)
-            title = title
-            requester = f"[{user_name}](tg://user?id={user_id})"
-            duration_min = duration_min
             button = stream_markup(_, vidid)
             await elnqyb.reply_photo(
                 photo=img,
-                caption="**Starting Stream Playing**\n\n**Song Name** : {title[20]}\n**Duration Time** :{duration_min}\n**Request By** :{requester}",
+                caption="**Starting Stream Playing**\n\n**Song Name** : {title}\n{titl}\n**Duration Time** :{durationmin} \n{duration_min}\n**Request By** :{requester}",
                 reply_markup=InlineKeyboardMarkup(button),
             )
 
