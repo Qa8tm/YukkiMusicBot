@@ -199,7 +199,7 @@ async def stream(
             photo = user.photo.big_file_id if user.photo else None
             button = stream_markup(_, vidid)
             await elnqyb.reply_photo(
-                photo=photo,
+                photo=photo.png,
                 caption=_["stream_1"].format(
                     user_name,
                     f"https://t.me/{app.username}?start=info_{vidid}",
