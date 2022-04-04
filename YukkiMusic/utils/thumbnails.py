@@ -66,11 +66,11 @@ async def gen_thumb(videoid, photo):
                     await f.write(await resp.read())
                     await f.close()
 
-        youtube = Image.open(f"YukkiMusic/utils/ahmed.png")
+        youtube = Image.open(f"cache/thumb{videoid}.png")
         elnqybv = Image.open(f"{photo}")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
-        background = image2.filter(filter=ImageFilter.BoxBlur(20))
+        background = image2.filter(filter=ImageFilter.BoxBlur(5))
         enhancer = ImageEnhance.Brightness(background)
         background = enhancer.enhance(0.6)
         Xcenter = elnqybv.width / 2
