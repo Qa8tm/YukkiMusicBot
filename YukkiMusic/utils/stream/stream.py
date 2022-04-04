@@ -288,7 +288,7 @@ async def stream(
             button = telegram_markup(_)
             await elnqyb.reply_photo(
                 photo=f"https://telegra.ph//file/87df80418564dd50949e8.jpg",
-                caption=f"**File Add To Playlist** » {position}\n\n**Song Name** : {title[:30]}\n**Duration Time** : {duration_min}\n**Request By** :{requester}",
+                caption=f"**File Add To Playlist** » {position}\n\n**Song Name** : {title[:20]}\n**Duration Time** : {duration_min}\n**Request By** :{requester}",
                 reply_markup=InlineKeyboardMarkup(button),
             )
         else:
@@ -315,7 +315,7 @@ async def stream(
             button = telegram_markup(_)
             await elnqyb.reply_photo(
                 photo=f"https://telegra.ph//file/87df80418564dd50949e8.jpg",
-                caption=f"**Start Playing**\n\n**Song Name** : {title[:30]}\n**Duration Time** : {duration_min}\n**Request By** :{requester}",
+                caption=f"**Start Streaming Playing**\n\n**Song Name** : {title[:20]}\n**Duration Time** : {duration_min}\n**Request By** :{requester}",
                 reply_markup=InlineKeyboardMarkup(button),
             )
     elif streamtype == "live":
