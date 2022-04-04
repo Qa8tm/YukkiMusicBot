@@ -195,9 +195,11 @@ async def stream(
                 forceplay=forceplay,
             )
             img = await gen_thumb(vidid)
+            user = await app.get_users(user_id)
+            photo = user.photo.big_file_id if user.photo else None
             button = stream_markup(_, vidid)
             await elnqyb.reply_photo(
-                photo=img,
+                photo=photo,
                 caption=_["stream_1"].format(
                     user_name,
                     f"https://t.me/{app.username}?start=info_{vidid}",
