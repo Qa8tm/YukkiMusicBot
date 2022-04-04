@@ -163,6 +163,7 @@ lyrical = {}
 chatstats = {}
 userstats = {}
 clean = {}
+db_mem = {}
 
 autoclean = []
 
