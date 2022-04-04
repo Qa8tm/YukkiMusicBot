@@ -314,6 +314,7 @@ class Call(PyTgCalls):
             _ = get_string(language)
             title = (check[0]["title"]).title()
             user = check[0]["by"]
+            dur = check [0]["dur"]
             user_id = check [0]["user_id"]
             original_chat_id = check[0]["chat_id"]
             streamtype = check[0]["streamtype"]
@@ -436,18 +437,16 @@ class Call(PyTgCalls):
                         reply_markup=InlineKeyboardMarkup(button),
                     )
                 else:
-                    user = await app.get_users(user_id)
-                    photo_id = user.photo.big_file_id if user.photo else None
+                    userx = await app.get_users(user_id)
+                    photo_id = userx.photo.big_file_id if user.photo else None
                     photo = await app.download_media(photo_id)
                     img = await gen_thumb(videoid, photo)
+                    requester = f"[{user}](tg://user?id={user_id})
                     button = stream_markup(_, videoid)
                     await app.send_photo(
                         original_chat_id,
                         photo=img,
-                        caption=_["stream_1"].format(
-                            user,
-                            f"https://t.me/{app.username}?start=info_{videoid}",
-                        ),
+                        caption=f"**Starting Streaming **\n\n**Song Name** : {title}\n**Duration Time** {dur}\n**Request By** : {requester}",
                         reply_markup=InlineKeyboardMarkup(button),
                     )
 
