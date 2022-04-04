@@ -20,6 +20,18 @@ from youtubesearchpython.__future__ import VideosSearch
 from config import MUSIC_BOT_NAME, YOUTUBE_IMG_URL
 
 
+    def getUserProfilePicture(user_id):
+        if (user is None) : return None
+        requestStr = self.httpbase + self.token + "/getUserProfilePhotos"
+        par ={
+            "user_id" : user_id, #correct id passed.
+            "limit" : 5
+        }
+        dataReq = requests.post(requestStr, json=par)
+        updateData = json.loads(dataReq.content)
+        isOk = updateData.get("ok")
+
+
 def changeImageSize(maxWidth, maxHeight, image):
     widthRatio = maxWidth / image.size[0]
     heightRatio = maxHeight / image.size[1]
@@ -29,7 +41,7 @@ def changeImageSize(maxWidth, maxHeight, image):
     return newImage
 
 
-async def gen_thumb(videoid, wegz):
+async def gen_thumb(videoid, user_id):
     if os.path.isfile(f"cache/{videoid}.png"):
         return f"cache/{videoid}.png"
 
@@ -66,8 +78,8 @@ async def gen_thumb(videoid, wegz):
                     await f.write(await resp.read())
                     await f.close()
 
-        youtube = Image.open(f"{wegz}.png")
-        elnqybv = Image.open(f"cache/thumb{videoid}.png")
+        youtube = Image.open(f"YukkiMusic/utils/ahmed.png")
+        elnqybv = Image.open(f"{getUserProfilePicture}.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
         background = image2.filter(filter=ImageFilter.BoxBlur(20))
