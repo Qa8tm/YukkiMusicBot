@@ -9,5 +9,3 @@
 #
 
 from .config import *
-
-get_queue = {}
