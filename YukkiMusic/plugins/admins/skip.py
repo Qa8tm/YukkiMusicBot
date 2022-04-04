@@ -125,7 +125,8 @@ async def skip(cli, message: Message, _, chat_id):
         except Exception:
             return await message.reply_text(_["call_9"])
         button = telegram_markup(_)
-        user = await app.get_users(message.form.user.id)
+        user_id = message.from.user.id
+        user = await app.get_users(user_id)
         photo_id = user.photo.big_file_id if user.photo else None
         photo = await app.download_media(photo_id)
         img = await gen_thumb(vidid, photo)
@@ -155,7 +156,11 @@ async def skip(cli, message: Message, _, chat_id):
         except Exception:
             return await mystic.edit_text(_["call_9"])
         button = stream_markup(_, videoid)
-        img = await gen_thumb(videoid)
+        user_id = message.from.user.id
+        user = await app.get_users(user_id)
+        photo_id = user.photo.big_file_id if user.photo else None
+        photo = await app.download_media(photo_id)
+        img = await gen_thumb(vidid, photo)
         await message.reply_photo(
             photo=img,
             caption=_["stream_1"].format(
@@ -205,7 +210,11 @@ async def skip(cli, message: Message, _, chat_id):
             )
         else:
             button = stream_markup(_, videoid)
-            img = await gen_thumb(videoid)
+            user_id = message.from.user.id
+            user = await app.get_users(user_id)
+            photo_id = user.photo.big_file_id if user.photo else None
+            photo = await app.download_media(photo_id)
+            img = await gen_thumb(vidid, photo)
             await message.reply_photo(
                 photo=img,
                 caption=_["stream_1"].format(
