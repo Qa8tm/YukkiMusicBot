@@ -36,6 +36,7 @@ async def put_queue(
         "dur": duration,
         "streamtype": stream,
         "by": user,
+        "user_id: user_id,
         "chat_id": original_chat_id,
         "file": file,
         "vidid": vidid,
