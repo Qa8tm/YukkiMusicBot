@@ -37,15 +37,15 @@ def stream_markup(_, videoid):
         [
             InlineKeyboardButton(
                 text="END",
-                callback_data=f"stopbc",
+                callback_data=f"stopcb",
             ),
             InlineKeyboardButton(
                 text="RESUME",
-                callback_data=f"resumebc",
+                callback_data=f"resumecb",
             ),
             InlineKeyboardButton(
                 text="PAUSE",
-                callback_data=f"pausebc",
+                callback_data=f"pausecb",
             ),
         ],[
             InlineKeyboardButton(
