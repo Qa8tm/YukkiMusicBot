@@ -314,6 +314,7 @@ class Call(PyTgCalls):
             _ = get_string(language)
             title = (check[0]["title"]).title()
             user = check[0]["by"]
+            user_id = check [0]["user_id"]
             original_chat_id = check[0]["chat_id"]
             streamtype = check[0]["streamtype"]
             stream = (
@@ -435,7 +436,7 @@ class Call(PyTgCalls):
                         reply_markup=InlineKeyboardMarkup(button),
                     )
                 else:
-                    user = await app.get_users(user)
+                    user = await app.get_users(user_id)
                     photo_id = user.photo.big_file_id if user.photo else None
                     photo = await app.download_media(photo_id)
                     img = await gen_thumb(videoid, photo)
