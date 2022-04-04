@@ -38,6 +38,7 @@ SKIP_COMMAND = get_command("SKIP_COMMAND")
 async def skip(cli, message: Message, _, chat_id):
     if not len(message.command) < 2:
         loop = await get_loop(chat_id)
+        user_id = message.from.user.id
         if loop != 0:
             return await message.reply_text(_["admin_12"])
         state = message.text.split(None, 1)[1].strip()
@@ -125,7 +126,6 @@ async def skip(cli, message: Message, _, chat_id):
         except Exception:
             return await message.reply_text(_["call_9"])
         button = telegram_markup(_)
-        user_id = message.from.user.id
         user = await app.get_users(user_id)
         photo_id = user.photo.big_file_id if user.photo else None
         photo = await app.download_media(photo_id)
@@ -156,7 +156,6 @@ async def skip(cli, message: Message, _, chat_id):
         except Exception:
             return await mystic.edit_text(_["call_9"])
         button = stream_markup(_, videoid)
-        user_id = message.from.user.id
         user = await app.get_users(user_id)
         photo_id = user.photo.big_file_id if user.photo else None
         photo = await app.download_media(photo_id)
@@ -210,7 +209,6 @@ async def skip(cli, message: Message, _, chat_id):
             )
         else:
             button = stream_markup(_, videoid)
-            user_id = message.from.user.id
             user = await app.get_users(user_id)
             photo_id = user.photo.big_file_id if user.photo else None
             photo = await app.download_media(photo_id)
