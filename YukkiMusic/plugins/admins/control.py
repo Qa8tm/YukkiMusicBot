@@ -8,7 +8,7 @@ from pyrogram.types import InlineKeyboardMarkup, CallbackQuery
 
 from YukkiMusic.core.call import Yukki
 from YukkiMusic.utils.decorators import AdminRightsCheck
-from config import get_queue
+from config.config import clean as get_queue
 from YukkiMusic import app
 from YukkiMusic.misc import db as db_mem
 from YukkiMusic.core import Queues
