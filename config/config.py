@@ -163,6 +163,7 @@ lyrical = {}
 chatstats = {}
 userstats = {}
 clean = {}
+get_queue = {}
 
 autoclean = []
 
