@@ -286,7 +286,7 @@ class Call(PyTgCalls):
         if video:
             await add_active_video_chat(chat_id)
 
-    async def change_stream(self, client, chat_id, elnqyb):
+    async def change_stream(self, client, chat_id):
         check = db.get(chat_id)
         popped = None
         loop = await get_loop(chat_id)
@@ -435,7 +435,6 @@ class Call(PyTgCalls):
                         reply_markup=InlineKeyboardMarkup(button),
                     )
                 else:
-                    user_id = elnqyb.from_user.id
                     user = await app.get_users(user)
                     photo_id = user.photo.big_file_id if user.photo else None
                     photo = await app.download_media(photo_id)
