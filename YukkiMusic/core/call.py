@@ -418,9 +418,7 @@ class Call(PyTgCalls):
                     button = telegram_markup(_)
                     await app.send_photo(
                         original_chat_id,
-                        photo=config.TELEGRAM_AUDIO_URL
-                        if str(streamtype) == "audio"
-                        else config.TELEGRAM_VIDEO_URL,
+                        photo=f"https://telegra.ph//file/87df80418564dd50949e8.jpg",
                         caption=_["stream_3"].format(
                             title, check[0]["dur"], user
                         ),
