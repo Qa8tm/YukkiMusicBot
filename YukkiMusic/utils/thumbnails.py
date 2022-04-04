@@ -230,10 +230,10 @@ async def genth(photo, title, duration_min):
             font=arial,
         )
         try:
-            os.remove(f"{photo}.png")
+            os.remove()
         except:
             pass
-        background.save(f"{photo}.png")
+        background.save()
         return f"{photo}.png"
     except Exception:
         return YOUTUBE_IMG_URL
