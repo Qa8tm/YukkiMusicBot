@@ -150,8 +150,7 @@ async def gen_thumb(videoid, photo):
     except Exception:
         return YOUTUBE_IMG_URL
 
-async def genthumb(photo, title, duration_min):
-
+async def genth(photo, title, duration_min):
         youtube = Image.open(f"YukkiMusic/utils/ahmed.png")
         elnqybv = Image.open(f"{photo}")
         image1 = changeImageSize(1280, 720, youtube)
