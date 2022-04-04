@@ -226,11 +226,3 @@ async def genth(photo, title, duration_min):
             (255, 255, 255),
             font=arial,
         )
-        try:
-            os.remove(f"YukkiMusic/utils/ahmed.png")
-        except:
-            pass
-        background.save(f"YukkiMusic/utils/ahmed.png")
-        return f"YukkiMusic/utils/ahmed.png"
-    except Exception:
-        return YOUTUBE_IMG_URL
