@@ -115,6 +115,7 @@ async def stream(
                     forceplay=forceplay,
                 )
                 img = await gen_thumb(vidid)
+                title = result["title"]
                 button = stream_markup(_, vidid)
                 await app.send_photo(
                     original_chat_id,
@@ -172,7 +173,7 @@ async def stream(
             photo_id = user.photo.big_file_id if user.photo else None
             photo = await app.download_media(photo_id)
             img = await gen_thumb(vidid, photo)
-            title = title
+            title = result["title"]
             requester = f"[{user_name}](tg://user?id={user_id})"
             duration_min = duration_min
             button = stream_markup(_, vidid)
@@ -199,7 +200,7 @@ async def stream(
                 "video" if video else "audio",
                 forceplay=forceplay,
             )
-            titl = result["title"]
+            title = result["title"]
             requester = f"[{user_name}](tg://user?id={user_id})"
             durationmin = result["duration_min"]
             user = await app.get_users(user_id)
@@ -365,6 +366,7 @@ async def stream(
                 "video" if video else "audio",
                 forceplay=forceplay,
             )
+            title = result["title"]
             img = await gen_thumb(vidid)
             button = telegram_markup(_)
             await app.send_photo(
