@@ -29,7 +29,7 @@ def changeImageSize(maxWidth, maxHeight, image):
     return newImage
 
 
-async def gen_thumb(videoid):
+async def gen_thumb(videoid, photo):
     if os.path.isfile(f"cache/{videoid}.png"):
         return f"cache/{videoid}.png"
 
@@ -67,7 +67,7 @@ async def gen_thumb(videoid):
                     await f.close()
 
         youtube = Image.open(f"YukkiMusic/utils/ahmed.png")
-        elnqybv = Image.open(f"cache/thumb{videoid}.png")
+        elnqybv = Image.open(f"cache/thumb{photo}.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
         background = image2.filter(filter=ImageFilter.BoxBlur(20))
