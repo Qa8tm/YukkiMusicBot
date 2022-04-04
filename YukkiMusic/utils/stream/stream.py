@@ -284,16 +284,11 @@ async def stream(
                 "video" if video else "audio",
             )
             position = len(db.get(chat_id)) - 1
+            requester = f"[{user_name}](tg://user?id={user_id})"
             button = telegram_markup(_)
-            user = await app.get_users(user_id)
-            photo_id = user.photo.big_file_id if user.photo else None
-            photo = await app.download_media(photo_id)
-            img = await genth(title, duration_min, photo)
             await elnqyb.reply_photo(
                 photo=f"https://telegra.ph//file/87df80418564dd50949e8.jpg",
-                caption=_["stream_4"].format(
-                    title, link, duration_min, user_name
-                ),
+                caption=f"**File Add To Playlist**» {position}\n\n**Song Name** : {title[:30]}\n**Duration Time** : {duration_min}\n**Request By** :{requester}",
                 reply_markup=InlineKeyboardMarkup(button),
             )
         else:
@@ -317,15 +312,9 @@ async def stream(
             if video:
                 await add_active_video_chat(chat_id)
             button = telegram_markup(_)
-            user = await app.get_users(user_id)
-            photo_id = user.photo.big_file_id if user.photo else None
-            photo = await app.download_media(photo_id)
-            img = await genth(title, duration_min, photo)
             await elnqyb.reply_photo(
                 photo=f"https://telegra.ph//file/87df80418564dd50949e8.jpg",
-                caption=_["stream_4"].format(
-                    title, link, duration_min, user_name
-                ),
+                caption=f"**Starting Stream Playing**\n\n**Song Name** : {title[:30]}\n**Duration Time** : {duration_min}\n**Request By** :{requester}",
                 reply_markup=InlineKeyboardMarkup(button),
             )
     elif streamtype == "live":
