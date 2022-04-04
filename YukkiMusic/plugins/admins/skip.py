@@ -111,6 +111,7 @@ async def skip(cli, message: Message, _, chat_id):
     queued = check[0]["file"]
     title = (check[0]["title"]).title()
     user = check[0]["by"]
+    dur = check [0]["dur"]
     streamtype = check[0]["streamtype"]
     videoid = check[0]["vidid"]
     status = True if str(streamtype) == "video" else None
@@ -132,7 +133,7 @@ async def skip(cli, message: Message, _, chat_id):
         img = await gen_thumb(videoid, photo)
         await message.reply_photo(
             photo=img,
-            caption=f"**Skipped Streaming**\n\nSong Name **: {title}",
+            caption=f"**Skipped Streaming**\n\nSong Name **: {title}\n**Duration Time ** : {dur}",
             reply_markup=InlineKeyboardMarkup(button),
         )
     elif "vid_" in queued:
@@ -160,7 +161,7 @@ async def skip(cli, message: Message, _, chat_id):
         img = await gen_thumb(videoid, photo)
         await message.reply_photo(
             photo=img,
-            caption=f"**Skipped Streaming**\n\nSong Name **: {title}",
+            caption=f"**Skipped Streaming**\n\nSong Name **: {title} \n**Duration Time** : {dur}",
             reply_markup=InlineKeyboardMarkup(button),
         )
         await mystic.delete()
@@ -211,6 +212,6 @@ async def skip(cli, message: Message, _, chat_id):
             img = await gen_thumb(videoid, photo)
             await message.reply_photo(
                 photo=img,
-                caption=f"**Skipped Streaming**\n\nSong Name **: {title}",
+                caption=f"**Skipped Streaming**\n\nSong Name **: {title} \n**Duration Time** : {dur}",
                 reply_markup=InlineKeyboardMarkup(button),
             )
