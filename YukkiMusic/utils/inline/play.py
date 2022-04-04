@@ -36,16 +36,31 @@ def stream_markup(_, videoid):
     buttons = [
         [
             InlineKeyboardButton(
-                text=_["PL_B_2"],
-                callback_data=f"add_playlist {videoid}",
+                text="END",
+                callback_data=f"stopbc",
             ),
             InlineKeyboardButton(
-                text=_["PL_B_3"], switch_inline_query_current_chat=""
+                text="RESUME",
+                callback_data=f"resumebc",
             ),
+            InlineKeyboardButton(
+                text="PAUSE",
+                callback_data=f"pausebc",
+            ),
+            InlineKeyboardButton(
+                text="SEEK", switch_inline_query_current_chat="/seek 10"
+            ),
+        ],[
+            InlineKeyboardButton(
+                text="channel", url="https://t.me/elnqyb"
+            ),
+            InlineKeyboardButton(
+                text="group", url="https://t.me/barelnqyb"
+            )
         ],
         [
             InlineKeyboardButton(
-                text=_["CLOSEMENU_BUTTON"], callback_data="close"
+                text="𝗔𝗵𝗠𝗲𝗱 𝗘𝗹𝗡𝗾𝗬𝗯™★ ⤶", url="https://t.me/ahmedelnqyb"
             )
         ],
     ]
@@ -56,11 +71,32 @@ def telegram_markup(_):
     buttons = [
         [
             InlineKeyboardButton(
-                text=_["PL_B_3"], switch_inline_query_current_chat=""
+                text="END",
+                callback_data=f"stopbc",
             ),
             InlineKeyboardButton(
-                text=_["CLOSEMENU_BUTTON"], callback_data="close"
+                text="RESUME",
+                callback_data=f"resumebc",
             ),
+            InlineKeyboardButton(
+                text="PAUSE",
+                callback_data=f"pausebc",
+            ),
+            InlineKeyboardButton(
+                text="SEEK", switch_inline_query_current_chat="/seek 10"
+            ),
+        ],[
+            InlineKeyboardButton(
+                text="channel", url="https://t.me/elnqyb"
+            ),
+            InlineKeyboardButton(
+                text="group", url="https://t.me/barelnqyb"
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text="𝗔𝗵𝗠𝗲𝗱 𝗘𝗹𝗡𝗾𝗬𝗯™★ ⤶", url="https://t.me/ahmedelnqyb"
+            )
         ],
     ]
     return buttons
