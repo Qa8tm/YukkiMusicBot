@@ -47,9 +47,6 @@ def stream_markup(_, videoid):
                 text="PAUSE",
                 callback_data=f"pausebc",
             ),
-            InlineKeyboardButton(
-                text="SEEK", switch_inline_query_current_chat="/seek 10"
-            ),
         ],[
             InlineKeyboardButton(
                 text="channel", url="https://t.me/elnqyb"
@@ -81,9 +78,6 @@ def telegram_markup(_):
             InlineKeyboardButton(
                 text="PAUSE",
                 callback_data=f"pausebc",
-            ),
-            InlineKeyboardButton(
-                text="SEEK", switch_inline_query_current_chat="/seek 10"
             ),
         ],[
             InlineKeyboardButton(
