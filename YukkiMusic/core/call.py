@@ -441,7 +441,7 @@ class Call(PyTgCalls):
                     photo_id = userx.photo.big_file_id if userx.photo else None
                     photo = await app.download_media(photo_id)
                     img = await gen_thumb(videoid, photo)
-                    requester = f"[{user}](tg://user?id={user_id})"
+                    requester = f"[{user}](tg://user?id={userx.id})"
                     button = stream_markup(_, videoid)
                     await app.send_photo(
                         original_chat_id,
