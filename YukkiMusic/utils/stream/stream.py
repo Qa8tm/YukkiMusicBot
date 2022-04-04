@@ -314,7 +314,7 @@ async def stream(
             user = await app.get_users(user_id)
             photo_id = user.photo.big_file_id if user.photo else None
             photo = await app.download_media(photo_id)
-            img = await genthumb(title, duration_min, photo)
+            img = await genth(title, duration_min, photo)
             await elnqyb.reply_photo(
                 photo="img",
                 caption=_["stream_4"].format(
