@@ -200,7 +200,7 @@ async def stream(
             img = await gen_thumb(vidid, photo)
             button = stream_markup(_, vidid)
             await elnqyb.reply_photo(
-                photo=img,
+                photo=photo,
                 caption=_["stream_1"].format(
                     user_name,
                     f"https://t.me/{app.username}?start=info_{vidid}",
