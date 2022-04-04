@@ -436,7 +436,7 @@ class Call(PyTgCalls):
                     )
                 else:
                     user_id = elnqyb.from_user.id
-                    user = await app.get_users(user_id)
+                    user = await app.get_users(user)
                     photo_id = user.photo.big_file_id if user.photo else None
                     photo = await app.download_media(photo_id)
                     img = await gen_thumb(videoid, photo)
