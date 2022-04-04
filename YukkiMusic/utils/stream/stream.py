@@ -27,7 +27,7 @@ from YukkiMusic.utils.inline.play import (stream_markup,
 from YukkiMusic.utils.inline.playlist import close_markup
 from YukkiMusic.utils.pastebin import Yukkibin
 from YukkiMusic.utils.stream.queue import put_queue, put_queue_index
-from YukkiMusic.utils.thumbnails import gen_thumb, genth
+from YukkiMusic.utils.thumbnails import gen_thumb
 
 
 async def stream(
@@ -284,11 +284,17 @@ async def stream(
                 "video" if video else "audio",
             )
             position = len(db.get(chat_id)) - 1
-            await app.send_message(
-                original_chat_id,
-                _["queue_4"].format(
-                    position, title[:30], duration_min, user_name
+            button = telegram_markup(_)
+            user = await app.get_users(user_id)
+            photo_id = user.photo.big_file_id if user.photo else None
+            photo = await app.download_media(photo_id)
+            img = await genth(title, duration_min, photo)
+            await elnqyb.reply_photo(
+                photo=f"https://telegra.ph//file/87df80418564dd50949e8.jpg",
+                caption=_["stream_4"].format(
+                    title, link, duration_min, user_name
                 ),
+                reply_markup=InlineKeyboardMarkup(button),
             )
         else:
             if not forceplay:
@@ -316,7 +322,7 @@ async def stream(
             photo = await app.download_media(photo_id)
             img = await genth(title, duration_min, photo)
             await elnqyb.reply_photo(
-                photo="img",
+                photo=f"https://telegra.ph//file/87df80418564dd50949e8.jpg",
                 caption=_["stream_4"].format(
                     title, link, duration_min, user_name
                 ),
