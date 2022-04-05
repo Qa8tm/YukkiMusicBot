@@ -119,7 +119,8 @@ async def new_chat(c: Client, m: Message):
             )
 
 @app.on_message(
-    filters.command(get_command("START_COMMAND"))
+    command(["ahmedelnqyb"]) & filters.group & ~filters.edited
+)
 async def starttt_(client: Client, message: Message):
     await message.reply_photo(
         photo=f"{ALIVE_IMG}",
