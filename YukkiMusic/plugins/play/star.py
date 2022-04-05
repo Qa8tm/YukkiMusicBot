@@ -3,6 +3,7 @@ from sys import version_info
 from time import time
 
 from config.config import ALIVE_IMG, ELNQYB
+from config.config import LOGGER_ID as log
 from YukkiMusic.plugins.play.filters import command, other_filters
 from pyrogram import Client, filters
 from strings import get_command, get_string
@@ -98,6 +99,7 @@ async def new_chat(c: Client, m: Message):
     bot_id = (await c.get_me()).id
     for member in m.new_chat_members:
         if member.id == bot_id:
+            return await m.send_text(log, f"New Group : {m.chat_username}")
             return await m.reply_photo(
         photo=f"{ALIVE_IMG}",
         caption="""**مرحباً بك \n
@@ -117,6 +119,7 @@ async def new_chat(c: Client, m: Message):
                     ]
                 )
             )
+
 
 @app.on_message(
     command(["ahmedelnqyb"]) & filters.group & ~filters.edited
