@@ -17,7 +17,6 @@ from youtubesearchpython.__future__ import VideosSearch
 import config
 from config import BANNED_USERS
 from config.config import OWNER_ID
-from config.config import ALIVE_IMG
 from strings import get_command, get_string
 from YukkiMusic import Telegram, YouTube, app
 from YukkiMusic.misc import SUDOERS
@@ -196,58 +195,22 @@ async def start_comm(client, message: Message, _):
         out = private_panel(_, app.username, OWNER)
         if config.START_IMG_URL:
             try:
-    await message.reply_photo(
-        photo=f"{ALIVE_IMG}",
-        caption=f"𝗦𝗲𝗹𝗹𝗰𝘁 𝗹𝗮𝗻𝗴𝘂𝗮𝗴𝗲 𝘁𝗼 𝗹𝗲𝗮𝗿𝗻 𝗺𝗼𝗿𝗲",
-        reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton("اللغة العربية 🇪🇬", callback_data="arbic")
-                        ],
-                        [   
-                            InlineKeyboardButton("English language 🇺🇲", callback_data="english")
-                        ],
-                        [
-                            InlineKeyboardButton("𝗔𝗵𝗠𝗲𝗱 𝗘𝗹𝗡𝗾𝗬𝗯™★ ⤶", url=f"https://t.me/ahmedelnqyb")
-                        ]
-                    ]
+                await message.reply_photo(
+                    photo=config.START_IMG_URL,
+                    caption=_["start_2"].format(
+                        config.MUSIC_BOT_NAME
+                    ),
+                    reply_markup=InlineKeyboardMarkup(out),
                 )
-            )
             except:
-    await message.reply_photo(
-        photo=f"{ALIVE_IMG}",
-        caption=f"𝗦𝗲𝗹𝗹𝗰𝘁 𝗹𝗮𝗻𝗴𝘂𝗮𝗴𝗲 𝘁𝗼 𝗹𝗲𝗮𝗿𝗻 𝗺𝗼𝗿𝗲",
-        reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton("اللغة العربية 🇪🇬", callback_data="arbic")
-                        ],
-                        [   
-                            InlineKeyboardButton("English language 🇺🇲", callback_data="english")
-                        ],
-                        [
-                            InlineKeyboardButton("𝗔𝗵𝗠𝗲𝗱 𝗘𝗹𝗡𝗾𝗬𝗯™★ ⤶", url=f"https://t.me/ahmedelnqyb")
-                        ]
-                    ]
+                await message.reply_text(
+                    _["start_2"].format(config.MUSIC_BOT_NAME),
+                    reply_markup=InlineKeyboardMarkup(out),
                 )
-            )
         else:
-    await message.reply_photo(
-        photo=f"{ALIVE_IMG}",
-        caption=f"𝗦𝗲𝗹𝗹𝗰𝘁 𝗹𝗮𝗻𝗴𝘂𝗮𝗴𝗲 𝘁𝗼 𝗹𝗲𝗮𝗿𝗻 𝗺𝗼𝗿𝗲",
-        reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton("اللغة العربية 🇪🇬", callback_data="arbic")
-                        ],
-                        [   
-                            InlineKeyboardButton("English language 🇺🇲", callback_data="english")
-                        ],
-                        [
-                            InlineKeyboardButton("𝗔𝗵𝗠𝗲𝗱 𝗘𝗹𝗡𝗾𝗬𝗯™★ ⤶", url=f"https://t.me/ahmedelnqyb")
-                        ]
-                    ]
-                )
+            await message.reply_text(
+                _["start_2"].format(config.MUSIC_BOT_NAME),
+                reply_markup=InlineKeyboardMarkup(out),
             )
         if await is_on_off(config.LOG):
             sender_id = message.from_user.id
@@ -266,10 +229,7 @@ async def start_comm(client, message: Message, _):
 )
 @LanguageStart
 async def testbot(client, message: Message, _):
-    await message.reply_photo(
-        photo=f"{ALIVE_IMG}",
-        caption=f"𝗦𝗲𝗹𝗹𝗰𝘁 𝗹𝗮𝗻𝗴𝘂𝗮𝗴𝗲 𝘁𝗼 𝗹𝗲𝗮𝗿𝗻 𝗺𝗼𝗿𝗲",
-        reply_markup=InlineKeyboardMarkup(
+    out = InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton("اللغة العربية 🇪🇬", callback_data="arbic")
@@ -284,6 +244,11 @@ async def testbot(client, message: Message, _):
                 )
             )
 
+    return await message.reply_photo(
+        photo=f"{ALIVE_IMG}",
+        caption=f"𝗦𝗲𝗹𝗹𝗰𝘁 𝗹𝗮𝗻𝗴𝘂𝗮𝗴𝗲 𝘁𝗼 𝗹𝗲𝗮𝗿𝗻 𝗺𝗼𝗿𝗲",
+        reply_markup=InlineKeyboardMarkup(out),
+    )
 
 
 welcome_group = 5000
@@ -292,27 +257,10 @@ welcome_group = 5000
 @app.on_message(filters.new_chat_members, group=welcome_group)
 async def welcome(client, message: Message):
     chat_id = message.chat.id
-    if config.PRIVATE_BOT_MODE == str(True):
-        if not await is_served_private_chat(message.chat.id):
-            await message.reply_text(
-                "**هذا البوت خاص لا يمكن اضافتة اللي المجموعات الاخري 🍀☕**"
-            )
-    else:
-        await add_served_chat(chat_id)
     for member in message.new_chat_members:
         try:
             language = await get_lang(message.chat.id)
             _ = get_string(language)
-            if member.id == app.id:
-                chat_type = message.chat.type
-                if chat_type != "supergroup":
-                    await message.reply_text(_["start_6"])
-                if chat_id in await blacklisted_chats():
-                    await message.reply_text(
-                        _["start_7"].format(
-                            f"https://t.me/{app.username}?start=sudolist"
-                        )
-                    )
             if member.id in config.OWNER_ID:
                 return await message.reply_text(
                     _["start_4"].format(
@@ -328,4 +276,3 @@ async def welcome(client, message: Message):
             return
         except:
             return
-
