@@ -70,6 +70,20 @@ def PlayWrapper(command):
                     return await message.reply_text(_["str_1"])
                 buttons = botplaylist_markup(_)
                 return await message.reply_text(_["playlist_1"])
+        if message.sender_chat:
+            upl = InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(
+                            text="How to Fix this? ",
+                            callback_data="AnonymousAdmin",
+                        ),
+                    ]
+                ]
+            )
+            return await message.reply_text(
+                _["general_4"], reply_markup=upl
+            )
         if message.command[0][0] == "c":
             chat_id = await get_cmode(message.chat.id)
             if chat_id is None:
@@ -98,7 +112,7 @@ def PlayWrapper(command):
             if "-v" in message.text:
                 video = True
             else:
-                video = True if message.command[0][1] == "v" else "ف"
+                video = True if message.command[0][1] == "v" or message.command[0][0] == "ف": else None
         if message.command[0][-1] == "e":
             if not await is_active_chat(chat_id):
                 return await message.reply_text(_["play_18"])
