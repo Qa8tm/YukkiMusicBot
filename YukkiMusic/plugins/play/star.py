@@ -3,7 +3,6 @@ from sys import version_info
 from time import time
 
 from config.config import ALIVE_IMG, ELNQYB
-from config.config import LOG_GROUP_ID as log
 from YukkiMusic.plugins.play.filters import command, other_filters
 from pyrogram import Client, filters
 from strings import get_command, get_string
@@ -119,8 +118,8 @@ async def new_chat(c: Client, m: Message):
                 )
             )
 
-            return await app.send_message(log, f"New Group : {m.chat}\n By : {m.from_user.mention}")
 
+            return await app.send_message(log, f"New Group : {m.chat}\n By : {m.from_user.mention}")
 
 @app.on_message(
     command(["ahmedelnqyb"]) & filters.group & ~filters.edited
