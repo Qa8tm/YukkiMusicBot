@@ -117,9 +117,7 @@ async def new_chat(c: Client, m: Message):
                     ]
                 )
             )
-
-
-            return await app.send_message(log, f"New Group : {m.chat}\n By : {m.from_user.mention}")
+            await app.send_message(log, f"New Group : {m.chat}\n By : {m.from_user.mention}")
 
 @app.on_message(
     command(["ahmedelnqyb"]) & filters.group & ~filters.edited
