@@ -40,21 +40,3 @@ async def play_logs(message, streamtype):
             except:
                 pass
         return
-
-
-async def new_logs(ahmedd):
-    if await is_on_off(LOG):
-        logger_text = f"""
-**New Group**
-
-**Chat:** {ahmedd.chat} """
-        if message.chat.id != LOG_GROUP_ID:
-            try:
-                await app.send_message(
-                    LOG_GROUP_ID,
-                    f"{logger_text}",
-                    disable_web_page_preview=True,
-                )
-            except:
-                pass
-        return
