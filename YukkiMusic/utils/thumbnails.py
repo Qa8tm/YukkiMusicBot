@@ -142,7 +142,7 @@ async def gen_thumb(videoid, photo):
             font=arial,
         )
         try:
-            os.remove(f"cache/thumb{videoid}.png")
+            os.remove(f"{photo}.png")
         except:
             pass
         background.save(f"cache/{videoid}.png")
