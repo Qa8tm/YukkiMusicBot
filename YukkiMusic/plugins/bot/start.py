@@ -30,7 +30,7 @@ from YukkiMusic.utils.database import (add_served_chat,
                                        is_served_private_chat)
 from YukkiMusic.utils.decorators.language import LanguageStart
 from YukkiMusic.utils.inline import (help_pannel, private_panel,
-                                     start_pannel)
+                                     start_pannel, elnqyb_start)
 
 loop = asyncio.get_running_loop()
 
@@ -192,7 +192,7 @@ async def start_comm(client, message: Message, _):
             OWNER = OWNER_ID[0]
         except:
             OWNER = None
-        out = private_panel(_, app.username, OWNER)
+        out = elnqyb_start(_)
         if config.START_IMG_URL:
             try:
                 await message.reply_photo(
