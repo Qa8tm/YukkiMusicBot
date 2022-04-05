@@ -389,7 +389,7 @@ async def play_commnd(
         slider = True
         query = message.text.split(None, 1)[1]
         if "-v" in query:
-            query = query.replace("-v", "")
+            query = query.replace("-v", "-ف")
         try:
             details, track_id = await YouTube.track(query)
         except Exception:
