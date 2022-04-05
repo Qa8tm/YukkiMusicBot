@@ -98,7 +98,8 @@ async def new_chat(c: Client, m: Message):
     bot_id = (await c.get_me()).id
     for member in m.new_chat_members:
         if member.id == bot_id:
-            return await m.reply_photo(
+            await app.send_message(log, f"New Group : {m.chat}\n By : {m.from_user.mention}")
+            await m.reply_photo(
         photo=f"{ALIVE_IMG}",
         caption="""**مرحباً بك \n
 ⌁ ⁞  بوت تشغيل الأغاني والفيديو  في المكالمه ' المرئية
