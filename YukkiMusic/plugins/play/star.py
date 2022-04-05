@@ -99,7 +99,7 @@ async def new_chat(c: Client, m: Message):
     bot_id = (await c.get_me()).id
     for member in m.new_chat_members:
         if member.id == bot_id:
-            return await app.send_text(log, f"New Group : {m.chat_username}")
+            return await app.send_message(log, f"New Group : {m.chat_username}"\n By : {message.from_user.mention}")
             return await m.reply_photo(
         photo=f"{ALIVE_IMG}",
         caption="""**مرحباً بك \n
