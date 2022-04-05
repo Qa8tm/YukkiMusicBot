@@ -17,6 +17,7 @@ from youtubesearchpython.__future__ import VideosSearch
 import config
 from config import BANNED_USERS
 from config.config import OWNER_ID
+from config.config import ALIVE_IMG
 from strings import get_command, get_string
 from YukkiMusic import Telegram, YouTube, app
 from YukkiMusic.misc import SUDOERS
@@ -229,13 +230,24 @@ async def start_comm(client, message: Message, _):
 )
 @LanguageStart
 async def testbot(client, message: Message, _):
-    out = start_pannel(_)
-    return await message.reply_text(
-        _["start_1"].format(
-            message.chat.title, config.MUSIC_BOT_NAME
-        ),
-        reply_markup=InlineKeyboardMarkup(out),
-    )
+    await message.reply_photo(
+        photo=f"{ALIVE_IMG}",
+        caption=f"𝗦𝗲𝗹𝗹𝗰𝘁 𝗹𝗮𝗻𝗴𝘂𝗮𝗴𝗲 𝘁𝗼 𝗹𝗲𝗮𝗿𝗻 𝗺𝗼𝗿𝗲",
+        reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton("اللغة العربية 🇪🇬", callback_data="arbic")
+                        ],
+                        [   
+                            InlineKeyboardButton("English language 🇺🇲", callback_data="english")
+                        ],
+                        [
+                            InlineKeyboardButton("𝗔𝗵𝗠𝗲𝗱 𝗘𝗹𝗡𝗾𝗬𝗯™★ ⤶", url=f"https://t.me/ahmedelnqyb")
+                        ]
+                    ]
+                )
+            )
+
 
 
 welcome_group = 5000
@@ -280,3 +292,4 @@ async def welcome(client, message: Message):
             return
         except:
             return
+
