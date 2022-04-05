@@ -3,7 +3,7 @@ name : English
 # General Strings
 general_1 : "Reply to a user's message or give username/user_id."
 general_2 : "خطا في استخدام الازرار."
-general_3 : "Some **exception occured** while processing your query.\n\nException Type:- {0}"
+general_3 : "** حدث خطا في استخدام الازرار اذا لم يتم التشغيل ف تواصل مع المطور لحل هذه المشكلة ⚡.** \n** @ahmedelnqyb المطور **.\n\nException Type:- {0}"
 general_4 : "يمكنك طلب التشغيل من الحساب الاساسي فقط ليس حساب قناة او جروب ⚡."
 general_5 : "**يجب ان تكون ادمن مع الصلاحيات المطلوبة للقيام بذلك ⚡.**"
 general_6 : "**لا يوجد شئ يتم تشغيلة الان ⚡.**"
