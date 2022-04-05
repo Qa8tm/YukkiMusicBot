@@ -5,6 +5,7 @@ from time import time
 from config.config import ALIVE_IMG, ELNQYB
 from YukkiMusic.plugins.play.filters import command, other_filters
 from pyrogram import Client, filters
+from strings import get_command, get_string
 from YukkiMusic import app
 from pyrogram import __version__ as pyrover
 from pytgcalls import (__version__ as pytover)
@@ -42,7 +43,7 @@ async def _human_time_duration(seconds):
 
 
 @app.on_message(
-    command(["alive", f"معلومات"]) & filters.group & ~filters.edited
+    command(["alive", "معلومات", "سورس", "السورس"]) & filters.group & ~filters.edited
 )
 async def alive(c: Client, message: Message):
     chat_id = message.chat.id
@@ -117,7 +118,8 @@ async def new_chat(c: Client, m: Message):
                 )
             )
 
-@app.on_message(command("/start") & filters.private & ~filters.edited)
+@app.on_message(
+    filters.command(get_command("START_COMMAND"))
 async def starttt_(client: Client, message: Message):
     await message.reply_photo(
         photo=f"{ALIVE_IMG}",
@@ -171,7 +173,7 @@ async def dev(client: Client, message: Message):
                 )
             )
 
-@app.on_message(command("بوت") & filters.group & ~filters.edited)
+@app.on_message(command(["تست", "بوت", "البوت"]) & filters.group & ~filters.edited)
 async def bott(client: Client, message: Message):
     await message.reply_text(" البوت قيد التشغيل الان ⚡",
         reply_markup=InlineKeyboardMarkup(
