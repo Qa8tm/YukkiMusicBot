@@ -196,22 +196,58 @@ async def start_comm(client, message: Message, _):
         out = private_panel(_, app.username, OWNER)
         if config.START_IMG_URL:
             try:
-                await message.reply_photo(
-                    photo=config.START_IMG_URL,
-                    caption=_["start_2"].format(
-                        config.MUSIC_BOT_NAME
-                    ),
-                    reply_markup=InlineKeyboardMarkup(out),
+    await message.reply_photo(
+        photo=f"{ALIVE_IMG}",
+        caption=f"𝗦𝗲𝗹𝗹𝗰𝘁 𝗹𝗮𝗻𝗴𝘂𝗮𝗴𝗲 𝘁𝗼 𝗹𝗲𝗮𝗿𝗻 𝗺𝗼𝗿𝗲",
+        reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton("اللغة العربية 🇪🇬", callback_data="arbic")
+                        ],
+                        [   
+                            InlineKeyboardButton("English language 🇺🇲", callback_data="english")
+                        ],
+                        [
+                            InlineKeyboardButton("𝗔𝗵𝗠𝗲𝗱 𝗘𝗹𝗡𝗾𝗬𝗯™★ ⤶", url=f"https://t.me/ahmedelnqyb")
+                        ]
+                    ]
                 )
+            )
             except:
-                await message.reply_text(
-                    _["start_2"].format(config.MUSIC_BOT_NAME),
-                    reply_markup=InlineKeyboardMarkup(out),
+    await message.reply_photo(
+        photo=f"{ALIVE_IMG}",
+        caption=f"𝗦𝗲𝗹𝗹𝗰𝘁 𝗹𝗮𝗻𝗴𝘂𝗮𝗴𝗲 𝘁𝗼 𝗹𝗲𝗮𝗿𝗻 𝗺𝗼𝗿𝗲",
+        reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton("اللغة العربية 🇪🇬", callback_data="arbic")
+                        ],
+                        [   
+                            InlineKeyboardButton("English language 🇺🇲", callback_data="english")
+                        ],
+                        [
+                            InlineKeyboardButton("𝗔𝗵𝗠𝗲𝗱 𝗘𝗹𝗡𝗾𝗬𝗯™★ ⤶", url=f"https://t.me/ahmedelnqyb")
+                        ]
+                    ]
                 )
+            )
         else:
-            await message.reply_text(
-                _["start_2"].format(config.MUSIC_BOT_NAME),
-                reply_markup=InlineKeyboardMarkup(out),
+    await message.reply_photo(
+        photo=f"{ALIVE_IMG}",
+        caption=f"𝗦𝗲𝗹𝗹𝗰𝘁 𝗹𝗮𝗻𝗴𝘂𝗮𝗴𝗲 𝘁𝗼 𝗹𝗲𝗮𝗿𝗻 𝗺𝗼𝗿𝗲",
+        reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton("اللغة العربية 🇪🇬", callback_data="arbic")
+                        ],
+                        [   
+                            InlineKeyboardButton("English language 🇺🇲", callback_data="english")
+                        ],
+                        [
+                            InlineKeyboardButton("𝗔𝗵𝗠𝗲𝗱 𝗘𝗹𝗡𝗾𝗬𝗯™★ ⤶", url=f"https://t.me/ahmedelnqyb")
+                        ]
+                    ]
+                )
             )
         if await is_on_off(config.LOG):
             sender_id = message.from_user.id
