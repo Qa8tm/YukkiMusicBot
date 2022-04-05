@@ -132,3 +132,24 @@ def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
         [InlineKeyboardButton(text=_["ST_B_6"], callback_data="LG")]
     )
     return buttons
+
+def elnqyb_start(_):
+    buttons = [
+        [
+            InlineKeyboardButton(
+                text="English 🇺🇲",
+                callback_data=f"english",
+            ),
+            InlineKeyboardButton(
+                text="عربي 🇪🇬",
+                callback_data=f"arbic",
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text="𝗔𝗵𝗠𝗲𝗱 𝗘𝗹𝗡𝗾𝗬𝗯™★ ⤶",
+                url=f"https://t.me/ahmedelnqyb",
+            ),
+        ],
+    ]
+    return buttons
