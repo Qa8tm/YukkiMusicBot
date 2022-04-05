@@ -203,13 +203,15 @@ async def start_comm(client, message: Message, _):
                     reply_markup=InlineKeyboardMarkup(out),
                 )
             except:
-                await message.reply_text(
-                    _["start_2"].format(config.MUSIC_BOT_NAME),
+                await message.reply_photo(
+                photo=f"{ALIVE_IMG}",
+                caption=f"𝗦𝗲𝗹𝗹𝗰𝘁 𝗹𝗮𝗻𝗴𝘂𝗮𝗴𝗲 𝘁𝗼 𝗹𝗲𝗮𝗿𝗻 𝗺𝗼𝗿𝗲",
                     reply_markup=InlineKeyboardMarkup(out),
                 )
         else:
-            await message.reply_text(
-                _["start_2"].format(config.MUSIC_BOT_NAME),
+            await message.reply_photo(
+                photo=f"{ALIVE_IMG}",
+                caption=f"𝗦𝗲𝗹𝗹𝗰𝘁 𝗹𝗮𝗻𝗴𝘂𝗮𝗴𝗲 𝘁𝗼 𝗹𝗲𝗮𝗿𝗻 𝗺𝗼𝗿𝗲",
                 reply_markup=InlineKeyboardMarkup(out),
             )
         if await is_on_off(config.LOG):
