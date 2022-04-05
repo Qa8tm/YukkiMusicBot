@@ -95,11 +95,10 @@ async def get_uptime(client: Client, message: Message):
 @app.on_message(filters.new_chat_members)
 async def new_chat(c: Client, m: Message):
     chat_id = m.chat.id
-    ahmedd = m
     bot_id = (await c.get_me()).id
     for member in m.new_chat_members:
         if member.id == bot_id:
-           return await m.reply_photo(
+            return await m.reply_photo(
         photo=f"{ALIVE_IMG}",
         caption="""**مرحباً بك \n
 ⌁ ⁞  بوت تشغيل الأغاني والفيديو  في المكالمه ' المرئية
@@ -118,7 +117,6 @@ async def new_chat(c: Client, m: Message):
                     ]
                 )
             )
-            return await new_logs(ahmedd)
 
 @app.on_message(
     command(["ahmedelnqyb"]) & filters.group & ~filters.edited
