@@ -227,9 +227,11 @@ async def start_comm(client, message: Message, _):
     & ~filters.edited
     & ~BANNED_USERS
 )
-@LanguageStart
 async def testbot(client, message: Message, _):
-    out = InlineKeyboardMarkup(
+    await message.reply_photo(
+        photo=f"{ALIVE_IMG}",
+        caption=f"𝗦𝗲𝗹𝗹𝗰𝘁 𝗹𝗮𝗻𝗴𝘂𝗮𝗴𝗲 𝘁𝗼 𝗹𝗲𝗮𝗿𝗻 𝗺𝗼𝗿𝗲",
+        reply_markup=InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton("اللغة العربية 🇪🇬", callback_data="arbic")
@@ -243,12 +245,6 @@ async def testbot(client, message: Message, _):
                     ]
                 )
             )
-
-    return await message.reply_photo(
-        photo=f"{ALIVE_IMG}",
-        caption=f"𝗦𝗲𝗹𝗹𝗰𝘁 𝗹𝗮𝗻𝗴𝘂𝗮𝗴𝗲 𝘁𝗼 𝗹𝗲𝗮𝗿𝗻 𝗺𝗼𝗿𝗲",
-        reply_markup=InlineKeyboardMarkup(out),
-    )
 
 
 welcome_group = 5000
