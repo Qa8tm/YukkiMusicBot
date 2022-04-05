@@ -112,7 +112,7 @@ def PlayWrapper(command):
             if "-v" in message.text:
                 video = True
             else:
-                video = True if message.command[0][1] == "v" or message.command[0][0] == "ف": else None
+                video = True if message.command[0][1] == "v" else None
         if message.command[0][-1] == "e":
             if not await is_active_chat(chat_id):
                 return await message.reply_text(_["play_18"])
