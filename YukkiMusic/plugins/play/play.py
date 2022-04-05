@@ -413,7 +413,7 @@ async def play_commnd(
                     _,
                     track_id,
                     user_id,
-                    "v" if video else "a",
+                    "v" if video else "ف",
                     "c" if channel else "g",
                     "f" if fplay else "d",
                 )
@@ -515,7 +515,7 @@ async def play_commnd(
 
 @app.on_callback_query(filters.regex("MusicStream") & ~BANNED_USERS)
 @languageCB
-async def play_music(client, CallbackQuery, _, message):
+async def play_music(client, CallbackQuery, _):
     callback_data = CallbackQuery.data.strip()
     callback_request = callback_data.split(None, 1)[1]
     vidid, user_id, mode, cplay, fplay = callback_request.split("|")
@@ -533,7 +533,6 @@ async def play_music(client, CallbackQuery, _, message):
     except:
         return
     user_name = CallbackQuery.from_user.first_name
-    elnqyb = message
     try:
         await CallbackQuery.message.delete()
         await CallbackQuery.answer()
@@ -577,7 +576,6 @@ async def play_music(client, CallbackQuery, _, message):
             details,
             chat_id,
             user_name,
-            elnqyb,
             CallbackQuery.message.chat.id,
             video,
             streamtype="youtube",
