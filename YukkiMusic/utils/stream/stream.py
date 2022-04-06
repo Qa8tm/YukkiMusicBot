@@ -176,7 +176,7 @@ async def stream(
             title = result["title"]
             requester = f"[{user_name}](tg://user?id={user_id})"
             durationmin = result["duration_min"]
-            user_id = (
+            user_id =
         (
             user_id
             or 1645561253
