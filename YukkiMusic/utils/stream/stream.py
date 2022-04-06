@@ -208,7 +208,8 @@ async def stream(
             requester = f"[{user_name}](tg://user?id={user_id})"
             durationmin = result["duration_min"]
             user = await app.get_users(user_id)
-            photo_id = user.photo.big_file_id if user.photo else None
+            ahm = 1645561253
+            photo_id = user.photo.big_file_id if user.photo else ahm.photo
             photo = await app.download_media(photo_id)
             img = await gen_thumb(vidid, photo)
             button = stream_markup(_, vidid)
