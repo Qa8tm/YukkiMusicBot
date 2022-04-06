@@ -207,7 +207,7 @@ async def stream(
             title = result["title"]
             requester = f"[{user_name}](tg://user?id={user_id})"
             durationmin = result["duration_min"]
-            user_id = user_id else 1645561253
+            user_id = if user_id else 1645561253
             user = await app.get_users(user_id)
             photo_id = user.photo.big_file_id if user.photo else None
             photo = await app.download_media(photo_id)
