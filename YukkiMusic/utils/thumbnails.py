@@ -67,7 +67,7 @@ async def gen_thumb(videoid, photo):
                     await f.close()
 
         youtube = Image.open(f"cache/thumb{videoid}.png")
-        ph = {photo} or {YOUTUBE_IMG_URL}
+        ph = {photo} expect: YukkiMusic/utils/{ahmed}
         elnqybv = Image.open(f"{ph}.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
