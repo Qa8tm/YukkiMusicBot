@@ -34,10 +34,7 @@ async def aed(photo):
 
     url = f"https://www.youtube.com/watch?v"
 try:
-            os.remove(f"{photo}.png")
-        except:
-            pass
-        background.save(f"{photo}.png")
+        save(f"{photo}.png")
         return f"{photo}.png"
     except Exception:
         return YOUTUBE_IMG_URL
