@@ -68,7 +68,7 @@ async def gen_thumb(videoid, photo):
 
         youtube = Image.open(f"cache/thumb{videoid}.png")
         ph = {photo} or {YOUTUBE_IMG_URL}
-        elnqybv = Image.open(f"{ph}")
+        elnqybv = Image.open(f"{ph}.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
         background = image2.filter(filter=ImageFilter.BoxBlur(5))
