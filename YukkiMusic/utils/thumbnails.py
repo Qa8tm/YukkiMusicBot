@@ -29,6 +29,10 @@ def changeImageSize(maxWidth, maxHeight, image):
     return newImage
 
 async def aed(photo):
+    if os.path.isfile(f"{photo}.png"):
+        return f"{photo}.png"
+
+    url = f"https://www.youtube.com/watch?v"
 try:
             os.remove(f"{photo}.png")
         except:
