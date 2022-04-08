@@ -185,3 +185,17 @@ async def bott(client: Client, message: Message):
                     ]
                 )
             )
+
+@app.on_message(command(["الرابط"]) & filters.group & ~filters.edited)
+async def llink(client: Client, message: Message):
+    chat_id = message.text.split(None, 1)[1].strip()
+    invitelink = (await app.export_chat_invite_link(chat_id))
+    await message.reply_text(" رابط المجموعة ⚡",
+        reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton("الرابط", url=f"{invitelink}")
+                        ]
+                    ]
+                )
+            )
