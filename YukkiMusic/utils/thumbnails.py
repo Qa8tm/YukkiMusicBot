@@ -28,17 +28,6 @@ def changeImageSize(maxWidth, maxHeight, image):
     newImage = image.resize((newWidth, newHeight))
     return newImage
 
-async def aed(photo):
-    if os.path.isfile(f"{photo}.png"):
-        return f"{photo}.png"
-
-    url = f"https://www.youtube.com/watch?v"
-try:
-        save(f"{photo}.png")
-        return f"{photo}.png"
-    except Exception:
-        return YOUTUBE_IMG_URL
-
 
 
 async def gen_thumb(videoid, photo):
@@ -79,7 +68,7 @@ async def gen_thumb(videoid, photo):
                     await f.close()
 
         youtube = Image.open(f"cache/thumb{videoid}.png")
-        ph = aed(photo)
+        ph = https://telegra.ph//file/536af0595d4bfbac2d794.png
         elnqybv = Image.open(f"{ph}")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
