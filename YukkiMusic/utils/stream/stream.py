@@ -27,7 +27,9 @@ from YukkiMusic.utils.inline.play import (stream_markup,
 from YukkiMusic.utils.inline.playlist import close_markup
 from YukkiMusic.utils.pastebin import Yukkibin
 from YukkiMusic.utils.stream.queue import put_queue, put_queue_index
-from YukkiMusic.utils.thumbnails import gen_thumb
+from YukkiMusic.utils.thumbnails import gen_thumb 
+
+ELLNQYB = https://telegra.ph//file/536af0595d4bfbac2d794.png
 
 
 async def stream(
@@ -206,10 +208,9 @@ async def stream(
             )
             title = result["title"]
             requester = f"[{user_name}](tg://user?id={user_id})"
-            durationmin = result["duration_min"]
-            user_id = getenv("user_id", "1645561253")
+            durationmin = result["duration_min"]   
             user = await app.get_users(user_id)
-            photo_id = user.photo.big_file_id if user.photo else None
+            photo_id = user.photo.big_file_id if user.photo else ELLNQYB
             photo = await app.download_media(photo_id)
             img = await gen_thumb(vidid, photo)
             button = stream_markup(_, vidid)
