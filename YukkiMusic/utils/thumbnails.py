@@ -58,7 +58,7 @@ async def gen_thumb(videoid, user_id):
             except:
                 channel = "Unknown Channel"
             try: 
-                user = user_id
+                user = {user_id}
             except:
                 user = 1645561253
 
@@ -75,7 +75,7 @@ async def gen_thumb(videoid, user_id):
         user = await app.get_users(user_id)
         photo_id = user.photo.big_file_id if user.photo else None
         photo = await app.download_media(photo_id)
-        elnqybv = Image.open(f"{ph}.png")
+        elnqybv = Image.open(f"{photo}.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
         background = image2.filter(filter=ImageFilter.BoxBlur(5))
