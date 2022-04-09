@@ -60,7 +60,7 @@ async def gen_thumb(videoid, photo):
             try: 
                 ph = "photo"
             except:
-                ph = "YOUTUBE_IMG_URL"
+                ph = "YukkiMusic/utils/ahmed"
 
         async with aiohttp.ClientSession() as session:
             async with session.get(thumbnail) as resp:
