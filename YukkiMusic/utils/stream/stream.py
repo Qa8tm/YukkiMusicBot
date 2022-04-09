@@ -210,7 +210,7 @@ async def stream(
             user = await app.get_users(user_id)
             photo_id = user.photo.big_file_id if user.photo else None
             photo = await app.download_media(photo_id)
-            img = await gen_thumb(vidid, photo)
+            img = await gen_thumb(vidid, photo, user_id)
             button = stream_markup(_, vidid)
             await elnqyb.reply_photo(
                 photo=img,
