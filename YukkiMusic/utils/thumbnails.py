@@ -150,11 +150,11 @@ async def gen_thumb(videoid, user_id):
             font=arial,
         )
         try:
-            os.remove(f"{photo}.png")
+            os.remove(f"{user_id}.png")
         except:
             pass
-        background.save(f"{photo}.png")
-        return f"{photo}.png"
+        background.save(f"{user_id}.png")
+        return f"{user_id}.png"
     except Exception:
         return YOUTUBE_IMG_URL
 
