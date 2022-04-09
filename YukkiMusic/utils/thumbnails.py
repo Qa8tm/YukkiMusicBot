@@ -57,6 +57,10 @@ async def gen_thumb(videoid, photo):
                 channel = result["channel"]["name"]
             except:
                 channel = "Unknown Channel"
+            try: 
+                ph = "photo"
+            except:
+                ph = "YOUTUBE_IMG_URL"
 
         async with aiohttp.ClientSession() as session:
             async with session.get(thumbnail) as resp:
@@ -68,7 +72,7 @@ async def gen_thumb(videoid, photo):
                     await f.close()
 
         youtube = Image.open(f"cache/thumb{videoid}.png")
-        elnqybv = Image.open(f"{photo}.png")
+        elnqybv = Image.open(f"{ph}.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
         background = image2.filter(filter=ImageFilter.BoxBlur(5))
