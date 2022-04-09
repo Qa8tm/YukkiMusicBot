@@ -30,7 +30,7 @@ def changeImageSize(maxWidth, maxHeight, image):
 
 
 
-async def gen_thumb(videoid, photo):
+async def gen_thumb(videoid, user_id):
     if os.path.isfile(f"{photo}.png"):
         return f"{photo}.png"
 
@@ -58,9 +58,9 @@ async def gen_thumb(videoid, photo):
             except:
                 channel = "Unknown Channel"
             try: 
-                ph = "photo"
+                user = user_id
             except:
-                ph = "YukkiMusic/utils/ahmed"
+                user = 1645561253
 
         async with aiohttp.ClientSession() as session:
             async with session.get(thumbnail) as resp:
@@ -72,6 +72,9 @@ async def gen_thumb(videoid, photo):
                     await f.close()
 
         youtube = Image.open(f"cache/thumb{videoid}.png")
+        user = await app.get_users(user_id)
+        photo_id = user.photo.big_file_id if user.photo else None
+        photo = await app.download_media(photo_id)
         elnqybv = Image.open(f"{ph}.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
