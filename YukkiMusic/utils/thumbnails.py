@@ -72,7 +72,7 @@ async def gen_thumb(videoid, user_id):
                     await f.close()
 
         youtube = Image.open(f"cache/thumb{videoid}.png")
-        user = await app.get_users(user_id)
+        user = await app.get_users(user)
         photo_id = user.photo.big_file_id if user.photo else None
         photo = await app.download_media(photo_id)
         elnqybv = Image.open(f"{photo}.png")
