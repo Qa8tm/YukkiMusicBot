@@ -58,9 +58,9 @@ async def gen_thumb(videoid, user_id):
             except:
                 channel = "Unknown Channel"
             try: 
-                user = {user_id}
+                user = "user_id"
             except:
-                user = 1645561253
+                user = "1645561253"
 
         async with aiohttp.ClientSession() as session:
             async with session.get(thumbnail) as resp:
