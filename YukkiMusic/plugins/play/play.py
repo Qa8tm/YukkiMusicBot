@@ -350,7 +350,7 @@ async def play_commnd(
                 )
             except Exception as e:
                 return await mystic.edit_text(
-                    "قم بوضع صورة علي ملفك الشخصي ⚡. \n {e}"
+                    _["general_3"].format(type(e).__name__)
                 )
             await mystic.edit_text(_["str_2"])
             try:
