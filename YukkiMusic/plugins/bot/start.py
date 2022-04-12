@@ -283,7 +283,7 @@ async def welcome(client, message: Message):
                 userbot = await get_assistant(message.chat.id)
                 out = start_pannel(_)
                 await app.send.message(log, f"New Group : {message.chat} \n By : {message.from_user.mention}")
-                await message.reply_text(
+                return await message.reply_text(
                     _["start_3"].format(
                         config.MUSIC_BOT_NAME,
                         userbot.username,
