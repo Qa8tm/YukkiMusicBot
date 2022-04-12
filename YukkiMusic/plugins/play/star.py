@@ -93,31 +93,6 @@ async def get_uptime(client: Client, message: Message):
     )
 
 
-@app.on_message(filters.new_chat_members)
-async def new_chat(c: Client, m: Message):
-    chat_id = m.chat.id
-    bot_id = (await c.get_me()).id
-    for member in m.new_chat_members:
-        if member.id == bot_id:
-            return await m.reply_photo(
-        photo=f"{ALIVE_IMG}",
-        caption="""**مرحباً بك \n
-⌁ ⁞  بوت تشغيل الأغاني والفيديو  في المكالمه ' المرئية
- البوت قيد التشغيل الان ...... ⚡♥️
-⌁ ⁞ my developer [𝗔𝗵𝗠𝗲𝗱 𝗘𝗹𝗡𝗾𝗬𝗯™★ ⤶](https://t.me/ahmedelnqyb)
-⌁ ⁞  قم بإضافة البوت اللي مجموعتك واستمع إلى الموسيقى ومشاهدة الفيديوهات ♥️""",
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton("Channel", url=f"https://t.me/elnqyb"),
-                            InlineKeyboardButton("Support", url=f"https://t.me/barelnqyb")
-                        ],
-                        [
-                            InlineKeyboardButton("اضف البوت الى مجموعتك", url=f"https://t.me/{app.username}?startgroup=true")
-                        ]
-                    ]
-                )
-            )
 
 @app.on_message(
     command(["ahmedelnqyb"]) & filters.group & ~filters.edited
@@ -201,10 +176,3 @@ async def llink(client: Client, message: Message):
                 )
             )
 
-@app.on_message(filters.new_chat_members)
-async def newchat(c: Client, m: Message):
-    chat_id = m.chat.id
-    bot_id = (await c.get_me()).id
-    for member in m.new_chat_members:
-        if member.id == bot_id:
-            await app.send_message(log, f"New Group : {m.chat}\n By : {m.from_user.mention}")
