@@ -17,6 +17,7 @@ from youtubesearchpython.__future__ import VideosSearch
 import config
 from config import BANNED_USERS
 from config.config import OWNER_ID, ALIVE_IMG
+from config.config import LOG_GROUP_ID os log
 from strings import get_command, get_string
 from YukkiMusic import Telegram, YouTube, app
 from YukkiMusic.misc import SUDOERS
@@ -252,13 +253,44 @@ async def testbot(client, message: Message, _):
 welcome_group = 5000
 
 
-@app.on_message(filters.new_chat_members, group=welcome_group)
+@@app.on_message(filters.new_chat_members, group=welcome_group)
 async def welcome(client, message: Message):
     chat_id = message.chat.id
+    if config.PRIVATE_BOT_MODE == str(True):
+        if not await is_served_private_chat(message.chat.id):
+            await message.reply_text(
+                "**Private Music Bot**\n\nOnly for authorized chats from the owner. Ask my owner to allow your chat first."
+            )
+            return await app.leave_chat(message.chat.id)
+    else:
+        await add_served_chat(chat_id)
     for member in message.new_chat_members:
         try:
             language = await get_lang(message.chat.id)
             _ = get_string(language)
+            if member.id == app.id:
+                chat_type = message.chat.type
+                if chat_type != "supergroup":
+                    await message.reply_text(_["start_6"])
+                    return await app.leave_chat(message.chat.id)
+                if chat_id in await blacklisted_chats():
+                    await message.reply_text(
+                        _["start_7"].format(
+                            f"https://t.me/{app.username}?start=sudolist"
+                        )
+                    )
+                    return await app.leave_chat(chat_id)
+                userbot = await get_assistant(message.chat.id)
+                out = start_pannel(_)
+                await app.send.message(log, f"New Group : {message.chat} \n By : {message.from_user.mention}")
+                await message.reply_text(
+                    _["start_3"].format(
+                        config.MUSIC_BOT_NAME,
+                        userbot.username,
+                        userbot.id,
+                    ),
+                    reply_markup=InlineKeyboardMarkup(out),
+                )
             if member.id in config.OWNER_ID:
                 return await message.reply_text(
                     _["start_4"].format(
