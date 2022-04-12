@@ -253,7 +253,7 @@ async def testbot(client, message: Message, _):
 welcome_group = 5000
 
 
-@@app.on_message(filters.new_chat_members, group=welcome_group)
+@app.on_message(filters.new_chat_members, group=welcome_group)
 async def welcome(client, message: Message):
     chat_id = message.chat.id
     if config.PRIVATE_BOT_MODE == str(True):
