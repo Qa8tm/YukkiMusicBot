@@ -53,7 +53,7 @@ class Userbot(Client):
         )
 
     async def start(self):
-        LOGGER(__name__).info(f"Starting Assistant Clients")
+        LOGGER(__name__).info(f"سيعمل البوت قريبا ...")
         if config.STRING1:
             await self.one.start()
             try:
@@ -65,11 +65,11 @@ class Userbot(Client):
             assistants.append(1)
             try:
                 await self.one.send_message(
-                    config.LOG_GROUP_ID, "Assistant Started"
+                    config.LOG_GROUP_ID, "المساعد يعمل الان!"
                 )
             except:
                 LOGGER(__name__).error(
-                    f"Assistant Account 1 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin! "
+                    f"هنالك خطأ , الرجاء التاكد من ادخال االحساب المساعد ورفعه الى ادمن! "
                 )
                 sys.exit()
             get_me = await self.one.get_me()
@@ -96,11 +96,11 @@ class Userbot(Client):
             assistants.append(2)
             try:
                 await self.two.send_message(
-                    config.LOG_GROUP_ID, "Assistant Started"
+                    config.LOG_GROUP_ID, "المساعد يعمل الان !"
                 )
             except:
                 LOGGER(__name__).error(
-                    f"Assistant Account 2 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin! "
+                    f"هنالك خطأ في 2 حساب المساعد الرجاء اضافتهما الى الكروب ورفعهما الى ادمن! "
                 )
                 sys.exit()
             get_me = await self.two.get_me()
@@ -114,7 +114,7 @@ class Userbot(Client):
             else:
                 self.two.name = get_me.first_name
             LOGGER(__name__).info(
-                f"Assistant Two Started as {self.two.name}"
+                f"المساعد يعمل بأسم -> {self.two.name}"
             )
         if config.STRING3:
             await self.three.start()
@@ -127,11 +127,11 @@ class Userbot(Client):
             assistants.append(3)
             try:
                 await self.three.send_message(
-                    config.LOG_GROUP_ID, "Assistant Started"
+                    config.LOG_GROUP_ID, "المساعد يعمل الان"
                 )
             except:
                 LOGGER(__name__).error(
-                    f"Assistant Account 3 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin! "
+                    f"هنالك خطأ في 3 حساب المساعد الرجاء اضافتهما الى الكروب ورفعهما الى ادمن! "
                 )
                 sys.exit()
             get_me = await self.three.get_me()
@@ -158,11 +158,11 @@ class Userbot(Client):
             assistants.append(4)
             try:
                 await self.four.send_message(
-                    config.LOG_GROUP_ID, "Assistant Started"
+                    config.LOG_GROUP_ID, "المساعد يعمل الان"
                 )
             except:
                 LOGGER(__name__).error(
-                    f"Assistant Account 4 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin! "
+                    f"هنالك خطأ في 4 حساب المساعد الرجاء اضافتهما الى الكروب ورفعهما الى ادمن! "
                 )
                 sys.exit()
             get_me = await self.four.get_me()
@@ -189,11 +189,11 @@ class Userbot(Client):
             assistants.append(5)
             try:
                 await self.five.send_message(
-                    config.LOG_GROUP_ID, "Assistant Started"
+                    config.LOG_GROUP_ID, "المساعد يعمل الان"
                 )
             except:
                 LOGGER(__name__).error(
-                    f"Assistant Account 5 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin! "
+                    f"هنالك خطأ في 5 حساب المساعد الرجاء اضافتهما الى الكروب ورفعهما الى ادمن! "
                 )
                 sys.exit()
             get_me = await self.five.get_me()
