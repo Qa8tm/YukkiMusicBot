@@ -22,7 +22,7 @@ TEMP_MONGODB = "mongodb+srv://shikhar:shikhar@cluster0.6xzlh.mongodb.net/myFirst
 
 if config.MONGO_DB_URI is None:
     LOGGER(__name__).warning(
-        "No MONGO DB URL found.. Your Bot will work on Yukki's Database"
+        "لم يتم ايجاد اي رابط..  البوت الخاص بك يعمل الان على سورس jepthon"
     )
     temp_client = Client(
         "Yukki",
