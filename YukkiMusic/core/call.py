@@ -270,7 +270,7 @@ class Call(PyTgCalls):
                 )
             except Exception as e:
                 raise AssistantErr(
-                    "**متفتح كول الاول يعم 🙂**"
+                    "**الرجاء فتح الاتصال🙂**"
                 )
         except AlreadyJoinedError:
             raise AssistantErr(
@@ -278,7 +278,7 @@ class Call(PyTgCalls):
             )
         except TelegramServerError:
             raise AssistantErr(
-                "**اقفل الكول وافتحو تاني **"
+                "**اقفل الاتصال وافتحه مرة اخرى **"
             )
         await add_active_chat(chat_id)
         await mute_off(chat_id)
@@ -342,7 +342,7 @@ class Call(PyTgCalls):
                 button = telegram_markup(_)
                 await app.send_photo(
                     original_chat_id,
-                    photo=f"https://telegra.ph/file/5509d3b6259ec0f5017fd.jpg",
+                    photo=f"https://telegra.ph/file/cb0e2b7df8a639302ec89.jpg",
                     caption=_["stream_1"].format(
                         user,
                         f"https://t.me/{app.username}?start=info_{videoid}",
@@ -380,7 +380,7 @@ class Call(PyTgCalls):
                 await mystic.delete()
                 await app.send_photo(
                     original_chat_id,
-                    photo=f"https://telegra.ph/file/5509d3b6259ec0f5017fd.jpg",
+                    photo=f"https://telegra.ph/file/cb0e2b7df8a639302ec89.jpg",
                     caption=_["stream_1"].format(
                         user,
                         f"https://t.me/{app.username}?start=info_{videoid}",
@@ -418,7 +418,7 @@ class Call(PyTgCalls):
                     button = telegram_markup(_)
                     await app.send_photo(
                         original_chat_id,
-                        photo=f"https://telegra.ph//file/87df80418564dd50949e8.jpg",
+                        photo=f"https://telegra.ph/file/cb0e2b7df8a639302ec89.jpg",
                         caption=_["stream_3"].format(
                             title, check[0]["dur"], user
                         ),
@@ -444,7 +444,7 @@ class Call(PyTgCalls):
                     await app.send_photo(
                         original_chat_id,
                         photo=img,
-                        caption=f"**Starting Streaming **\n\n**Song Name** : {title}\n**Duration Time** {dur}\n**Request By** : {requester}",
+                        caption=f"**يتم التشغيل الان ! **\n\n**ايم الاغنية** : {title}\n**المدة** {dur}\n**بطلب من** : {requester}",
                         reply_markup=InlineKeyboardMarkup(button),
                     )
 
