@@ -19,35 +19,35 @@ from YukkiMusic.utils.database.memorydatabase import (add_active_chat, is_active
 
 
 @app.on_callback_query(
-    filters.regex(pattern=r"^(pausecb|skipcb|stopcb|resumecb)$")
+    filters.regex(pattern=r"^(ايقاف|تخطي|انهاء|استئناف)$")
 )
 async def admin_risghts(_, CallbackQuery):
     global get_queue
     command = CallbackQuery.matches[0].group(1)
     if not await is_active_chat(CallbackQuery.message.chat.id):
         return await CallbackQuery.answer(
-            "Nothing is playing on voice chat.", show_alert=True
+            "لا يوجد شيء يعمل الان !.", show_alert=True
         )
     chat_id = CallbackQuery.message.chat.id
-    if command == "pausecb":
+    if command == "ايقاف":
         if not await is_music_playing(chat_id):
             return await CallbackQuery.answer(
-                "Music is already Paused", show_alert=True
+                "الاغنية متوقفه بالفعل", show_alert=True
             )
         await music_off(chat_id)
         await Yukki.pause_stream(chat_id)
         await CallbackQuery.answer(
                 "تم ايقاف التشغيل موقتا ☕🍀", show_alert=True
             )
-    if command == "resumecb":
+    if command == "استئناف":
         if await is_music_playing(chat_id):
             return await CallbackQuery.answer(
-                "Music is already Resumed.", show_alert=True
+                "الاغنية تعمل ينجاح.", show_alert=True
             )
         await music_on(chat_id)
         await Yukki.resume_stream(chat_id)
         await CallbackQuery.answer("تم استكمال التشغيل ☕🍀", show_alert=True)
-    if command == "stopcb":
+    if command == "انهاء":
         if CallbackQuery.message.chat.id not in db_mem:
             db_mem[CallbackQuery.message.chat.id] = {}
         wtfbro = db_mem[CallbackQuery.message.chat.id]
