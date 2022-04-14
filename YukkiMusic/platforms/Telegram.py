@@ -123,7 +123,7 @@ class TeleAPI:
                 current_time = time.time()
                 start_time = speed_counter.get(message.message_id)
                 check_time = current_time - start_time
-                upl = InlineKeyboardMarkup([[InlineKeyboardButton(text="🚦 Cancel Downloading", callback_data="stop_downloading"),]])
+                upl = InlineKeyboardMarkup([[InlineKeyboardButton(text="🚦 الغاء التحميل", callback_data="stop_downloading"),]])
                 if datetime.now() > left_time.get(message.message_id):
                     percentage = current * 100 / total
                     percentage = str(round(percentage, 2))
@@ -162,7 +162,7 @@ class TeleAPI:
                     file_name=fname,
                     progress=progress,
                 )
-                await mystic.edit_text("Successfully Downloaded.. Processing file now")
+                await mystic.edit_text("تم التحميل بنجاح.. جاري ارسال الملف")
                 downloader.pop(message.message_id)
             except:
                 await mystic.edit_text(_["tg_2"])
