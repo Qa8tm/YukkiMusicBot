@@ -38,7 +38,7 @@ async def stop_music(cli, message: Message, _, chat_id):
 
 
 @app.on_message(
-    command(["اسكت", "ايقاف"])
+    command(["انهاء", "ايقاف"])
     & filters.group
     & ~filters.edited
     & ~BANNED_USERS
@@ -46,6 +46,6 @@ async def stop_music(cli, message: Message, _, chat_id):
 @AdminRightsCheck
 async def endstr(cli, message: Message, _, chat_id):
     if not len(message.command) == 1:
-        return await message.reply_text("**انا ساكت اصلا 🙂**")
+        return await message.reply_text("**انا لا اعمل الان 🙂**")
     await Yukki.stop_stream(chat_id)
-    await message.reply_text("**حاضر سكت اهو 😢♥️**")
+    await message.reply_text("**تم الايقاف بنجاح 😢♥️**")
