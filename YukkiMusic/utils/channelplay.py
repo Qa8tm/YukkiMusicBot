@@ -12,7 +12,7 @@ from YukkiMusic.utils.database import get_cmode
 
 
 async def get_channeplayCB(_, command, CallbackQuery):
-    if command == "c":
+    if command == "c" or message.command[0][0] == "ق":
         chat_id = await get_cmode(CallbackQuery.message.chat.id)
         if chat_id is None:
             try:
@@ -22,7 +22,9 @@ async def get_channeplayCB(_, command, CallbackQuery):
             except:
                 return
         try:
-            chat = await app.get_chat(chat_id)
+            lel = await client.get_chat(message.chat.id)
+            chat = lel.linked_chat.id
+            lol = await app.get_chat(chat_id)
             channel = chat.title
         except:
             try:
