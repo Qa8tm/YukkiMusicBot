@@ -73,7 +73,7 @@ def sudo():
         if sudoers:
             for x in sudoers:
                 SUDOERS.add(x)
-    LOGGER(__name__).info(f"Sudoers Loaded.")
+    LOGGER(__name__).info(f"الادمنيه.")
 
 
 def heroku():
@@ -86,5 +86,5 @@ def heroku():
                 LOGGER(__name__).info(f"Heroku App Configured")
             except BaseException:
                 LOGGER(__name__).warning(
-                    f"Please make sure your Heroku API Key and Your App name are configured correctly in the heroku."
+                    f"الرجاء التاكد من كود هيروكو."
                 )
