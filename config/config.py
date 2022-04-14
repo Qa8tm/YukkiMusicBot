@@ -19,8 +19,8 @@ load_dotenv()
 # Get it from my.telegram.org
 API_ID = int(getenv("API_ID", "13238717"))
 API_HASH = getenv("API_HASH", "104f04d2793c9fdf35ee84bf7c9899a7")
-ELNQYB = getenv("AHMEDELNQYB", "https://telegra.ph/file/62e28f469c217f5513f20.jpg")
-ALIVE_IMG = getenv("ALIVE_IMG", "https://telegra.ph/file/c83b000f004f01897fe18.png")
+ELNQYB = getenv("AHMEDELNQYB", "https://telegra.ph/file/cb0e2b7df8a639302ec89.jpg")
+ALIVE_IMG = getenv("ALIVE_IMG", "https://telegra.ph/file/cb0e2b7df8a639302ec89.jpg")
 PMPERMIT = getenv("PMPERMIT", "ENABLE")
 
 ## Get it from @Botfather in Telegram.
@@ -40,14 +40,14 @@ SONG_DOWNLOAD_DURATION = int(
 )  # Remember to give value in Minutes
 
 # You'll need a Private Group ID for this.
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1001580282605"))
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1001564019775 "))
 
 # A name for your Music bot.
-MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "Elnqyb")
+MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "jepthonmusicS_bot")
 
 # Your User ID.
 OWNER_ID = list(
-    map(int, getenv("OWNER", "1645561253 5155331295").split())
+    map(int, getenv("OWNER", "705475246").split())
 )  # Input type must be interger
 
 # Get it from http://dashboard.heroku.com/account
@@ -59,7 +59,7 @@ HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 # For customized or modified Repository
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/UUCCTT/YukkiMusicBot",
+    "https://github.com/lml20l/JepthonMusicBot",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 
@@ -145,12 +145,6 @@ STRING4 = getenv("SESSION_NAME4", None)
 STRING5 = getenv("SESSION_NAME5", None)
 
 
-#  __     ___    _ _  ___  _______   __  __ _    _  _____ _____ _____   ____   ____ _______
-#  \ \   / / |  | | |/ / |/ /_   _| |  \/  | |  | |/ ____|_   _/ ____| |  _ \ / __ \__   __|
-#   \ \_/ /| |  | | ' /| ' /  | |   | \  / | |  | | (___   | || |      | |_) | |  | | | |
-#    \   / | |  | |  < |  <   | |   | |\/| | |  | |\___ \  | || |      |  _ <| |  | | | |
-#     | |  | |__| | . \| . \ _| |_  | |  | | |__| |____) |_| || |____  | |_) | |__| | | |
-#     |_|   \____/|_|\_\_|\_\_____| |_|  |_|\____/|_____/|_____\_____| |____/ \____/  |_|
 
 
 ### DONT TOUCH or EDIT codes after this line
@@ -248,28 +242,28 @@ SONG_DOWNLOAD_DURATION_LIMIT = int(
 if SUPPORT_CHANNEL:
     if not re.match("(?:http|https)://", SUPPORT_CHANNEL):
         print(
-            "[ERROR] - Your SUPPORT_CHANNEL url is wrong. Please ensure that it starts with https://"
+            "[خطأ] -  SUPPORT_CHANNEL رابط قناة المساعده خاططئ تأكد من ووجود  https:// معه"
         )
         sys.exit()
 
 if SUPPORT_GROUP:
     if not re.match("(?:http|https)://", SUPPORT_GROUP):
         print(
-            "[ERROR] - Your SUPPORT_GROUP url is wrong. Please ensure that it starts with https://"
+            "[خطأ] -  SUPPORT_GROUP رابط كروب المساعده خاططئ تأكد من ووجود  https:// معه""
         )
         sys.exit()
 
 if UPSTREAM_REPO:
     if not re.match("(?:http|https)://", UPSTREAM_REPO):
         print(
-            "[ERROR] - Your UPSTREAM_REPO url is wrong. Please ensure that it starts with https://"
+            "[خطأ] -  UPSTREAM_REPO رابط التنصيب خاطئ تأكد من وجود https://"
         )
         sys.exit()
 
 if GITHUB_REPO:
     if not re.match("(?:http|https)://", GITHUB_REPO):
         print(
-            "[ERROR] - Your GITHUB_REPO url is wrong. Please ensure that it starts with https://"
+            "[خطأ] -  GITHUB_REPO رابط التنصيب خاطئ تاكد من وجود  with https://"
         )
         sys.exit()
 
@@ -278,7 +272,7 @@ if PING_IMG_URL:
     if PING_IMG_URL != "assets/Ping.jpeg":
         if not re.match("(?:http|https)://", PING_IMG_URL):
             print(
-                "[ERROR] - Your PING_IMG_URL url is wrong. Please ensure that it starts with https://"
+                "[خطأ] -  PING_IMG_URL رابط صورة البنك خطأ تاكد من وجود https://"
             )
             sys.exit()
 
@@ -286,7 +280,7 @@ if PLAYLIST_IMG_URL:
     if PLAYLIST_IMG_URL != "assets/Playlist.jpeg":
         if not re.match("(?:http|https)://", PLAYLIST_IMG_URL):
             print(
-                "[ERROR] - Your PLAYLIST_IMG_URL url is wrong. Please ensure that it starts with https://"
+                "[خطأ] -  PLAYLIST_IMG_URL رابط الصور خاطئ تاكد من وجود with https://"
             )
             sys.exit()
 
@@ -294,7 +288,7 @@ if GLOBAL_IMG_URL:
     if GLOBAL_IMG_URL != "assets/Global.jpeg":
         if not re.match("(?:http|https)://", GLOBAL_IMG_URL):
             print(
-                "[ERROR] - Your GLOBAL_IMG_URL url is wrong. Please ensure that it starts with https://"
+                "[خطأ] -  GLOBAL_IMG_URL رابط الصورة خاطئ تاكد من وجود  with https://"
             )
             sys.exit()
 
@@ -303,7 +297,7 @@ if STATS_IMG_URL:
     if STATS_IMG_URL != "assets/Stats.jpeg":
         if not re.match("(?:http|https)://", STATS_IMG_URL):
             print(
-                "[ERROR] - Your STATS_IMG_URL url is wrong. Please ensure that it starts with https://"
+                "[خطا] - Your STATS_IMG_URL الرابط خاطئ تاكد من وجود https://"
             )
             sys.exit()
 
@@ -312,7 +306,7 @@ if TELEGRAM_AUDIO_URL:
     if TELEGRAM_AUDIO_URL != "assets/Audio.jpeg":
         if not re.match("(?:http|https)://", TELEGRAM_AUDIO_URL):
             print(
-                "[ERROR] - Your TELEGRAM_AUDIO_URL url is wrong. Please ensure that it starts with https://"
+                "[خطأ] - Your TELEGRAM_AUDIO_URL الرابط خاطئ تاكد من وجود https://"
             )
             sys.exit()
 
@@ -321,7 +315,7 @@ if STREAM_IMG_URL:
     if STREAM_IMG_URL != "assets/Stream.jpeg":
         if not re.match("(?:http|https)://", STREAM_IMG_URL):
             print(
-                "[ERROR] - Your STREAM_IMG_URL url is wrong. Please ensure that it starts with https://"
+                "[خطأ] - Your STREAM_IMG_URL الرابط خاطئ تاكد من وجود https://"
             )
             sys.exit()
 
@@ -330,7 +324,7 @@ if SOUNCLOUD_IMG_URL:
     if SOUNCLOUD_IMG_URL != "assets/Soundcloud.jpeg":
         if not re.match("(?:http|https)://", SOUNCLOUD_IMG_URL):
             print(
-                "[ERROR] - Your SOUNCLOUD_IMG_URL url is wrong. Please ensure that it starts with https://"
+                "[خطأ] - Your SOUNCLOUD_IMG_URL الرابط خاطئ تاكد من وجود https://"
             )
             sys.exit()
 
@@ -338,7 +332,7 @@ if YOUTUBE_IMG_URL:
     if YOUTUBE_IMG_URL != "assets/Youtube.jpeg":
         if not re.match("(?:http|https)://", YOUTUBE_IMG_URL):
             print(
-                "[ERROR] - Your YOUTUBE_IMG_URL url is wrong. Please ensure that it starts with https://"
+                "[خطأ] - Your YOUTUBE_IMG_URL الرابط خاطئ تاكد من وجود https://"
             )
             sys.exit()
 
@@ -347,13 +341,13 @@ if TELEGRAM_VIDEO_URL:
     if TELEGRAM_VIDEO_URL != "assets/Video.jpeg":
         if not re.match("(?:http|https)://", TELEGRAM_VIDEO_URL):
             print(
-                "[ERROR] - Your TELEGRAM_VIDEO_URL url is wrong. Please ensure that it starts with https://"
+                "[خطأ] -  TELEGRAM_VIDEO_URL الرابط خاطئ تاكد من وجود https://"
             )
             sys.exit()
 
 
 if not MUSIC_BOT_NAME.isascii():
     print(
-        "[ERROR] - You've defined MUSIC_BOT_NAME wrong. Please don't use any special characters or Special font for this... Keep it simple and small."
+        "[خطأ] - لقد كتبت MUSIC_BOT_NAME اسم خاطئ للبوت الرجاء استعمال حروف عادية انكليزية... اكتبها صغيرة وبسيطة."
     )
     sys.exit()
