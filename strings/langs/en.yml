@@ -3,188 +3,188 @@ name : English
 # General Strings
 general_1 : "Reply to a user's message or give username/user_id."
 general_2 : "خطا في استخدام الازرار."
-general_3 : "** حدث خطا في استخدام الازرار اذا لم يتم التشغيل ف تواصل مع المطور لحل هذه المشكلة ⚡.** \n** @ahmedelnqyb المطور **.\n\nException Type:- {0}"
+general_3 : "** حدث خطا في استخدام الازرار اذا لم يتم التشغيل ف تواصل مع المطور لحل هذه المشكلة ⚡.** \n** @lml10l المطور **.\n\nException Type:- {0}"
 general_4 : "يمكنك طلب التشغيل من الحساب الاساسي فقط ليس حساب قناة او جروب ⚡."
 general_5 : "**يجب ان تكون ادمن مع الصلاحيات المطلوبة للقيام بذلك ⚡.**"
 general_6 : "**لا يوجد شئ يتم تشغيلة الان ⚡.**"
 
 # Classes - Telegram.py
-tg_1 : "Bot is **overloaded** with downloads right now.\n\n**Try After:** {0} (__expected time__)"
-tg_2 : "Failed to download the media from telegram."
+tg_1 : "⚡ البوت في وضع **الضغط** مع التحميلات الان.\n\n**جرب بعد:** {0} (__expected time__)"
+tg_2 : "⚡ هنالك خطأ في تحميل الميديا من تليكرام."
 
 # Core - Call.py
 call_1 : "**قم بإعطاء البوت صلاحية اضافه المستخدمين ⚡.**"
-call_2 : "**قم بالغاء الحظر عن الحساب المساعد لتفعيل البوت**.\n\n @{0} : **الحساب المساعد **⚡.\n** قم بتنظيف قايمه المستدخمين تمت ازالتهم ⚡.**\n\n** @ELNQYBSP : او تواصل مع المطور من هنا ⚡.**"
-call_3 : "@ELNQYBSP : لتفعيل البوت تواصل مع الدعم من هنا ⚡.\n\n**Reason**: {0}"
+call_2 : "**قم بالغاء الحظر عن الحساب المساعد لتفعيل البوت**.\n\n @{0} : **الحساب المساعد **⚡.\n** قم بتنظيف قايمه المستدخمين تمت ازالتهم ⚡.**\n\n** @lml10l : او تواصل مع المطور من هنا ⚡.**"
+call_3 : "@Jepthon : لتفعيل البوت تواصل مع الدعم من هنا ⚡.\n\n**السبب**: {0}"
 call_4 : "**قم بإعطاء البوت صلاحية اضافه المستخدمين ⚡.**"
 call_5 : "**الرجاء الانتظار سوف يتم تفعيل البوت الان ⚡.**"
 call_6 : "** [{0}] الحساب المساعد انضم بنجاح.\n\nيمكنك تشغيل الموسيقي الان ⚡."
 call_7 : "**البوت لا يحتاج صلاحيه الحظر قم بالغاء تفعيلها للبوت ⚡.**"
 call_8 : "**البوت لا يحتاج صلاحيه اضافة مشرفين قم بالغاء تفعيلها للبوت ⚡."
 call_9 : "**فشل تخطي التشغيل حاول مجددا ⚡.**"
-call_10 : "Downloading Next Track from Playlist"
-call_11 : "Please add @{0} to your channel[ ID: {1}].\n\nBot is not able to get channel details."
+call_10 : "⚡ تحميل الاغنية القادمة من القائمة"
+call_11 : "⚡ ارجوك اضف @{0} لقناتك[ ID: {1}].\n\nالبوت لا يمكنه الحصول على معلومات القناة."
 
 # PLUGINS - Auth.py
-auth_1 : "You can only have 20 Users in your group's Authorised Users List (AUL)"
-auth_2 : "Added to Authorised Users List of your group."
-auth_3 : "Already in the Authorised Users List."
-auth_4 : "Removed from Authorised Users List of this Group."
-auth_5 : "Targeted user is not an Authorised User."
-auth_6 : "Fetching Authorised Users... Please Wait"
-auth_7 : "**Authorised Users List[AUL]:**\n\n"
-auth_8 : "┗ Added By:-"
+auth_1 : "⚡ يمكنك اضافه 20 شخص فقط يمكنه التحكم في البوت في الكروب (AUL)"
+auth_2 : "⚡ تمت اضافته لقائمة الموثوقين."
+auth_3 : "⚡ هو بالطبع في قائمه الموثوقين."
+auth_4 : "⚡ تم حذفه من قائمة الموثوقين في هذا الكروب."
+auth_5 : "⚡ تم تحديد شخص من قائمة الموثوقين."
+auth_6 : "قائمه الموثوقين... قيد التحديث انتظر"
+auth_7 : "**قائمه الموثوقين ⚡ [AUL]:**\n\n"
+auth_8 : "┗ ⚡ تمت اضافته بواسطه:-"
 
 # PLUGINS - Admins
-admin_1 : "Music is already Paused."
-admin_2 : "Voicechat Paused by {}!"
-admin_3 : "Music is already resumed."
-admin_4 : "Voicechat Resumed by {}!"
-admin_5 : "Music is already muted."
-admin_6 : "Voicechat Muted by {}!"
-admin_7 : "Music is already unmuted."
-admin_8 : "Voicechat Unmuted by {}!"
-admin_9 : "Voicechat End/Stopped by {}!"
-admin_10 : "Voicechat Skipped by {}!. No More Music in Queue."
-admin_11 : "Error while changing stream to **{0}**\n\nPlease use /skip again."
-admin_12 : "Unable to skip to a specific track because of enabled loop play. Please disable loop play via `/loop disable` to use this feature."
-admin_13 : "Please use numeric numbers for specific tracks, like 1, 2 or 4 etc"
-admin_14 : "Atleast 2 tracks needed in queue to skip to a specific number. Check queue by /queue"
-admin_15 : "Not enough tracks in queue for the value given by you. Please choose numbers between 1 and {0}"
-admin_16 : "Failed to skip to specific track.\n\nCheck left queue by /queue"
-admin_17 : "{0}.. Please Wait"
-admin_18 : "**قم بكتابة الامر **\n /Reload \n** لتحديث قائمه الادمنيه **"
-admin_19 : "**يجب ان تكون ادمن للقيام بذلك**\n**/Reload ثم اضغت لتحديث قائمه الادمنيه** "
-admin_20 : "**تم اعادة تحديث قايمه الادمن**"
-admin_21 : "Nothing inside queue to shuffle"
-admin_22 : "Failed to shuffle.\n\nCheck queue : /queue"
-admin_23 : "**Queue Shuffled by {0}**\n\nCheck shuffled queue : /queue"
-admin_24 : "**Usage:**\n/loop [enable/disable] or [Number between 1-10]\n\n**Example:** /loop 5"
-admin_25 : "Loop enabled by {0} for **{1}** times. Bot will now repeat the current playing music on voice chat for **{1}** times"
-admin_26 : "Please use numbers between 1-10 for loop play"
-admin_27 : "Loop Play has been disabled"
-admin_28 : "**Usage:**\n/seek or /seekback [Duration in seconds]"
-admin_29 : "Please use numeric duration seconds like 10-20-30 second for seeking"
-admin_30 : "Sorry but you can't seek the currently playing stream. It can only be skipped or stopped."
-admin_31 : "Bot is not able to seek due to high duration given. You need to seek to a lower duration and remember that a time of 10 seconds is left after seeking.\n\nCurrently played** {0}** mins out of **{1}** mins"
-admin_32 : "Please Wait... Seeking ongoing stream."
-admin_33 : "Successfully Seeked Stream to {0} Mins"
-admin_34 : "Failed to seek the current stream."
+admin_1 : "⚡ الاغنية متوقفه بالفعل."
+admin_2 : "⚡ تم ايقاف الاغنيةالاتصال بواسطه  {}!"
+admin_3 : "⚡ الاغنية شغالة بالفعل."
+admin_4 : "⚡ تم استئناف الاغنية بالفعل بواسطه {}!"
+admin_5 : "⚡ الاغنية مكتومه بالفعل."
+admin_6 : "⚡ تمت كتم الاتصال بالفعل بواسطه {}!"
+admin_7 : "⚡الاغنية ليست مكتومه بالفعل."
+admin_8 : "⚡ تم الغاء كتم الاتصال بواسطه {}!"
+admin_9 : "⚡ تم انهاء االمكالمه بواسطه {}!"
+admin_10 : "⚡ تم تخطي المكالمه بوتسطه {}!. لا مزيد من الاغاني في الانتظار."
+admin_11 : "⚡ حدث خطأ في تحويل الاتصال الى**{0}**\n\nالرجاء استعمل /skip مجددا."
+admin_12 : "⚡ حدث خطأ في تخطي الاغنية لانها في قائمه الاعادة. الرجاء اوقف الاعادة عنطرريق الامر `/loop disable` لاستخدام هذا الامر."
+admin_13 : "⚡ الرجاء استعمال تعداد صحيح للاغاني مثل 1 2 3 4 5"
+admin_14 : "⚡ على الاقل يجب ان يكون هناك اغنيتان فيا لانتظار للتخطي الى رقم معين. اظهار القائمه عن طريق /queue"
+admin_15 : "⚡ ليس هناك هذا العدد من الغاني في الانتظار. اختر رقم بين 1 و {0}"
+admin_16 : "⚡ حدث خطأ في تخطي الاغنية.\n\nاظهر القائمه عن طريق الامر /queue"
+admin_17 : "{0}.. ⚡ انتظر"
+admin_18 : "**⚡ قم بكتابة الامر **\n /Reload \n** لتحديث قائمه الادمنيه **"
+admin_19 : "**⚡ يجب ان تكون ادمن للقيام بذلك**\n**/Reload ثم اضغت لتحديث قائمه الادمنيه** "
+admin_20 : "**⚡تم اعادة تحديث قايمه الادمن**"
+admin_21 : "⚡ لا يوجد اغاني في القائمه لتشغيلها عشوائيا"
+admin_22 : "⚡خطأ في الخلط.\n\nافحص القائمه عن طريق الامر : /queue"
+admin_23 : "**⚡ تم خلط القائمه بواسطه {0}**\n\nافحص الخلط عن طريق الامر : /queue"
+admin_24 : "**⚡ الاستخدام:**\n/loop [enable/disable] او [رقم بين 1-10]\n\n**مثال:** /loop 5"
+admin_25 : "⚡ تم تفعيل الحلقة بواسطه {0} ل **{1}** مرات. البوت سيقوم باعاده الاغنية ل **{1}** مرات"
+admin_26 : "⚡ ارجوك حدد رقم بين  1-10 لتشغيل الحلقة"
+admin_27 : "⚡ تم ايقاف الحلقه"
+admin_28 : "**⚡ استخدامي:**\n/seek او /seekback [الوقت بالثواني]"
+admin_29 : "⚡ ارجوك حدد وقت بالثواني مثل 10-20-30 للبحث"
+admin_30 : "⚡ اسف لا يمكنك البحث في وقت البث. فقط يمكنك التخطي والانهاء."
+admin_31 : "⚡ البوت لا يمكنه البحث الوقت طويل جدا. الرجاء البحث لمده اقل وتذكر 10 ثواني الباقية للبحث.\n\nيعمل الان** {0}** دقيقه خارج **{1}** دقيقه"
+admin_32 : "⚡ انتظر... يبحث في البث."
+admin_33 : "⚡ لقد تم البحث بالبث لمده {0} دقائق"
+admin_34 : "⚡ خطأ في البحث في البث."
 
 # Bot 
 
 # Start
-start_1 : "Thanks for having me in {0}.\n{1} is alive.\n\nFor any assistance or help, checkout our support group and channel."
-start_2 : "Hello, My name is {0}.\n\nI'm a telegram streaming bot with some useful features. Supporting platforms like Youtube, Spotify, Resso, AppleMusic , Soundcloud etc.\n\nFeel free to add me to your groups."
-start_3 : "Welcome To {0}\n\nI don't need any **admin permission** to work ( until asked for ).\n\nAssistant Username:- @{1}\nAssistant ID:- {2}"
-start_4 : "[𝗔𝗵𝗠𝗲𝗱 𝗘𝗹𝗡𝗾𝗬𝗯™★ ⤶](https://t.me/ahmedelnqyb) **انضم الان** ⚡.\n\n** يرجي من الأعضاء احترام وجوده هنا 🍀☕**"
+start_1 : "شكرا لاستعمالي في {0}.\n{1} انا اعمل الان.\n\nلاي مساعده او استفسار, اذهب الى كروب الدعم او قناة السورس."
+start_2 : "اهلا, اسمي هو {0}.\n\nانا بوت بث تليكرام في المكالمات مع اوامر حصريا جدا. ادعم العديد من المنصات مثل يوتيوب, سبوتيفاي, ريسو, اغاني ابل , ساوند كلاود etc.\n\nاضفني لكروبك الان واستمتع."
+start_3 : "اهلا بك في {0}\n\nانا لا املك اي **صلاحيات ** للعمل ( حتى سأل عن ).\n\nاسم المساعد:- @{1}\nايدي المساعد:- {2}"
+start_4 : "[السيد™★ ⤶](https://t.me/lml10l) **انضم الان** ⚡.\n\n** يرجي من الأعضاء احترام وجوده هنا 🍀☕**"
 start_5 : "انضم أحد المطورين اللي هنا الان"
 start_6 : "**قم بترقية البوت ادمن مع الصلاحيات الكاملة واضافه للمشرفين**"
-start_7 : "**Blacklisted Chat**\n\nYou're chat has been blacklisted by the Bot. Please ask any SudoUser to whitelist chat first. Check [Sudolist from here]({0})"
+start_7 : "**الدردشه في القائمه السوداء**\n\nدردشتك اصبحت في القائمه السوداء في البوت. يرجى اطلب من المطورين اضافه كروبك الى القائمه البيضاء [المطورين من هنا]({0})"
 
 # Help
-help_1 : "Click on the buttons below for more information. If you're facing any problem in command you can contact my bot owner or ask in support chat.\n\nAll commands can be used with: /"
-help_2 : "Contact me in PM for help."
+help_1 : "اضغط على الازرار للمعلومات. اذا واجهت اي خلل في الاوامر الرجاء مراسلة المطور للاصلاح في اسرع وقت او اذهب الى كروب المساعده.\n\nكل الاوامر تعمل ب : /"
+help_2 : "راسلني في الخاص للتحدث مع المطور."
 
 # Settings
-setting_1 : "⚙️ **Music Bot Settings**\n\n🖇**Group:** {0}\n🔖**Group ID:** `{1}`\n\n💡**Choose the function buttons from below which you want to edit or change.**"
-setting_3 : "⁉️ What is This?\n\n1) Direct: Plays search queries directly. Use -v to play videos in direct mode.\n\n2) Inline: Returns Inline Markup Buttons for choosing between video & audio."
-setting_4 : "⁉️ What is This?\n\n👥 Everyone: Anyone can use admin commands(skip, pause, resume etc) present in this group.\n\n🙍 Admin Only: Only admins and authorized users can use admin commands."
-setting_5 : "No Authorized Users Found\n\nYou can allow any non-admin to use my admin commands by /auth and delete by using /unauth"
-setting_9 : "⁉️ What is This?\n\nWhen activated, Bot will delete its message after {0} to make your chat clean and clear."
-setting_10 : "⁉️ What is This?\n\n1) Group: Plays music in the group where the command is given .\n\n2) Channel: Plays music in the channel you want. Set channel id via /channelplay"
-setting_11 : "⁉️ What is This?\n\n1) Everyone: Anyone present in this group can play music here.\n\n2) Admin Only: Only admins can play the music in this group."
-setting_12 : "❌ You've no channel id defined for channel mode. Please define with /channelplay."
-setting_13 : "Can't change play mode in active group call. Please stop the voice chat first with /stop."
-setting_14 : "⁉️ What is This?\n\nWhen activated, Bot will delete its executed commands (/play, /pause, /shuffle, /stop etc) immediately.\n\nBot will be requiring delete messages admin right for this to work properly."
-setting_15 : "Failed to resolve peer, Make sure you have added bot in your channel and promoted it as admin.\n\nTry setting /channelplay again.."
-setting_16 : "⁉️ What is This?\n\nWhen activated, Bot will suggest your chat in every 1-2 hour about bot commands (How to use them, which are the commands and many other things) randomly."
+setting_1 : "⚙️ **اعدادات بوت الاغاني**\n\n🖇**الكروب:** {0}\n🔖**ايدي الكروب:** `{1}`\n\n💡**اختر من الازرار بالاسفل للتعديل.**"
+setting_3 : "⁉️ ما هو هذا?\n\n1) مباشرة: يمكنك البحث مباشرة. بباستخدام -v لبدء الفيديوهات في البث المباشر.\n\n2) Inline: لرؤية الازرار للتحويل بين قيديو & صوت."
+setting_4 : "⁉️ ماهو هذا?\n\n👥 Everyone: الكل يمكنه استعمالاوامر الادمن(skip, pause, resume etc) موجوده في هذه المجموعه.\n\n🙍 Admin Only: فقط الادمن يمكنه التحكم بالبوت."
+setting_5 : "تم ايجاد يوزرات غير موثوقه\n\nيمكنك السماح لاي احد باستخدام البوت عن طريق الامر /auth ومسحه عن طريق الامر /unauth"
+setting_9 : "⁉️ ما هذا?\n\nعندما تفعله, البوت سيحذف الرسائل بعد {0} ليجعل الكروب مرتب وبدون اي ازعاج."
+setting_10 : "⁉️ ما هذا This?\n\n1) Group: تشغيل الاغاني في الكروب حسب الاوامر المعطى .\n\n2) Channel: تشغيل الاغاني في لقناة. ضع ايدي القناة بواسطه الامر /channelplay"
+setting_11 : "⁉️ ما هذا?\n\n1) Everyone: اي احد في الكروب يمكنه استعال تشغيل الاغاني.\n\n2) Admin Only: فقط الادمن من يمكنه تشغيل الاغاني."
+setting_12 : "❌ لم تضع اي ايدي لقناة لوضع القنوات. ارجوك ضع ايدي قناتك عن طريق الامر /channelplay."
+setting_13 : "لا يمكنك تغيير النوع عندما يكون الاتصال مفتوح. ارجوك اوقف الاتصال اولا عن طريق الامر  /stop."
+setting_14 : "⁉️ ما هذا?\n\nعندما تفعله, البوت سيحذف الاوامر (/play, /pause, /shuffle, /stop etc) تلقائيا.\n\nالبوت سيحتاج الى صلاحية حذف الرسائل للعمل بشكل صحيح."
+setting_15 : "فشل في الحل, تاكد من اضافه البوت لقناتك وترقيته الى ادمن.\n\nجرب الامر /channelplay مرة اخرى.."
+setting_16 : "⁉️ ماهذا?\n\nWعندما يفعل, البوت سيرسل الاوامر كل 1 او 2 ساعة في كروبك  (كيفيه الاستخدام, ما هي الاوامر وما هو عملها وغيرهامن الاشياء) عشوائي."
 
 
-set_cb_1 : "Getting Audio Quality Panel..."
-set_cb_2 : "Getting Video Quality Panel..."
-set_cb_3 : "Getting Auth Users Panel..."
-set_cb_4 : "Getting Play Mode Panel..."
-set_cb_5 : "Getting Clean Mode Panel..."
-set_cb_6 : "Setting up changes."
-set_cb_7 : "Getting Auth Users List.. PLEASE WAIT."
-set_cb_8 : "Getting back.."
+set_cb_1 : "🌕 يتم تحظير قائمة جودة الصوت..."
+set_cb_2 : "🌕 يتم تحظير قائمة جودة الفيديو..."
+set_cb_3 : "🌕 يتم تحظير قائمة الموثوقين..."
+set_cb_4 : "🌕 يتم تحظير قائمة التشغيل ..."
+set_cb_5 : "🌕 يتم تحظير قائمة التنظيف..."
+set_cb_6 : "تم تغيير الاعدادات."
+set_cb_7 : "يتم جلي قائمة المة=وثوقين.. انتظر."
+set_cb_8 : "رجوع.."
 
 # Misc
-ustats_1 : "No User Stats Found."
-ustats_2 : "Grettings!, You have played **{0}** tracks till now with a whopping count of **{1}** times.\n\nTop {2} played by you:\n\n"
+ustats_1 : "لم يتم ايجاد معلةمات الشخص."
+ustats_2 : " لقد تم تشغيل **{0}** اغاني الى الان مع عدد كبير من **{1}** الاوقات.\n\nافضل {2} ما سمعت من طلبك:\n\n"
 
-gstats_1 : "Getting Global Stats, This could take some time..."
-gstats_2 : "No Stats Found."
-gstats_3 : "Getting Global Top 10 {0} on the bot, This could take some time.."
-gstats_4 : "**Total Queries on Bot:** {0}\n\n{1} has played **{2}** tracks till now with a whopping count of **{3}** times.\n\n**Top {4} Tracks:**\n"
-gstats_5 : "**Top {0} Chats of {1}:**\n\n"
-gstats_6 : "**Top {0} Users of {1}:**\n\n"
-gstats_7 : "This chat group has played **{0}** tracks till now with a whopping count of **{1}** times.\n\nTop {2} played by this chat group:\n\n"
-gstats_8 : "Getting Bot's general stats and information.. This could take some time..."
-gstats_9 : "**GLOBAL TOP 10 STATS OF THE BOT**\n\nSelect the buttons from below for which you want to check global stats from bot's servers."
-gstats_10 : "**Global Stats of {0}**\n\nSelect the buttons from below for which you want to check global stats from bot's servers."
-gstats_11 : "**General Stats of {0}**\nSelect the buttons from below for which you want to check global stats from bot's servers.\n\nTo check top tracks, chats, users and other stuffs, please use /gstats"
+gstats_1 : "الحصول على الاحصائيات العامة, ذلك ساخذ بعض الوقت..."
+gstats_2 : "لا توجد اي احصائيات."
+gstats_3 : "افضل  10 في العالم{0} يستخدمون البوت, هذا سياخذ بعض الوقت للحساب.."
+gstats_4 : "**كل استعلامات البوت:** {0}\n\n{1} تم تشغيل **{2}** اغاني حتى الانمع عدد كبير من **{3}** الاوقات.\n\n**افضل {4} اغاني:**\n"
+gstats_5 : "**الافضل {0} دردشات  {1}:**\n\n"
+gstats_6 : "**افضل {0} مستخدمين {1}:**\n\n"
+gstats_7 : "هذا الكروب شغل **{0}** اغاني ختى الان مع عدد كبير من  **{1}** الاوقات.\n\nافضل {2} تم تشغيلها في االكروب:\n\n"
+gstats_8 : "الحصول على الإحصائيات والمعلومات العامة الخاصة بالبوت.. وهذا يمكن أن يستغرق بعض الوقت..."
+gstats_9 : "**أفضل 10 إحصائيات للبوت على مستوى العالم**\n\nحدد الأزرار أدناه التي تريد التحقق من الإحصائيات العامة من خوادم الروبوت الخاصة بها."
+gstats_10 : "**احصائيات العالمية {0}**\n\nحدد الأزرار أدناه التي تريد التحقق من الإحصائيات العامة من خوادم الروبوت الخاصة بها."
+gstats_11 : "**احصائيات عامة من {0}**\nحدد الأزرار أدناه التي تريد التحقق من الإحصائيات العامة من خوادم الروبوت الخاصة بها.\n\n للتحقق من أفضل المسارات والمحادثات والمستخدمين والأشياء الأخرى ، يرجى استخدام /gstats"
 
 
 # Play 
 
 #Play Callback 
-playcb_1 : "This is not for you! Search You Own Song."
-playcb_2 : "Getting Next Result"
+playcb_1 : "هذا ليس لك! ابحث عن الأغنية الخاصة بك."
+playcb_2 : "الحصول على النتيجة التالية"
 
 # Channel Play
-cplay_1 : "You can play music in channels from this chat[{0}] to any channel or your chat's linked channel.\n\n**For linked channel:**\n`/{1} linked`\n\n**For any other channel:**\n`/{1} [Channel ID]`"
-cplay_2 : "This chat has no linked channel."
-cplay_3 : "Channel Defined to {0}\n\n__Channel ID__: {1}"
-cplay_4 : "Failed to get channel.\n\nMake sure you have added bot in your channel and promoted it as admin.\nEdit or Change channel via /channelplay"
+cplay_1 : "يمكنك تشغيل الموسيقى في القنوات من هذه الدردشة[{0}] to أي قناة أو قناة مرتبطة بالدردشة الخاصة بك.\n\n**للقناة المرتبطة:**\n`/{1} مرتبط`\n\n**لأية قناة أخرى:**\n`/{1} [Channel ID]`"
+cplay_2 : "هذه الدردشة ليس لها قناة مرتبطة."
+cplay_3 : "قناة محددة ل {0}\n\n__Channel ID__: {1}"
+cplay_4 : "فشل الحصول على القناة.\n\nتأكد من أنك أضفت الروبوت في قناتك وقمت بترقيته كمسؤول.\nتحرير أو تغيير القناة عبر /channelplay"
 cplay_5 : "Only Channels are supported."
-cplay_6 : "You need to be the **Owner** of the channel[{0}] to connect it with this group.\n**Channel's Owner:** @{1}\n\nAlternatively you can link your group to that channel and then try connnecting with `/channelplay linked`"
+cplay_6 : "عليك أن تكون **المالك** من القناة[{0}] لربطها بهذه المجموعة.\n**مالك القناة:** @{1}\n\nبدلاً من ذلك ، يمكنك ربط مجموعتك بتلك القناة ثم محاولة الاتصال بها `/channelplay مرتبط`"
 
 #Play
 play_1 : "**جاري التشغيل انتظر قليلاً .....⚡♥️**"
-play_2 : "**🏷Channel Play Mode**\n\n🔄 Processing Query... Please Wait!\n**Linked Channel:** {0}"
+play_2 : "**🏷وضع تشغيل القناة**\n\n🔄 الاستعلام عن المعالجة... ارجوك انتظر!\n**قناة مرتبطة:** {0}"
 play_3 : "لم يتم العثور على النتيجة المطلوبة ⚡."
 play_4 : "**الادمن فقط من يمكنهم التشغيل هنا ⚡.**"
-play_5 : "Failed to process audio file.\n\nAudio File Size Should Be Less Than 100 mb"
+play_5 : "فشلت معالجة ملف الصوت.\n\nيجب أن يكون حجم ملف الصوت أقل من 100 mb"
 play_6 : " **{0} minute(s) لا يمكن تشغيل الملفات التي تذيد عن **\n {1} hour(s)**الوقت المطلوب**"
-play_7 : "Sorry! Bot only allows limited number of video calls due to CPU overload issues. Many other chats are using video call right now. Try switching to audio or try again later"
-play_8 : "Not A Valid Video File Extension!\n\n**Supported Formats:** {0}"
-play_9 : "Video File Size Should Be Less Than 1 GiB"
-play_10 : "**Youtube Playlist Feature**\n\nSelect the Mode in which you want to play whole Youtube Playlist"
-play_11 : "📎Title: **{0}\n\n⏳Duration:** {1} Mins"
-play_12 : "**Spotify Play Mode**\n\nRequested By:- {0}"
-play_13 : "**Apple Playlists**\n\nRequested By:- {0}"
-play_14 : "**Unable to verify the URL.**\nBot wonders if this url belongs to any of the following platforms: Youtube, AppleMusic, Spotify, Resso and Soundcloud.\n\nYou can use /stream for M3u8 or Remote Links."
-play_15 : "**Live Stream Detected**\n\nSystems have detected your track link as live stream. Want to play live stream ?"
-play_16 : "Failed to fetch track details. Try playing any other."
-play_17 : "Unable to play this type of spotify query!\n\nI can only play spotify tracks, albums, artists and playlists"
+play_7 : "آسف! يسمح البوت بعدد محدود فقط من مكالمات الفيديو بسبب مشاكل التحميل الزائد لوحدة المعالجة المركزية. العديد من الدردشات الأخرى تستخدم مكالمات الفيديو في الوقت الحالي. حاول التبديل إلى الصوت أو حاول مرة أخرى لاحقًا"
+play_8 : "ملحق ملف فيديو غير صالح!\n\n**التنسيقات المدعومة:** {0}"
+play_9 : "يجب أن يكون حجم ملف الفيديو أقل من 1 GiB"
+play_10 : "**ميزة قائمة تشغيل يوتيوب**\n\nحدد الوضع الذي تريد تشغيل قائمة تشغيل Youtube بالكامل فيه"
+play_11 : "📎عنوان: **{0}\n\n⏳مدة:** {1} دقيقة"
+play_12 : "**وضع تشغيل سبوتيفاي**\n\nبطلب من :- {0}"
+play_13 : "**قوائم تشغيل Apple**\n\nبطلب من :- {0}"
+play_14 : "**تعذر التحقق من عنوان URL.**\nيتساءل بوت عما إذا كان عنوان url هذا ينتمي إلى أي من الأنظمة الأساسية التالية: يوتيوب ، أبل ميوزيك ، سبوتيفي ، ريسو ، ساوند كلاود.\n\nيمكنك استخدام /stream for M3u8 or Remote Links."
+play_15 : "**تم الكشف عن البث المباشر**\n\nاكتشفت الأنظمة رابط المسار الخاص بك على أنه بث مباشر. تريد أن تلعب البث المباشر ?"
+play_16 : "فشل إحضار تفاصيل المسار. جرب لعب أي لعبة أخرى."
+play_17 : "غير قادر على تشغيل هذا النوع من استعلام سبوتيفي!\n\nيمكنني فقط تشغيل مسارات Spotify والألبومات والفنانين وقوائم التشغيل"
 play_18 : "**تاكد من تشغيل المحادثه الصوتية اولا ⚡.**"
 
 
 #Playlist
 playlist_1 : "**قم بكتابة تفاصيل الاغنية لتشغيلها ⚡.**"
-playlist_2 : "Getting your playlist. Please wait"
-playlist_3 : "You have no playlist on Bot's Server."
-playlist_4 : "Fetched Playlist:\n\n"
-playlist_5 :  "    Duration- {0} Mins"
-playlist_6 : "Contact me in PM for deletion of Playlists."
-playlist_7 : "Tracks Inside Playlist: {0}\n\nPress the Buttons to delete a particular track in your playlist.\n\nTo delete whole playlist: Press Del Whole Playlist button."
-playlist_8 : "Already Exists\n\nThis track exists in your playlist."
-playlist_9 : "Sorry! You can only have {0} music in a playlist."
-playlist_10 : "Playlist Addition\n\n{0}\nadded to your playlist."
-playlist_11 : "Successfully deleted your track."
-playlist_12 : "Failed to delete your track."
-playlist_13 : "Deleted your whole playlists from the server. "
-playlist_14 : "**Are you Sure you want to delete your whole playlist?**\n\nYou'll lost your playlist and this can't be recovered later."
-playlist_15 : "[Checkout Whole Playlist]({0})"
-playlist_16 : "Queued Playlist:"
-playlist_17 : "Queued Position-"
-playlist_18 : "[Checkout Whole Queued Playlist]({0})\n\nLast Queued Position : **{1}**"
+playlist_2 : "الحصول على قائمة التشغيل الخاصة بك. ارجوك انتظر"
+playlist_3 : "ليس لديك قائمة تشغيل على خادم البوت."
+playlist_4 : "قائمة التشغيل التي تم جلبها:\n\n"
+playlist_5 :  "    مدة- {0} دقيقة"
+playlist_6 : "اتصل بي في المساء لحذف قوائم التشغيل."
+playlist_7 : "المسارات داخل قائمة التشغيل: {0}\n\nاضغط على الأزرار لحذف مسار معين في قائمة التشغيل الخاصة بك.\n\nلحذف قائمة التشغيل بأكملها: اضغط على زر حذف قائمة التشغيل بالكامل."
+playlist_8 : "موجود مسبقا\n\nهذا المسار موجود في قائمة التشغيل الخاصة بك."
+playlist_9 : "آسف! يمكنك فقط الحصول على ملفات {0} الموسيقى في قائمة التشغيل."
+playlist_10 : "إضافة قائمة التشغيل\n\n{0}\أضيفت إلى قائمة التشغيل الخاصة بك."
+playlist_11 : "تم حذف مسارك بنجاح."
+playlist_12 : "فشل حذف المسار الخاص بك."
+playlist_13 : "حذف كل قوائم التشغيل الخاصة بك من الخادم. "
+playlist_14 : "**هل أنت متأكد أنك تريد حذف قائمة التشغيل بأكملها؟**\n\nستفقد قائمة التشغيل الخاصة بك ولا يمكن استردادها لاحقًا."
+playlist_15 : "[الخروج من قائمة التشغيل بأكملها]({0})"
+playlist_16 : "قائمة التشغيل في قائمة الانتظار:"
+playlist_17 : "موقف في قائمة الانتظار-"
+playlist_18 : "[الخروج من قائمة التشغيل بأكملها في قائمة الانتظار]({0})\n\nآخر موقف في قائمة الانتظار : **{1}**"
 
 #Playmode
-playmode_1 : "Select the mode in which you want to play the queries inside your group[{0}]."
-playmode_2 : "Settings changed and saved successfully by {0}"
+playmode_1 : "حدد الوضع الذي تريد تشغيل الاستعلامات فيه داخل مجموعتك[{0}]."
+playmode_2 : "تم تغيير الإعدادات وحفظها بنجاح بواسطة{0}"
 
 #Stream 
 str_1 : "Please Provide M3u8 Links or Index Links."
@@ -198,48 +198,48 @@ tracks_2 : "**Error**\n\nThere's no **{0} Top 10 Playlist** on bot's servers. Pl
 # TOOLS
 
 #Lyrics
-lyrics_1 : "**Usage:**\n\n/lyrics [ Music Name]"
-lyrics_2 : "Searching Lyrics"
-lyrics_3 : "❌ Failed to fetch lyrics😭.\n\n💡**Tried Searching For:** {0}"
-lyrics_4 : "Click on the button below and get searched lyrics to avoid long spam types lyrics search."
+lyrics_1 : "**إستعمال:**\n\n/lyrics [ اسم الموسيقى]"
+lyrics_2 : "البحث عن كلمات"
+lyrics_3 : "❌ فشل في إحضار كلمات الأغاني😭.\n\n💡**حاولت البحث عن:** {0}"
+lyrics_4 : "انقر فوق الزر أدناه وابحث عن كلمات البحث لتجنب أنواع البريد العشوائي الطويلة البحث عن كلمات الأغاني."
 
 #Ping
-ping_1 : "Pong!!!!"
-ping_2 : "{0} is working good with a ping of `{1}` ms.\n\nBot's uptime is {2} and has used a total of {3} server's storage. Cpu load is about {4} with a consumption of {5} Ram. Py-Tgcalls client is also having a good ping of `{6}` ms."
+ping_1 : "بوت جيبثون يعمل بنجاح!!!!"
+ping_2 : "{0} يعمل بشكل جيد مع بنك من `{1}` ms.\n\nالجهوزية بوت هو {2} واستخدم ما مجموعه {3} تخزين الخادم. تحميل وحدة المعالجة المركزية حوالي {4} مع استهلاك {5} رام. يمتلك عميل Py-Tgcalls أيضًا اختبار اتصال جيد لـ `{6}` ms."
 
 
 # Song
 song_1 : ""
-song_2 : "**Usage:**\n\n/song [Music Name] or [Youtube Link]"
-song_3 : "Live Link Detected. I am not able to download live youtube videos. "
-song_4 : "**🔗Title:**- {0}\n\nSelect the type in which you want to download."
-song_5 : "Not a valid Youtube Link"
-song_6 : "Getting Formats.. \n\nPlease Wait.."
-song_7 : "Failed to get available formats for the video. Please try any other track."
-song_8 : "Download Started\n\nDownloading speed could be slow. Please hold on.."
-song_9 : "Failed to download song from Youtube-DL\n\n**Reason:** {0}"
-song_10 : "Failed to upload on telegram from servers."
-song_11 : "Uploading Started\n\nUploading speed could be slow. Please hold on.."
+song_2 : "**إستعمال:**\n\n/song [اسم الموسيقى] أو [رابط يوتيوب]"
+song_3 : "تم اكتشاف رابط مباشر. لا أستطيع تحميل مقاطع فيديو يوتيوب مباشرة. "
+song_4 : "**🔗عنوان:**- {0}\n\nحدد النوع الذي تريد التنزيل به."
+song_5 : "ليس رابط Youtube صالحًا"
+song_6 : "الحصول على التنسيقات ..\n\nارجوك انتظر.."
+song_7 : "فشل الحصول على التنسيقات المتوفرة للفيديو. الرجاء محاولة أي مسار آخر."
+song_8 : "بدأ التنزيل\n\nقد تكون سرعة التنزيل بطيئة. انتظر من فضلك.."
+song_9 : "فشل تنزيل الأغنية من Youtube-DL\n\n**سبب:** {0}"
+song_10 : "فشل التحميل على telegram من الخوادم."
+song_11 : "بدأ الرفع\n\nقد تكون سرعة التحميل بطيئة. انتظر من فضلك..".."
 
 # Tools - Queue
-queue_1 : "Please Wait..Fetching Queue.."
-queue_2 : "Queued List is empty. No tracks found"
-queue_3 : "<u>**Queued Tracks:</u>**  [Checkout More Queued Tracks From Here]({0})"
-queue_4 : "⏳ Added to Queue at **#{0}\n\nTitle:** {1}\n**⏱Duration:** {2}\n**Added By:** {3}"
-queue_5 : "Only one track inside queue, Please add some more to check list"
+queue_1 : "الرجاء الانتظار .. إحضار قائمة الانتظار.."
+queue_2 : "قائمة الانتظار فارغة. لم يتم العثور على مسارات"
+queue_3 : "<u>**المسارات في قائمة الانتظار:</u>**  [تحقق من المزيد من المسارات في قائمة الانتظار من هنا]({0})"
+queue_4 : "⏳ تمت الإضافة إلى قائمة الانتظار في **#{0}\n\nعنوان:** {1}\n**⏱مدة:** {2}\n**أضيفت من قبل:** {3}"
+queue_5 : "مسار واحد فقط داخل قائمة الانتظار ، يرجى إضافة المزيد لقائمة التحقق"
 
 # All Streaming Lines
-stream_1 : "**Started Streaming** \n\n**Requested By:** {0}\n**Information: **[Here]({1})"
-stream_2 : "**Started Streaming via URL ** \n\n**Requested By:** {0}"
-stream_3 : "**Started Streaming** \n\n**Title:** {0}\n**Duration**: {1}\n**Requested By:** {2}"
-stream_4 : "**Started Streaming** \n\n**Title:** [{0}]({1})\n**Duration**: {2}\n**Requested By:** {3}"
+stream_1 : "**جاري البث الان** \n\n**بطلب من:** {0}\n**المعلومات: **[Here]({1})"
+stream_2 : "**جاري البث بواسطه الرابط ** \n\n**بطلب من:** {0}"
+stream_3 : "**جاري البث** \n\n**العنوان:** {0}\n**المده**: {1}\n**بطلب من:** {2}"
+stream_4 : "**جاري البث** \n\n**العنوان:** [{0}]({1})\n**المده**: {2}\n**بطلب من:** {3}"
 
 # Inline Buttons
 
 #General Buttons
-CLOSE_BUTTON  : "🗑 Close"
-CLOSEMENU_BUTTON  : "🗑 Close Menu"
-BACK_BUTTON : "⬅ Back"
+CLOSE_BUTTON  : "🗑 اغلاق"
+CLOSEMENU_BUTTON  : "🗑 اغلاق القائمة"
+BACK_BUTTON : "⬅ رجوع"
 UNBAN_BUTTON : "🗑 Unban Assistant"
 
 #Lyrics
@@ -429,17 +429,17 @@ pbot_13 : "\n**<b>Unfetched Chats:</b>**\n\n"
 
 
 #Gbanned
-gban_1 : "You want to gban yourself? How Fool!"
-gban_2 : "Should i block myself? Lol"
-gban_3 : "You want to block a sudo user?"
-gban_4 : "{0} is already **gbanned** from the bot."
+gban_1 : "تريد أن تحظر نفسك؟ كم هذا أحمق!"
+gban_2 : "هل يجب أن أحجب نفسي؟ الضحك بصوت مرتفع"
+gban_3 : "تريد منع مستخدم sudo؟"
+gban_4 : "{0} بالفعل **gbanned** من البوت."
 gban_5 : "**Initializing Gobal Ban on {0}**\n\nExpected Time : {1}."
 gban_6 : "**Gbanned Successfully**\n\nBanned **{0}** from **{1}** chats."
-gban_7 : "{0} is not **gbanned **yet from the bot."
-gban_8 : "**Ungbanning {0}**\n\nExpected Time : {1}."
-gban_9 : "**UnGbanned Successfully**\n\nUnbanned **{0}** in **{1}** chats."
-gban_10 : "No Gbanned Users Found."
-gban_11 : "Please wait a while.. Fetching Gbanned users list"
+gban_7 : "{0} هو ليس **gbanned **على الاطلاق."
+gban_8 : "**جاري الغاء الحظر {0}**\n\nالوقت المتبقي : {1}."
+gban_9 : "**تم الغاء الحظر**\n\تم الغاء حظر **{0}** في **{1}** الدردشة."
+gban_10 : "لايوجد هناك محظورين."
+gban_11 : "الرجاء الانتظار بعض الوقت .. إحضار قائمة مستخدمي Gbanned"
 
 #Suggestions
 sug_0 : "❓**Do You Know?**\n\n✅ "
@@ -468,5 +468,5 @@ sug_22 : "You can now shuffle the queued musics on the bot.\n\nCommand: /shuffle
 sug_23 : "You can check the queue of the musics.\n\nCommand: /queue"
 sug_24 : "You can check my owner and sudo users who manage me.\n\nCommand: /sudolist"
 sug_25 : "Bot has a feature called **Commands Delete Mode**. It deletes its executed commands automatically.\n\nEnable or disable deletemode from /settings [__Enabled by default__]"
-sug_26 : "You can change language of the bot to available languages for easy understanding.\n\nCommand: /language"
-sug_27 : "Bot has a feature called **Force Play**.\n\n**Force Play** stops the playing track on voice chat and starts playing the searched track instantly without disturbing/clearing queue.\n\nCommand: /playforce"
+sug_26 : "يمكنك تغيير لغة الروبوت إلى اللغات المتاحة لسهولة الفهم.\n\nCommand: /language"
+sug_27 : "يحتوي الروبوت على ميزة تسمى **Force Play**.\n\n**Force Play** يوقف مسار التشغيل في الدردشة الصوتية ويبدأ في تشغيل المسار الذي تم البحث عنه على الفور دون إزعاج/clearing queue.\n\nCommand: /playforce"
