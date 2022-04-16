@@ -1,7 +1,7 @@
 {
-    "name": "Yukki Music Bot",
-    "description": "Telegram Group Calls streaming bot with some useful features, written in Python with Pyrogram and Py-Tgcalls. Supporting platforms like Youtube, Spotify, Resso, AppleMusic, Soundcloud and M3u8 Links.",
-    "logo": "https://telegra.ph/file/c0e014ff34f34d1056627.png",
+    "name": "بوت ميوزك جيبثون",
+    "description": "لتشغيل وتحميل الفيديوهات و الصوتيات في المكالمات.",
+    "logo": "https://telegra.ph/file/f8131049e001310f7a9a8.png",
     "keywords": [
     "python3",
     "telegram",
@@ -13,24 +13,69 @@
     ],
     "stack": "container",
     "env": {
-      "ALIVE_IMG": {
-        "description": "مممم",
+      "API_ID": {
+        "description": "احصل على الاب ايدي من https://my.telegram.org",
         "value": "",
+        "required": true
+      },
+      "API_HASH": {
+        "description": "احصل على الاب هاش من https://my.telegram.org",
+        "value": "",
+        "required": true
+      },
+      "AUTO_LEAVING_ASSISTANT": {
+        "description": "اذا كنت تريد حسابك المساعد يخرج من كل الجلسات.",
+        "value": "True",
         "required": true
       },
       "BOT_TOKEN": {
-        "description": "A Bot's token from Botfather",
+        "description": "توكن البوت من بوت فاذر",
         "value": "",
         "required": true
       },
-      "SESSION_NAME2": {
-        "description": "ممممم",
+      "MONGO_DB_URI": {
+        "description": "اتركها.",
         "value": "",
         "required": false
       },
-      "SESSION_NAME": {
-        "description": "ممممم",
+      "MUSIC_BOT_NAME": {
+        "description": "اسم لبوتك",
         "value": "",
+        "required": true
+      },
+      "OWNER_ID": {
+        "description": "ايديك.",
+        "value": "",
+        "required": true
+      },
+      "STRING_SESSION": {
+        "description": "كود  بايروكرام للبوت.",
+        "value": "",
+        "required": true
+      },
+      "HEROKU_API_KEY": {
+        "description": "ايبي كي هيروكو",
+        "value": "",
+        "required": false
+      },
+      "HEROKU_APP_NAME": {
+        "description": "اسم التطبيق اكتب اي شي حروف صغيرة",
+        "value": "",
+        "required": false
+      },
+      "LOG_GROUP_ID": {
+        "description": "ايدي كروبك او قناتك لازم البوت ادمن بيها.",
+        "value": "",
+        "required": true
+      },
+      "UPSTREAM_REPO": {
+        "description": "خليه نفس ما هية",
+        "value": "https://github.com/Qa8tm/jepthonMusicBot",
+        "required": true
+      },
+      "UPSTREAM_BRANCH": {
+        "description": "لا تلعب بيها",
+        "value": "master",
         "required": true
       }
     },
